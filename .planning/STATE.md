@@ -1,9 +1,9 @@
 ---
 gsd_state_version: "1.0"
 status: completed
-stopped_at: Phase 3 context gathered
-last_updated: "2026-09-29T22:35:05.696Z"
-state_head: 75a9bd00c68de3cdd6cfa0d1433cdac1c09083b1
+stopped_at: Phase 4 context gathered
+last_updated: "2026-09-29T22:47:40.806Z"
+state_head: 4577c45d1ee5964b0928b5222eb778e08afaee1b
 progress:
   total_phases: 7
   completed_phases: 3
@@ -50,6 +50,6 @@ Phase 3: Seções de Conteúdo Estático (Concluída)
 
 ## Session
 
-**Last session:** 2026-09-29T22:28:51.192Z
-**Stopped at:** Phase 3 context gathered
-**Resume file:** .planning/phases/03-se-es-de-conte-do-est-tico/03-CONTEXT.md
+**Last session:** 2026-09-29T22:47:40.700Z
+**Stopped at:** Phase 4 context gathered
+**Resume file:** .planning/phases/04-integra-o-youtube/04-CONTEXT.md
