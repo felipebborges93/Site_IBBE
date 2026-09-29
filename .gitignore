@@ -1,0 +1,23 @@
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc / OS
+.DS_Store
+*.pem
+
+# Local env files
+.env*.local
+
+# Vercel
+.vercel
+
+# Impeccable / Scratch
+.impeccable/

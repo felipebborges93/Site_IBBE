@@ -14,6 +14,15 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 .font-script-accent {
   font-family: var(--font-caveat), cursive;
 }
+
