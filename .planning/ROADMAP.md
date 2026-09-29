@@ -103,6 +103,12 @@
 
 **Requirements:** LIVE-01, LIVE-02, LIVE-03, LIVE-04
 
+**Plans:** 2/2 plans executed
+**Wave 1**
+
+- [x] 04-01-PLAN.md: Integração YouTube (Tracer) (Wave 1)
+- [x] 04-02-PLAN.md: Integração YouTube (Fallbacks & Indicador Ao Vivo) (Wave 1)
+
 ---
 
 ### Phase 5: Pedidos de Oração
