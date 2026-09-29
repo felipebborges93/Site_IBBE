@@ -7,9 +7,11 @@
 ## Phases
 
 ### Phase 1: Fundação do Projeto
+
 **Goal:** Configurar o projeto Next.js com TypeScript, Tailwind CSS, design tokens, fontes, layout base e componentes reutilizáveis.
 **Mode:** mvp
 **Success Criteria:**
+
 1. Projeto rodando com `npm run dev` sem erros
 2. Tailwind configurado com todos os design tokens (cores, fontes, espaçamentos do Stitch)
 3. Componentes base criados: Button, Card, Section, SectionTitle (com palavra em script), Container
@@ -18,12 +20,23 @@
 
 **Requirements:** CONT-01, CONT-02
 
+**Plans:** 0/2 plans executed
+**Wave 1**
+
+- [ ] 01-01-PLAN.md: Setup do Projeto Next.js, Design Tokens e Componentes Base (Wave 1)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 01-02-PLAN.md: Arquitetura de Conteúdo (/content) e Layout Base (Header/Footer) (Wave 2)
+
 ---
 
 ### Phase 2: Layout Base e Navegação
+
 **Goal:** Implementar o menu fixo com âncoras, hero section, e navegação completa (desktop + mobile) fiel ao design Stitch.
 **Mode:** mvp
 **Success Criteria:**
+
 1. Menu fixo funcional com todos os links de âncora e rolagem suave
 2. Item ativo destacado no menu conforme scroll
 3. Menu mobile com drawer/hambúrguer funcional
@@ -36,9 +49,11 @@
 ---
 
 ### Phase 3: Seções de Conteúdo Estático
+
 **Goal:** Implementar todas as seções de conteúdo lidas de `/content` — história, cultos, eventos, grupos, ministérios, ação social, visita, localização, PIX.
 **Mode:** mvp
 **Success Criteria:**
+
 1. Seção "Nossa história" com resumo + link, e página `/nossa-historia` completa com linha do tempo
 2. Cards de cultos/EBD com destaque automático do próximo
 3. Cards de eventos com filtro de passados, carrossel mobile e grade desktop
@@ -54,9 +69,11 @@
 ---
 
 ### Phase 4: Integração YouTube
+
 **Goal:** Buscar e exibir as 4 últimas lives do YouTube com cache ISR, fallbacks robustos e indicador "AO VIVO".
 **Mode:** mvp
 **Success Criteria:**
+
 1. Server Component busca lives via YouTube Data API v3 (playlistItems + videos com liveStreamingDetails)
 2. Cache ISR de 30 minutos funcionando
 3. Fallback para RSS quando API falha/cota esgotada
@@ -69,9 +86,11 @@
 ---
 
 ### Phase 5: Pedidos de Oração
+
 **Goal:** Implementar formulário, banco de dados, proteção anti-spam, moderação e APIs para o futuro telão.
 **Mode:** mvp
 **Success Criteria:**
+
 1. Formulário funcional com validação Zod client+server, campo honeypot, rate limit por hash de IP
 2. Interruptor anônimo funcional — nome não armazenado quando ativo
 3. Tabela `prayer_requests` no Supabase com RLS (anon=INSERT only)
@@ -85,9 +104,11 @@
 ---
 
 ### Phase 6: SEO, Acessibilidade, Performance e LGPD
+
 **Goal:** Garantir qualidade técnica: SEO completo, acessibilidade AA, performance Lighthouse ≥ 90, conformidade LGPD e segurança.
 **Mode:** mvp
 **Success Criteria:**
+
 1. Metadata + Open Graph configurados em todas as páginas
 2. sitemap.xml e robots.txt gerados
 3. JSON-LD Church no layout
@@ -102,9 +123,11 @@
 ---
 
 ### Phase 7: Testes, README e Checklist Final
+
 **Goal:** Validar com testes automatizados, documentar tudo e preparar a lista de placeholders e configuração externa.
 **Mode:** mvp
 **Success Criteria:**
+
 1. Testes passando: cálculo próximo culto, validação formulário (anônimo), fallback YouTube
 2. README completo em português
 3. `.env.example` documentado

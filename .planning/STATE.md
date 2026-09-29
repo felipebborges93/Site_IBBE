@@ -2,14 +2,15 @@
 gsd_state_version: "1.0"
 status: unknown
 stopped_at: Phase 1 context gathered
-last_updated: "2026-09-29T21:31:31.584Z"
-state_head: f2ad009317dfbdec5bab075bcc4fb90d463f7492
+last_updated: "2026-09-29T21:39:56.091Z"
+state_head: 13772b1247bb80ff1c148ec99d1b41ce7a1644fa
 progress:
   total_phases: 7
   completed_phases: 0
-  total_plans: 0
+  total_plans: 2
   completed_plans: 0
   percent: 0
+current_phase_name: Fundação do Projeto
 ---
 
 # State — Site IBBE
