@@ -2,38 +2,36 @@ export interface Group {
   id: string;
   name: string;
   neighborhood: string;
-  leader: string;
   meetingDay: string;
   meetingTime: string;
-  contactPhone: string;
+  description: string;
+  leader?: string;
+  contactPhone?: string;
 }
 
 export const groups: Group[] = [
   {
     id: "pgm-vila-isabel",
-    name: "PGM Vila Isabel",
+    name: "PGM Família & Esperança",
     neighborhood: "Vila Isabel",
-    leader: "[PLACEHOLDER: Líder PGM Vila Isabel]",
-    meetingDay: "Quarta-feira",
-    meetingTime: "20:00",
-    contactPhone: "[PLACEHOLDER: Telefone de contato]",
-  },
-  {
-    id: "pgm-toyota",
-    name: "PGM Toyota",
-    neighborhood: "Toyota",
-    leader: "[PLACEHOLDER: Líder PGM Toyota]",
-    meetingDay: "Quarta-feira",
+    meetingDay: "Terça-feira",
     meetingTime: "19:30",
-    contactPhone: "[PLACEHOLDER: Telefone de contato]",
+    description: "Reunião para famílias com momentos de partilha sincera, oração e espaço lúdico para as crianças.",
   },
   {
-    id: "pgm-alvorada",
-    name: "PGM Morada da Colina / Alvorada",
-    neighborhood: "Morada da Colina",
-    leader: "[PLACEHOLDER: Líder PGM Colina]",
-    meetingDay: "Sexta-feira",
+    id: "pgm-manejo",
+    name: "PGM Juventude & Propósito",
+    neighborhood: "Manejo / Cidade Alegria",
+    meetingDay: "Quarta-feira",
     meetingTime: "20:00",
-    contactPhone: "[PLACEHOLDER: Telefone de contato]",
+    description: "Roda de conversa descontraída sobre carreira, dúvidas, fé prática e amizades duradouras.",
+  },
+  {
+    id: "pgm-campos-eliseos",
+    name: "PGM Graça & Comunhão",
+    neighborhood: "Campos Elíseos / Centro",
+    meetingDay: "Quinta-feira",
+    meetingTime: "19:30",
+    description: "Estudo simples dos Salmos, oração mútua e acolhimento para quem mora ou trabalha na região central.",
   },
 ];
