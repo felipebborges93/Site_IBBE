@@ -1,8 +1,9 @@
 ---
 gsd_state_version: "1.0"
 status: completed
-stopped_at: Phase 4 completed
-last_updated: "2026-09-29T23:05:00.000Z"
+stopped_at: Phase 5 context gathered
+last_updated: "2026-09-29T23:08:00.570Z"
+state_head: 653222c74084ac394978fe92b7e59cb2e3a23eb4
 progress:
   total_phases: 7
   completed_phases: 4
@@ -49,6 +50,6 @@ Phase 4: Integração YouTube (Concluída)
 
 ## Session
 
-**Last session:** 2026-09-29T22:47:40.700Z
-**Stopped at:** Phase 4 context gathered
-**Resume file:** .planning/phases/04-integra-o-youtube/04-CONTEXT.md
+**Last session:** 2026-09-29T23:08:00.466Z
+**Stopped at:** Phase 5 context gathered
+**Resume file:** .planning/phases/05-pedidos-de-ora-o/05-CONTEXT.md
