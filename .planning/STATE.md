@@ -6,10 +6,10 @@ last_updated: "2026-09-29T22:35:05.696Z"
 state_head: 75a9bd00c68de3cdd6cfa0d1433cdac1c09083b1
 progress:
   total_phases: 7
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 7
-  completed_plans: 4
-  percent: 14
+  completed_plans: 7
+  percent: 43
 current_phase_name: se-es-de-conte-do-est-tico
 ---
 
@@ -17,7 +17,7 @@ current_phase_name: se-es-de-conte-do-est-tico
 
 ## Current Phase
 
-Phase 2: Layout Base e Navegação (Concluída)
+Phase 3: Seções de Conteúdo Estático (Concluída)
 
 ## Phase Status
 
@@ -25,7 +25,7 @@ Phase 2: Layout Base e Navegação (Concluída)
 |-------|--------|---------|-----------|
 | 1. Fundação do Projeto | completed | 2026-09-29 | 2026-09-29 |
 | 2. Layout Base e Navegação | completed | 2026-09-29 | 2026-09-29 |
-| 3. Seções de Conteúdo Estático | pending | — | — |
+| 3. Seções de Conteúdo Estático | completed | 2026-09-29 | 2026-09-29 |
 | 4. Integração YouTube | pending | — | — |
 | 5. Pedidos de Oração | pending | — | — |
 | 6. SEO, Acessibilidade, Performance e LGPD | pending | — | — |

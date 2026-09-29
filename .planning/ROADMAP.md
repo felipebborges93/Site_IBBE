@@ -76,6 +76,16 @@
 
 **Requirements:** HIST-01, HIST-02, CULT-01, CULT-02, EVEN-01, EVEN-02, GRUP-01, GRUP-02, MINI-01, ACAO-01, VISI-01, VISI-02, VISI-03, LOCA-01, LOCA-02, LOCA-03, PIX-01
 
+**Plans:** 3/3 plans executed
+**Wave 1**
+
+- [x] 03-01-PLAN.md: História (Home e Página Dedicada), Cultos com Destaque Dinâmico e Calendário de Eventos (Wave 1)
+- [x] 03-02-PLAN.md: Pequenos Grupos (PGMs), Ministérios Ativos e Bloco de Ação Social (Wave 1)
+
+**Wave 2**
+
+- [x] 03-03-PLAN.md: Planeje sua Visita com FAQ, Localização com GPS, Chave PIX e Integração Completa da Home (Wave 2)
+
 ---
 
 ### Phase 4: Integração YouTube
