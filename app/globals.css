@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bricolage: "Bricolage Grotesque", sans-serif;
+  --font-caveat: "Caveat", cursive;
+}
+
+body {
+  color: #122035;
+  background: #FFFFFF;
+  font-family: var(--font-bricolage), sans-serif;
+  overflow-x: hidden;
+}
+
+.font-script-accent {
+  font-family: var(--font-caveat), cursive;
+}
