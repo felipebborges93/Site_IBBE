@@ -17,6 +17,10 @@ export interface HistoryData {
     verse: string;
     reference: string;
   };
+  jeremiasVerse: {
+    verse: string;
+    reference: string;
+  };
   foundationText: string;
   capelaText: string;
   pastors: PastorReference[];
@@ -28,6 +32,10 @@ export const historyData: HistoryData = {
   themeVerse: {
     verse: "Porque, quanto ao Senhor, seus olhos passam por toda a terra, para mostrar-se forte para com aqueles cujo coração é totalmente dele.",
     reference: "2 Crônicas 16.9a",
+  },
+  jeremiasVerse: {
+    verse: "Porque sou eu que conheço os planos que tenho para vocês, diz o Senhor, planos de fazê-los prosperar e não de lhes causar dano, planos de dar-lhes esperança e um futuro.",
+    reference: "Jeremias 29:11",
   },
   foundationText:
     "A Igreja Batista Bethel em Resende nasceu em 28 de outubro de 2000, fruto de uma semente de amor e fé plantada por 28 irmãos no bairro Toyota. Sob a liderança do Pr. Paulo de Souza Neto e em comunhão com a PIB de Engenheiro Passos, a congregação foi emancipada para glorificar a Deus na região das Agulhas Negras.",
