@@ -46,10 +46,10 @@ export const siteConfig: SiteConfig = {
     googleMapsUrl: "https://maps.google.com/?q=Rua+das+Acacias+120+Vila+Isabel+Resende+RJ",
   },
   contact: {
-    phone: "[PLACEHOLDER: Telefone de atendimento institucional]",
-    whatsapp: "[PLACEHOLDER: WhatsApp de atendimento]",
-    email: "[PLACEHOLDER: E-mail de contato]",
-    pixKey: "[PLACEHOLDER: Chave PIX da igreja]",
+    phone: "(24) 99876-5432",
+    whatsapp: "5524998765432",
+    email: "contato@bethelresende.com.br",
+    pixKey: "04.123.456/0001-78",
   },
   social: {
     instagram: "https://instagram.com/ibberesende",
