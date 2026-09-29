@@ -127,6 +127,11 @@
 
 **Requirements:** PRAY-01, PRAY-02, PRAY-03, PRAY-04, PRAY-05, PRAY-06, PRAY-07, PRAY-08, PRAY-09
 
+**Plans:** 1 plans
+**Wave 1**
+
+- [ ] 05-01-PLAN.md: Implementar Pedidos de Oração, Supabase DB e APIs
+
 ---
 
 ### Phase 6: SEO, Acessibilidade, Performance e LGPD
