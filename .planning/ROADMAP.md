@@ -46,6 +46,16 @@
 
 **Requirements:** NAV-01, NAV-02, NAV-03, HERO-01, HERO-02, HERO-03
 
+**Plans:** 2/2 plans executed
+**Wave 1**
+
+- [x] 02-01-PLAN.md: Navegação Base, Header Fixo com Scrollspy, Menu Mobile Drawer e Botão Flutuante de WhatsApp (Wave 1)
+
+**Wave 2**
+
+- [x] 02-02-PLAN.md: Seção Hero, Tipografia Editorial, Mosaico Fotográfico Assimétrico e Faixa Dinâmica do Próximo Culto (Wave 2)
+
+
 ---
 
 ### Phase 3: Seções de Conteúdo Estático
