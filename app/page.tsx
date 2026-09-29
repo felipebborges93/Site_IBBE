@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { YouTubeSection } from "@/components/youtube/YouTubeSection";
 import { HistorySection } from "@/components/home/HistorySection";
 import { EventsSection } from "@/components/home/EventsSection";
 import { GroupsSection } from "@/components/home/GroupsSection";
@@ -9,21 +10,30 @@ import { VisitSection } from "@/components/home/VisitSection";
 import { LocationSection } from "@/components/home/LocationSection";
 import { PixSection } from "@/components/home/PixSection";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { getLatestLives } from "@/lib/youtube";
 
-export default function Home() {
+export default async function Home() {
+  const { liveVideoUrl, isLiveNow } = await getLatestLives();
+
   return (
     <div className="w-full">
       {/* 1. Hero Fiel ao Stitch com Mosaico e NextServiceBar */}
-      <Hero />
+      <Hero liveVideoUrl={liveVideoUrl} isLiveNow={isLiveNow} />
 
       {/* Divisor Onda para Gelo */}
       <SectionDivider variant="wave" to="gelo" />
 
-      {/* 2. Cultos e EBD com Destaque Dinâmico (#cultos e #lives) */}
+      {/* 2. Cultos e EBD com Destaque Dinâmico (#cultos) */}
       <ServicesSection />
 
       {/* Divisor Diagonal para Branco */}
       <SectionDivider variant="diagonal" to="white" />
+
+      {/* 3. Transmissões e Últimas Mensagens do YouTube (#lives) */}
+      <YouTubeSection />
+
+      {/* Divisor Arc para Gelo */}
+      <SectionDivider variant="arc" to="gelo" />
 
       {/* 3. Nossa História (#historia) */}
       <HistorySection />

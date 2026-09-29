@@ -5,7 +5,14 @@ import { Container } from "@/components/ui/Container";
 import { NextServiceBar } from "./NextServiceBar";
 import { services } from "@/content/services";
 
-export function Hero() {
+export interface HeroProps {
+  liveVideoUrl?: string;
+  isLiveNow?: boolean;
+}
+
+export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
+  const liveUrl = liveVideoUrl || "#lives";
+  const isExternalLive = Boolean(liveVideoUrl);
   return (
     <section
       id="inicio"
@@ -44,12 +51,24 @@ export function Hero() {
               >
                 Planeje sua visita
               </Link>
-              <Link
-                href="#cultos"
-                className="inline-flex items-center justify-center px-6 sm:px-8 h-14 rounded-full bg-white/80 hover:bg-white text-marinho font-semibold text-base border border-marinho/15 transition-all shadow-sm hover:scale-[1.02] active:scale-95"
-              >
-                Assistir ao vivo
-              </Link>
+              {isExternalLive ? (
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 justify-center px-6 sm:px-8 h-14 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-base transition-all shadow-md hover:scale-[1.02] active:scale-95 animate-pulse"
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
+                  <span>Assistir ao vivo</span>
+                </a>
+              ) : (
+                <Link
+                  href={liveUrl}
+                  className="inline-flex items-center justify-center px-6 sm:px-8 h-14 rounded-full bg-white/80 hover:bg-white text-marinho font-semibold text-base border border-marinho/15 transition-all shadow-sm hover:scale-[1.02] active:scale-95"
+                >
+                  Assistir ao vivo
+                </Link>
+              )}
             </div>
           </div>
 
