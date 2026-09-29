@@ -4,44 +4,19 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { Hero } from "@/components/home/Hero";
 import { siteConfig, services, groups, historyData } from "@/content";
 
 export default function Home() {
   return (
     <div className="w-full">
-      {/* Seção Hero / Boas-Vindas */}
-      <section id="inicio" className="relative py-24 sm:py-32 bg-white overflow-hidden">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-gelo text-marinho text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-sm">
-              {siteConfig.nickname} &bull; Resende/RJ
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-marinho leading-tight">
-              Uma igreja feita de{" "}
-              <span className="font-script text-cobalto text-5xl sm:text-6xl md:text-7xl block sm:inline font-normal">
-                pessoas.
-              </span>
-            </h1>
-            <p className="mt-6 text-lg sm:text-xl text-marinho/80 leading-relaxed font-normal">
-              {siteConfig.slogans.secondary} Conheça a nossa comunidade de fé fundamentada na
-              Palavra de Deus, no acolhimento mútuo e no amor prático.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Button href="#visita" variant="primary" size="lg">
-                Planeje sua Visita
-              </Button>
-              <Button href="#cultos" variant="secondary" size="lg">
-                Ver Horários dos Cultos
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
+      {/* Seção Hero Fiel ao Stitch com Mosaico, Tipografia Editorial e NextServiceBar */}
+      <Hero />
 
       {/* Divisor Onda Branca para Gelo */}
       <SectionDivider variant="wave" to="gelo" />
 
-      {/* Seção Cultos */}
+      {/* Seção Cultos & Transmissões */}
       <Section id="cultos" background="gelo">
         <Container>
           <SectionTitle
@@ -73,6 +48,9 @@ export default function Home() {
               </Card>
             ))}
           </div>
+
+          {/* Âncora secundária para Lives de transmissão */}
+          <div id="lives" className="scroll-mt-20 pt-8" />
         </Container>
       </Section>
 
@@ -110,7 +88,7 @@ export default function Home() {
       {/* Divisor Arc Branco para Gelo */}
       <SectionDivider variant="arc" to="gelo" />
 
-      {/* Seção Pequenos Grupos */}
+      {/* Seção Pequenos Grupos (PGMs) */}
       <Section id="grupos" background="gelo">
         <Container>
           <SectionTitle
@@ -133,13 +111,19 @@ export default function Home() {
               </Card>
             ))}
           </div>
+
+          {/* Âncoras auxiliares para scrollspy completo da Fase 3/4 */}
+          <div id="eventos" className="scroll-mt-20" />
+          <div id="ministerios" className="scroll-mt-20" />
+          <div id="acao-social" className="scroll-mt-20" />
+          <div id="oracao" className="scroll-mt-20" />
         </Container>
       </Section>
 
       {/* Divisor Wave Gelo para Marinho */}
       <SectionDivider variant="wave" to="marinho" />
 
-      {/* Seção Como Chegar / Visita */}
+      {/* Seção Como Chegar / Sou Novo (#visita) e Contato (#contato) */}
       <Section id="visita" background="marinho">
         <Container>
           <SectionTitle
@@ -165,6 +149,8 @@ export default function Home() {
               </Button>
             </div>
           </div>
+
+          <div id="contato" className="scroll-mt-20 pt-8" />
         </Container>
       </Section>
     </div>
