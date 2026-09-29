@@ -55,7 +55,6 @@
 
 - [x] 02-02-PLAN.md: Seção Hero, Tipografia Editorial, Mosaico Fotográfico Assimétrico e Faixa Dinâmica do Próximo Culto (Wave 2)
 
-
 ---
 
 ### Phase 3: Seções de Conteúdo Estático
@@ -127,10 +126,10 @@
 
 **Requirements:** PRAY-01, PRAY-02, PRAY-03, PRAY-04, PRAY-05, PRAY-06, PRAY-07, PRAY-08, PRAY-09
 
-**Plans:** 1 plans
+**Plans:** 1/1 plans executed
 **Wave 1**
 
-- [ ] 05-01-PLAN.md: Implementar Pedidos de Oração, Supabase DB e APIs
+- [x] 05-01-PLAN.md: Implementar Pedidos de Oração, Supabase DB e APIs
 
 ---
 
