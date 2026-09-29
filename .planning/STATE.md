@@ -2,15 +2,15 @@
 gsd_state_version: "1.0"
 status: completed
 stopped_at: Phase 3 context gathered
-last_updated: "2026-09-29T22:28:51.281Z"
-state_head: d230d7edd75dd10a2f2b31bdc0ab1214c2df86f7
+last_updated: "2026-09-29T22:35:05.696Z"
+state_head: 75a9bd00c68de3cdd6cfa0d1433cdac1c09083b1
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 4
+  total_plans: 7
   completed_plans: 4
-  percent: 29
-current_phase_name: Layout Base e Navegação
+  percent: 14
+current_phase_name: se-es-de-conte-do-est-tico
 ---
 
 # State — Site IBBE
