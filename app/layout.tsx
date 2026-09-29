@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Caveat } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -25,9 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${bricolage.variable} ${caveat.variable}`}>
-      <body className="bg-white text-marinho font-sans antialiased selection:bg-gelo selection:text-marinho">
-        {children}
+    <html lang="pt-BR" className={`${bricolage.variable} ${caveat.variable} scroll-smooth`}>
+      <body className="bg-white text-marinho font-sans antialiased selection:bg-gelo selection:text-marinho flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
