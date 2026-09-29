@@ -20,14 +20,14 @@
 
 **Requirements:** CONT-01, CONT-02
 
-**Plans:** 0/2 plans executed
+**Plans:** 2/2 plans executed
 **Wave 1**
 
-- [ ] 01-01-PLAN.md: Setup do Projeto Next.js, Design Tokens e Componentes Base (Wave 1)
+- [x] 01-01-PLAN.md: Setup do Projeto Next.js, Design Tokens e Componentes Base (Wave 1)
 
-**Wave 2** *(blocked on Wave 1 completion)*
+**Wave 2**
 
-- [ ] 01-02-PLAN.md: Arquitetura de Conteúdo (/content) e Layout Base (Header/Footer) (Wave 2)
+- [x] 01-02-PLAN.md: Arquitetura de Conteúdo (/content) e Layout Base (Header/Footer) (Wave 2)
 
 ---
 
