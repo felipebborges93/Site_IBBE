@@ -2,15 +2,15 @@
 gsd_state_version: "1.0"
 status: completed
 stopped_at: Phase 4 context gathered
-last_updated: "2026-09-29T22:47:40.806Z"
-state_head: 4577c45d1ee5964b0928b5222eb778e08afaee1b
+last_updated: "2026-09-29T22:53:28.159Z"
+state_head: 5183e4200daa6a89644e31f77aa0f3ea54dab30a
 progress:
   total_phases: 7
   completed_phases: 3
-  total_plans: 7
+  total_plans: 9
   completed_plans: 7
-  percent: 43
-current_phase_name: se-es-de-conte-do-est-tico
+  percent: 14
+current_phase_name: integra-o-youtube
 ---
 
 # State — Site IBBE
