@@ -27,8 +27,8 @@ Phase 4: Integração YouTube (Concluída)
 | 2. Layout Base e Navegação | completed | 2026-09-29 | 2026-09-29 |
 | 3. Seções de Conteúdo Estático | completed | 2026-09-29 | 2026-09-29 |
 | 4. Integração YouTube | completed | 2026-09-29 | 2026-09-29 |
-| 5. Pedidos de Oração | pending | — | — |
-| 6. SEO, Acessibilidade, Performance e LGPD | pending | — | — |
+| 5. Pedidos de Oração | completed | 2026-09-29 | 2026-09-29 |
+| 6. SEO, Acessibilidade, Performance e LGPD | completed | 2026-09-29 | 2026-09-29 |
 | 7. Testes, README e Checklist Final | pending | — | — |
 
 ## Key Decisions Log

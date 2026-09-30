@@ -148,7 +148,14 @@
 7. Cabeçalhos de segurança configurados
 8. Validação/sanitização no servidor
 
-**Requirements:** SEO-01, SEO-02, SEO-03, PERF-01, PERF-02, A11Y-01, A11Y-02, A11Y-03, LGPD-01, LGPD-02, LGPD-03, SEC-01, SEC-02, SEC-03
+**Plans:** 2/2 plans executed
+**Wave 1**
+
+- [x] 06-01-PLAN.md: SEO, Metadados Estruturados, Segurança e LGPD (Wave 1)
+
+**Wave 2**
+
+- [x] 06-02-PLAN.md: Acessibilidade (WCAG AA), Design Tokens e Otimização de Performance (Wave 2)
 
 ---
 
