@@ -139,12 +139,20 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${bricolage.variable} ${caveat.variable} scroll-smooth`}>
       <body className="bg-white text-marinho font-sans antialiased selection:bg-gelo selection:text-marinho flex flex-col min-h-screen">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-3 focus:bg-cobalto focus:text-branco focus:rounded-lg focus:shadow-lg focus:font-medium focus:outline-none"
+        >
+          Saltar para o conteúdo principal
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(churchJsonLd) }}
         />
         <Header />
-        <main className="flex-1 pt-20">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1 pt-20 outline-none">
+          {children}
+        </main>
         <Footer />
         <FloatingWhatsApp />
       </body>

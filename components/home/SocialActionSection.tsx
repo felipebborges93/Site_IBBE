@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { Heart, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
@@ -13,12 +14,13 @@ export function SocialActionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Retrato Real Pai e Filha com Cantos Arredondados */}
           <div className="lg:col-span-5">
-            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20">
-              <img
+            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[440px] sm:h-[500px]">
+              <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcTjw0MLVBf0qtsRCk-CXog-l6nZDns2DI2LLFkCVN1-rs51PkyyjCZgwxfrDTguvWggwgAr-j9EicpoV4QpRviB1ISosIanNBeFKajy8ZTtNV0rKkTGTQKxXQ7Mj1dKNHmkVhtHQxABGthX_6bQi2qsX6el5z_mZSs4TLJAr0psbab4263uk8oMJ1a9GBH52FJPxX6vgNHjcC_kkxY0RbfPx_HlLa9QHkXasFlP8wILxTyr-xEGk"
                 alt="Pai e filha sorrindo na comunidade em Resende"
-                className="w-full h-[440px] sm:h-[500px] object-cover"
-                loading="lazy"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover"
               />
             </div>
             <p className="text-xs text-white/60 mt-3 text-center">

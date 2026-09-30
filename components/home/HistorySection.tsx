@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { historyData } from "@/content/history";
 import { ArrowRight, BookOpen } from "@phosphor-icons/react/dist/ssr";
@@ -91,12 +92,13 @@ export function HistorySection() {
 
         {/* Coluna Fotografia Humanizada */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light">
-            <img
+          <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light relative w-full h-[380px] sm:h-[440px]">
+            <Image
               src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE"
               alt="Comunidade acolhedora da Igreja Batista Bethel reunida em Resende"
-              className="w-full h-[380px] sm:h-[440px] object-cover"
-              loading="lazy"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-marinho/60 px-1 gap-1">

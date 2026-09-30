@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { historyData } from "@/content/history";
 import { ArrowLeft, ArrowRight, BookOpen, Calendar, Sparkle, UserCheck } from "@phosphor-icons/react/dist/ssr";
@@ -84,11 +85,15 @@ export default function NossaHistoriaPage() {
 
           <div className="lg:col-span-5">
             <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-md bg-white">
-              <img
-                src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE"
-                alt="Comunhão da Igreja Batista Bethel"
-                className="w-full h-80 object-cover"
-              />
+              <div className="relative w-full h-80">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE"
+                  alt="Comunhão da Igreja Batista Bethel"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="p-4 bg-white text-xs text-marinho/70 border-t border-marinho/10">
                 A capela de Vila Isabel: um testemunho vivo construído pela união e perseverança da comunidade.
               </div>

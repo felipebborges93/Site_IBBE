@@ -26,3 +26,20 @@ section[id] {
   font-family: var(--font-caveat), cursive;
 }
 
+/* Anel de foco visível de alto contraste para acessibilidade via teclado (A11Y-03) */
+*:focus-visible {
+  outline: 2px solid #1765C2;
+  outline-offset: 2px;
+}
+
+/* Suporte à preferência do usuário de movimento reduzido (A11Y-02) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -22,7 +22,11 @@ export default function PrayerForm() {
   return (
     <form action={formAction} className="space-y-6 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-neutral-200">
       {state?.message && (
-        <div className={`p-4 rounded-lg text-sm font-medium ${state.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+        <div
+          role="status"
+          aria-live="polite"
+          className={`p-4 rounded-lg text-sm font-medium ${state.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}
+        >
           {state.message}
         </div>
       )}
