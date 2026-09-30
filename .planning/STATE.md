@@ -2,15 +2,15 @@
 gsd_state_version: "1.0"
 status: completed
 stopped_at: Phase 6 context gathered
-last_updated: "2026-09-30T00:49:07.673Z"
-state_head: 23e9e1196be30f1bc4b773d8ecbbf4eea55f9030
+last_updated: "2026-09-30T01:43:14.323Z"
+state_head: d5eda1bbbe9a4ed4310034a3e5c8e5b038439f04
 progress:
   total_phases: 7
   completed_phases: 4
-  total_plans: 10
+  total_plans: 12
   completed_plans: 10
-  percent: 57
-current_phase_name: integra-o-youtube
+  percent: 14
+current_phase_name: seo-acessibilidade-performance-e-lgpd
 ---
 
 # State — Site IBBE
