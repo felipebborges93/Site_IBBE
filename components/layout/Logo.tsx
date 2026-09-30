@@ -58,7 +58,7 @@ export function Logo({ className, light = false }: LogoProps) {
         </span>
         <span
           className={clsx(
-            "text-[10px] sm:text-xs tracking-wider uppercase font-semibold mt-0.5",
+            "text-micro uppercase mt-0.5",
             light ? "text-gelo/70" : "text-marinho/60"
           )}
         >

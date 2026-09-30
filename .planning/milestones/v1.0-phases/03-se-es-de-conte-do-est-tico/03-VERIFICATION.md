@@ -1,3 +1,28 @@
+---
+phase: 03-se-es-de-conte-do-est-tico
+verified_at: 2026-09-29T19:43:00Z
+status: passed
+score: 100%
+requirements:
+  - HIST-01
+  - HIST-02
+  - CULT-01
+  - CULT-02
+  - EVEN-01
+  - EVEN-02
+  - GRUP-01
+  - GRUP-02
+  - MINI-01
+  - ACAO-01
+  - VISI-01
+  - VISI-02
+  - VISI-03
+  - LOCA-01
+  - LOCA-02
+  - LOCA-03
+  - PIX-01
+---
+
 # Phase 3: Seções de Conteúdo Estático — Verification Report
 
 **Phase Status:** Complete

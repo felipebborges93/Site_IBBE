@@ -21,8 +21,8 @@ export async function YouTubeSection() {
                 03 / Mensagens e Transmissões
               </span>
               {isLiveNow && (
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-verde text-white text-[10px] font-extrabold uppercase tracking-wider animate-pulse motion-reduce:animate-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-verde text-white text-micro font-extrabold uppercase animate-pulse motion-reduce:animate-none">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
                   Ao Vivo Agora
                 </span>
               )}
@@ -86,12 +86,12 @@ export async function YouTubeSection() {
                     {/* Selos / Badges sobre o Thumbnail */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                       {isVideoLive ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-verde text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-verde text-white text-micro font-extrabold uppercase shadow-sm">
                           <span aria-hidden="true" className="w-2 h-2 rounded-full bg-white animate-pulse motion-reduce:animate-none" />
                           AO VIVO
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-marinho/80 text-white text-[11px] font-medium backdrop-blur-xs">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-marinho/80 text-white text-micro font-medium backdrop-blur-xs">
                           <Broadcast aria-hidden="true" className="w-3.5 h-3.5 text-gelo" />
                           Culto
                         </span>

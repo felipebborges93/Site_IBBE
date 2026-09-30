@@ -156,7 +156,7 @@ export function EventsSection() {
                       <span className="px-3 py-1 rounded-full bg-gelo text-cobalto font-bold text-xs uppercase tracking-wider">
                         {event.date}
                       </span>
-                      <span className="text-[11px] font-semibold text-verde">Aberto ao público</span>
+                      <span className="text-micro text-verde">Aberto ao público</span>
                     </div>
 
                     <h3 className="text-xl font-bold text-marinho leading-snug">{event.title}</h3>

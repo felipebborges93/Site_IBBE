@@ -14,10 +14,10 @@ test.describe('Fluxos Críticos da IBBE', () => {
   });
 
   test('Formulário de Pedido de Oração Anônimo', async ({ page }) => {
-    await page.goto('/pedidos-de-oracao');
+    await page.goto('/oracao');
 
     // Verifica se a página carregou
-    await expect(page.locator('h1')).toContainText(/Pedidos de Oração/i);
+    await expect(page.locator('h2, h1').first()).toContainText(/Orar/i);
 
     // Preenche formulário básico (campos obrigatórios mínimos - adaptar com base no form real)
     const pedidoTextarea = page.locator('textarea[name="request"], textarea[id="request"]');

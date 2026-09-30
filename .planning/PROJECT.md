@@ -68,36 +68,36 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ **HERO-01**: Hero tela cheia com título "Uma igreja feita de _pessoas._" (palavra em script), subtítulo, botões "Planeje sua visita" e "Assistir ao vivo", faixa com próximo culto calculado — v1.0
+- ✓ **HIST-01**: Seção "Nossa história" com resumo + link para página `/nossa-historia` completa — v1.0
+- ✓ **HIST-02**: Página `/nossa-historia` com texto completo, linha do tempo 2000→2003→Hoje, versículo, homenagem aos pastores — v1.0
+- ✓ **CULT-01**: Cards de cultos/EBD a partir de `services.ts` com destaque automático do próximo encontro — v1.0
+- ✓ **EVEN-01**: Cards de eventos a partir de `events.ts`, carrossel mobile/grade desktop, ocultando passados — v1.0
+- ✓ **LIVE-01**: 4 últimas lives do YouTube via API, cache 30min, fallback RSS → card amigável — v1.0
+- ✓ **LIVE-02**: Selo "AO VIVO" pulsante quando live em andamento + botão Hero apontando para ela — v1.0
+- ✓ **GRUP-01**: Pequenos grupos (PGMs) a partir de `groups.ts` com botão "Quero participar" → WhatsApp pré-preenchido — v1.0
+- ✓ **MINI-01**: Ministérios a partir de `ministries.ts` com ícone e descrição — v1.0
+- ✓ **ACAO-01**: Seção de ação social — v1.0
+- ✓ **PRAY-01**: Formulário de pedidos de oração com nome opcional, interruptor anônimo, validação Zod client+server, honeypot, rate limit por hash de IP — v1.0
+- ✓ **PRAY-02**: Tabela `prayer_requests` no Supabase com RLS (anon só INSERT), status enum (pending→approved→displayed→archived→rejected) — v1.0
+- ✓ **PRAY-03**: API `GET /api/prayer-requests/display` + `PATCH /api/prayer-requests/:id/displayed` protegidas por token para futuro telão — v1.0
+- ✓ **PRAY-04**: Área de moderação `/admin/oracao` com autenticação Supabase Auth, listar/aprovar/rejeitar/arquivar, mobile-friendly, noindex — v1.0
+- ✓ **LOCA-01**: Google Maps iframe lazy, endereço, botões "Abrir no Google Maps" e "Como chegar" — v1.0
+- ✓ **PIX-01**: Seção contribuição PIX com botão "Copiar chave" e feedback visual — v1.0
+- ✓ **VISI-01**: "Planeje sua visita" com 3 passos + acordeão FAQ + botão WhatsApp — v1.0
+- ✓ **CONT-01**: Conteúdo editável via pasta `/content` com arquivos TS tipados (site, services, events, groups, ministries, history, faq) — v1.0
+- ✓ **NAV-01**: Menu fixo com âncoras, rolagem suave, item ativo destacado, botão WhatsApp flutuante — v1.0
+- ✓ **SEO-01**: Metadata completa, Open Graph, sitemap.xml, robots.txt, JSON-LD Church, lang pt-BR — v1.0
+- ✓ **PERF-01**: Lighthouse ≥ 90 mobile, imagens WebP/AVIF via next/image, fontes display:swap — v1.0
+- ✓ **A11Y-01**: HTML semântico, contraste AA, navegação por teclado, alt em imagens, prefers-reduced-motion — v1.0
+- ✓ **LGPD-01**: Página `/privacidade`, aviso no formulário, sem cookies de rastreamento, hash de IP — v1.0
+- ✓ **TEST-01**: Testes do cálculo "próximo culto", validação do formulário (caso anônimo), fallback YouTube — v1.0
+- ✓ **SEC-01**: Nenhuma chave no repo, cabeçalhos de segurança, validação de entrada no servidor — v1.0
+- ✓ **DOC-01**: README em português, .env.example, docs/telao-api.md, checklist de configuração — v1.0
 
 ### Active
 
-- [ ] **HERO-01**: Hero tela cheia com título "Uma igreja feita de _pessoas._" (palavra em script), subtítulo, botões "Planeje sua visita" e "Assistir ao vivo", faixa com próximo culto calculado
-- [ ] **HIST-01**: Seção "Nossa história" com resumo + link para página `/nossa-historia` completa
-- [ ] **HIST-02**: Página `/nossa-historia` com texto completo, linha do tempo 2000→2003→Hoje, versículo, homenagem aos pastores
-- [ ] **CULT-01**: Cards de cultos/EBD a partir de `services.ts` com destaque automático do próximo encontro
-- [ ] **EVEN-01**: Cards de eventos a partir de `events.ts`, carrossel mobile/grade desktop, ocultando passados
-- [ ] **LIVE-01**: 4 últimas lives do YouTube via API, cache 30min, fallback RSS → card amigável
-- [ ] **LIVE-02**: Selo "AO VIVO" pulsante quando live em andamento + botão Hero apontando para ela
-- [ ] **GRUP-01**: Pequenos grupos (PGMs) a partir de `groups.ts` com botão "Quero participar" → WhatsApp pré-preenchido
-- [ ] **MINI-01**: Ministérios a partir de `ministries.ts` com ícone e descrição
-- [ ] **ACAO-01**: Seção de ação social
-- [ ] **PRAY-01**: Formulário de pedidos de oração com nome opcional, interruptor anônimo, validação Zod client+server, honeypot, rate limit por hash de IP
-- [ ] **PRAY-02**: Tabela `prayer_requests` no Supabase com RLS (anon só INSERT), status enum (pending→approved→displayed→archived→rejected)
-- [ ] **PRAY-03**: API `GET /api/prayer-requests/display` + `PATCH /api/prayer-requests/:id/displayed` protegidas por token para futuro telão
-- [ ] **PRAY-04**: Área de moderação `/admin/oracao` com autenticação Supabase Auth, listar/aprovar/rejeitar/arquivar, mobile-friendly, noindex
-- [ ] **LOCA-01**: Google Maps iframe lazy, endereço, botões "Abrir no Google Maps" e "Como chegar"
-- [ ] **PIX-01**: Seção contribuição PIX com botão "Copiar chave" e feedback visual
-- [ ] **VISI-01**: "Planeje sua visita" com 3 passos + acordeão FAQ + botão WhatsApp
-- [ ] **CONT-01**: Conteúdo editável via pasta `/content` com arquivos TS tipados (site, services, events, groups, ministries, history, faq)
-- [ ] **NAV-01**: Menu fixo com âncoras, rolagem suave, item ativo destacado, botão WhatsApp flutuante
-- [ ] **SEO-01**: Metadata completa, Open Graph, sitemap.xml, robots.txt, JSON-LD Church, lang pt-BR
-- [ ] **PERF-01**: Lighthouse ≥ 90 mobile, imagens WebP/AVIF via next/image, fontes display:swap
-- [ ] **A11Y-01**: HTML semântico, contraste AA, navegação por teclado, alt em imagens, prefers-reduced-motion
-- [ ] **LGPD-01**: Página `/privacidade`, aviso no formulário, sem cookies de rastreamento, hash de IP
-- [ ] **TEST-01**: Testes do cálculo "próximo culto", validação do formulário (caso anônimo), fallback YouTube
-- [ ] **SEC-01**: Nenhuma chave no repo, cabeçalhos de segurança, validação de entrada no servidor
-- [ ] **DOC-01**: README em português, .env.example, docs/telao-api.md, checklist de configuração
+(Nenhum ativo no momento — marco v1.0 concluído e validado; próximos requisitos serão definidos no marco v1.1)
 
 ### Out of Scope
 
@@ -112,31 +112,18 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Next.js App Router + TypeScript | Stack moderno, SSR/ISR nativo, boa DX | Confirmado pelo usuário |
-| Supabase para pedidos de oração | Postgres + RLS + Auth + Realtime em um só lugar; camada de abstração em `lib/prayer-repository.ts` para facilitar troca futura | Confirmado |
-| Conteúdo em arquivos TS tipados (`/content`) | Permite edição sem mexer em componentes; tipagem previne erros; JSON-like mas com IntelliSense | Confirmado |
-| YouTube Data API v3 com fallback RSS | Cota econômica via playlistItems.list, resiliente a falhas | Confirmado |
-| Caveat como fonte script padrão | Dongra Script apenas se arquivo fornecido em /public/fonts | Confirmado |
-| Design Stitch como referência visual | Divergências: design vence no visual, documento vence no comportamento/dados | Confirmado |
-| Phosphor Icons | Leve, já usado no design Stitch | Decidido |
-| Hash de IP (nunca IP bruto) | Conformidade LGPD para rate limiting | Confirmado |
+| Next.js App Router + TypeScript | Stack moderno, SSR/ISR nativo, boa DX | Confirmado pelo usuário (✓ Good) |
+| Supabase para pedidos de oração | Postgres + RLS + Auth + Realtime em um só lugar | Confirmado (✓ Good) |
+| Conteúdo em arquivos TS tipados (`/content`) | Permite edição sem mexer em componentes; tipagem previne erros | Confirmado (✓ Good) |
+| YouTube Data API v3 com fallback RSS | Cota econômica via playlistItems.list, resiliente a falhas | Confirmado (✓ Good) |
+| Caveat como fonte script padrão | Dongra Script apenas se arquivo fornecido em /public/fonts | Confirmado (✓ Good) |
+| Design Stitch como referência visual | Divergências: design vence no visual, documento vence no comportamento/dados | Confirmado (✓ Good) |
+| Phosphor Icons | Leve, já usado no design Stitch | Decidido (✓ Good) |
+| Hash de IP (nunca IP bruto) | Conformidade LGPD para rate limiting | Confirmado (✓ Good) |
 
 ## Evolution
 
 This document evolves at phase transitions and milestone boundaries.
 
-**After each phase transition** (via `/gsd-transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd-complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
-
 ---
-*Last updated: 2026-09-29 after initialization*
+*Last updated: 2026-09-30 after v1.0 milestone*

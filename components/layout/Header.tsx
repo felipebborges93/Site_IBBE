@@ -50,7 +50,7 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-[13px] 2xl:text-[14px] transition-all duration-150 py-2 min-h-[44px] border-b-2 ${
+                    className={`text-sm transition-all duration-150 py-2 min-h-[44px] border-b-2 ${
                       isActive
                         ? "text-cobalto font-bold border-cobalto"
                         : "text-marinho/80 font-medium border-transparent hover:text-cobalto hover:border-cobalto/40"

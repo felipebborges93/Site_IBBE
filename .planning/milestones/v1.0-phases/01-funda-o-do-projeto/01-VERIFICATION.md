@@ -1,3 +1,13 @@
+---
+phase: 01-funda-o-do-projeto
+verified_at: 2026-09-29T18:46:00Z
+status: passed
+score: 100%
+requirements:
+  - CONT-01
+  - CONT-02
+---
+
 # Phase 01: Fundação do Projeto — Verification Report
 
 - **Phase:** 01-funda-o-do-projeto

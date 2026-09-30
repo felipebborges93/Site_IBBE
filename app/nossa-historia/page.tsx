@@ -114,7 +114,7 @@ export default function NossaHistoriaPage() {
             {historyData.timeline.map((item, index) => (
               <div key={index} className="relative group">
                 {/* Marcador Circular */}
-                <span aria-hidden="true" className="absolute -left-8 sm:-left-12 top-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border-4 border-cobalto shadow-sm flex items-center justify-center text-[10px] font-black text-cobalto transition-transform motion-reduce:transition-none motion-reduce:transform-none group-hover:scale-110">
+                <span aria-hidden="true" className="absolute -left-8 sm:-left-12 top-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border-4 border-cobalto shadow-sm flex items-center justify-center text-micro font-black text-cobalto transition-transform motion-reduce:transition-none motion-reduce:transform-none group-hover:scale-110">
                   •
                 </span>
 
