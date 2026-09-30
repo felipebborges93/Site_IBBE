@@ -28,16 +28,36 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+/**
+ * Sanitiza texto removendo tags HTML e caracteres de controle para prevenir injeção (SEC-03).
+ */
+function sanitizeText(input: string): string {
+  if (!input) return "";
+  return input
+    .replace(/<[^>]*>/g, "") // Remove tags HTML
+    .replace(/[<>'"&]/g, (char) => {
+      switch (char) {
+        case "<": return "&lt;";
+        case ">": return "&gt;";
+        case "'": return "&#39;";
+        case '"': return "&quot;";
+        case "&": return "&amp;";
+        default: return char;
+      }
+    })
+    .trim();
+}
+
 export async function submitPrayerRequest(prevState: any, formData: FormData) {
   try {
     const data = Object.fromEntries(formData.entries());
     const isAnonymous = data.is_anonymous === "on" || data.is_anonymous === "true";
 
     const parsedData = {
-      name: data.name as string,
-      request: data.request as string,
+      name: typeof data.name === "string" ? sanitizeText(data.name) : "",
+      request: typeof data.request === "string" ? sanitizeText(data.request) : "",
       is_anonymous: isAnonymous,
-      honeypot: data.honeypot as string,
+      honeypot: typeof data.honeypot === "string" ? data.honeypot : "",
     };
 
     // Honeypot check
@@ -47,7 +67,8 @@ export async function submitPrayerRequest(prevState: any, formData: FormData) {
     }
 
     // IP Rate Limiting
-    const forwardedFor = headers().get("x-forwarded-for");
+    const headerList = await headers();
+    const forwardedFor = headerList.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0] : "unknown";
     
     if (!checkRateLimit(ip)) {
@@ -60,7 +81,13 @@ export async function submitPrayerRequest(prevState: any, formData: FormData) {
       return { success: false, errors: validated.error.flatten().fieldErrors };
     }
 
-    const supabase = createClient();
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      // Modo desenvolvimento sem Supabase configurado: simula sucesso para não travar testes locais
+      console.log("Mock submission (Supabase não configurado):", validated.data);
+      return { success: true, message: "Pedido enviado com sucesso! (Modo de desenvolvimento)" };
+    }
+
+    const supabase = await createClient();
     
     const { error } = await supabase.from("prayer_requests").insert({
       name: validated.data.is_anonymous ? null : validated.data.name,

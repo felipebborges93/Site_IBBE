@@ -3,7 +3,7 @@
 import { useFormState, useFormStatus } from "react-dom";
 import { submitPrayerRequest } from "@/app/actions/prayer";
 import { useState } from "react";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -17,6 +17,7 @@ function SubmitButton() {
 export default function PrayerForm() {
   const [state, formAction] = useFormState(submitPrayerRequest, null);
   const [isAnonymous, setIsAnonymous] = useState(false);
+  const [requestText, setRequestText] = useState("");
 
   return (
     <form action={formAction} className="space-y-6 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-neutral-200">
@@ -40,7 +41,7 @@ export default function PrayerForm() {
           value="true"
           checked={isAnonymous}
           onChange={(e) => setIsAnonymous(e.target.checked)}
-          className="w-5 h-5 text-primary-600 rounded border-neutral-300 focus:ring-primary-500 cursor-pointer"
+          className="w-5 h-5 text-cobalto rounded border-neutral-300 focus:ring-cobalto cursor-pointer"
         />
         <label htmlFor="is_anonymous" className="text-neutral-700 font-medium cursor-pointer">
           Quero fazer este pedido anonimamente
@@ -49,13 +50,13 @@ export default function PrayerForm() {
 
       {!isAnonymous && (
         <div className="space-y-2">
-          <label htmlFor="name" className="block text-sm font-medium text-neutral-700">Seu Nome</label>
+          <label htmlFor="name" className="block text-sm font-medium text-neutral-700">Seu Nome (opcional)</label>
           <input
             type="text"
             name="name"
             id="name"
             placeholder="Como podemos te chamar?"
-            className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors"
           />
           {state?.errors?.name && (
             <p className="text-red-500 text-sm mt-1">{state.errors.name[0]}</p>
@@ -64,13 +65,21 @@ export default function PrayerForm() {
       )}
 
       <div className="space-y-2">
-        <label htmlFor="request" className="block text-sm font-medium text-neutral-700">Seu Pedido</label>
+        <div className="flex justify-between items-center">
+          <label htmlFor="request" className="block text-sm font-medium text-neutral-700">Seu Pedido</label>
+          <span className={`text-xs ${requestText.length > 1000 ? 'text-red-500 font-bold' : requestText.length > 0 && requestText.length < 10 ? 'text-amber-600' : 'text-neutral-400'}`}>
+            {requestText.length}/1000 caracteres {requestText.length > 0 && requestText.length < 10 && "(mínimo 10)"}
+          </span>
+        </div>
         <textarea
           name="request"
           id="request"
           rows={5}
-          placeholder="Escreva aqui seu pedido de oração..."
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-y"
+          value={requestText}
+          onChange={(e) => setRequestText(e.target.value)}
+          maxLength={1000}
+          placeholder="Escreva aqui seu pedido de oração (mínimo 10 caracteres)..."
+          className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors resize-y"
           required
         ></textarea>
         {state?.errors?.request && (
@@ -81,6 +90,14 @@ export default function PrayerForm() {
       <div className="pt-2">
         <SubmitButton />
       </div>
+
+      <p className="text-xs text-neutral-500 text-center leading-relaxed">
+        Ao enviar seu pedido, você concorda com nossa{" "}
+        <a href="/privacidade" className="text-cobalto underline hover:text-marinho transition-colors font-medium">
+          Política de Privacidade
+        </a>
+        . Não exigimos cadastro e você pode orar de forma 100% anônima.
+      </p>
     </form>
   );
 }

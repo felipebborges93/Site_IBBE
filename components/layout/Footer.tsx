@@ -142,9 +142,15 @@ export function Footer() {
 
         {/* Linha Divisória e Faixa Inferior */}
         <div className="pt-8 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gelo/60">
-          <p>
-            &copy; {siteConfig.foundationDate.split("/")[2]}–{currentYear} {siteConfig.name}. Todos os direitos reservados.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p>
+              &copy; {siteConfig.foundationDate.split("/")[2]}–{currentYear} {siteConfig.name}. Todos os direitos reservados.
+            </p>
+            <span className="hidden sm:inline">&bull;</span>
+            <Link href="/privacidade" className="hover:text-white underline underline-offset-2 transition-colors">
+              Privacidade & LGPD
+            </Link>
+          </div>
           <p className="italic">
             &ldquo;{siteConfig.slogans.primary}&rdquo;
           </p>
