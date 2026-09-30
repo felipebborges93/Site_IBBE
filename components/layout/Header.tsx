@@ -42,14 +42,15 @@ export function Header() {
             <Logo />
 
             {/* Navegação Desktop (visível a partir de telas xl) */}
-            <nav className="hidden xl:flex items-center gap-5 2xl:gap-7">
+            <nav aria-label="Navegação principal" className="hidden xl:flex items-center gap-5 2xl:gap-7">
+
               {navLinks.map((link) => {
                 const isActive = activeId === link.id;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-[13px] 2xl:text-[14px] transition-all duration-150 py-1 border-b-2 ${
+                    className={`text-[13px] 2xl:text-[14px] transition-all duration-150 py-2 min-h-[44px] border-b-2 ${
                       isActive
                         ? "text-cobalto font-bold border-cobalto"
                         : "text-marinho/80 font-medium border-transparent hover:text-cobalto hover:border-cobalto/40"
@@ -80,7 +81,7 @@ export function Header() {
                 aria-label="Abrir menu de navegação"
                 aria-expanded={isDrawerOpen}
                 aria-controls="mobile-nav-drawer"
-                className="xl:hidden w-12 h-12 flex items-center justify-center rounded-lg text-marinho hover:bg-marinho/5 focus:outline-none focus:ring-2 focus:ring-cobalto transition-colors"
+                className="xl:hidden w-12 h-12 flex items-center justify-center rounded-lg text-marinho hover:bg-marinho/5 focus:outline-none focus:ring-2 focus:ring-cobalto transition-colors motion-reduce:transition-none min-h-[44px]"
               >
                 <List size={28} weight="bold" />
               </button>

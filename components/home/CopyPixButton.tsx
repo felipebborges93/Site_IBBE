@@ -26,7 +26,8 @@ export function CopyPixButton({ pixKey }: CopyPixButtonProps) {
     <button
       type="button"
       onClick={handleCopy}
-      className={`px-6 h-10 rounded-full border text-xs uppercase tracking-wider font-bold transition-all inline-flex items-center gap-2 cursor-pointer shadow-2xs ${
+      aria-live="polite"
+      className={`px-6 h-11 min-h-[44px] rounded-full border text-xs uppercase tracking-wider font-bold transition-all motion-reduce:transition-none inline-flex items-center gap-2 cursor-pointer shadow-2xs ${
         copied
           ? "bg-verde border-verde text-white"
           : "border-cobalto text-cobalto hover:bg-cobalto hover:text-white"
@@ -34,12 +35,12 @@ export function CopyPixButton({ pixKey }: CopyPixButtonProps) {
     >
       {copied ? (
         <>
-          <Check className="w-4 h-4" weight="bold" />
+          <Check aria-hidden="true" className="w-4 h-4" weight="bold" />
           <span>Chave copiada!</span>
         </>
       ) : (
         <>
-          <Copy className="w-4 h-4" weight="bold" />
+          <Copy aria-hidden="true" className="w-4 h-4" weight="bold" />
           <span>Copiar chave PIX</span>
         </>
       )}

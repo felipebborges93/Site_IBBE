@@ -21,7 +21,7 @@ export async function YouTubeSection() {
                 03 / Mensagens e Transmissões
               </span>
               {isLiveNow && (
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-600 text-white text-[10px] font-extrabold uppercase tracking-wider animate-pulse">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-verde text-white text-[10px] font-extrabold uppercase tracking-wider animate-pulse motion-reduce:animate-none">
                   <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
                   Ao Vivo Agora
                 </span>
@@ -42,10 +42,11 @@ export async function YouTubeSection() {
               href={siteConfig.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold text-cobalto hover:text-[#165eb3] transition-colors shrink-0"
+              aria-label="Canal Oficial no YouTube (abre em nova aba)"
+              className="inline-flex items-center gap-2 text-sm font-bold text-cobalto hover:text-cobalto/85 transition-colors motion-reduce:transition-none min-h-[44px] py-2 shrink-0"
             >
               <span>Canal Oficial</span>
-              <ArrowUpRight className="w-4 h-4" weight="bold" />
+              <ArrowUpRight aria-hidden="true" className="w-4 h-4" weight="bold" />
             </a>
           </div>
         </div>
@@ -61,13 +62,14 @@ export async function YouTubeSection() {
                 href={video.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col h-full focus:outline-none"
+                aria-label={`Assistir "${video.title}" no YouTube (abre em nova aba)`}
+                className="group flex flex-col h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalto focus-visible:ring-offset-2"
               >
                 <Card
                   variant="gelo"
                   elevation={1}
-                  className={`flex flex-col h-full p-0 overflow-hidden rounded-2xl border transition-all duration-300 group-hover:shadow-elevation-2 group-hover:-translate-y-1 ${
-                    isVideoLive ? "border-red-500/50 ring-2 ring-red-500/20" : "border-marinho/10"
+                  className={`flex flex-col h-full p-0 overflow-hidden rounded-2xl border transition-all duration-300 group-hover:shadow-elevation-2 group-hover:-translate-y-1 motion-reduce:transition-none motion-reduce:transform-none ${
+                    isVideoLive ? "border-verde/50 ring-2 ring-verde/20" : "border-marinho/10"
                   }`}
                 >
                   {/* Thumbnail do Vídeo com Selo de Destaque */}
@@ -77,26 +79,26 @@ export async function YouTubeSection() {
                       alt={video.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none motion-reduce:transform-none"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity motion-reduce:transition-none" />
 
                     {/* Selos / Badges sobre o Thumbnail */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                       {isVideoLive ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-red-600 text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm">
-                          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-verde text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm">
+                          <span aria-hidden="true" className="w-2 h-2 rounded-full bg-white animate-pulse motion-reduce:animate-none" />
                           AO VIVO
                         </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-marinho/80 text-white text-[11px] font-medium backdrop-blur-xs">
-                          <Broadcast className="w-3.5 h-3.5 text-gelo" />
+                          <Broadcast aria-hidden="true" className="w-3.5 h-3.5 text-gelo" />
                           Culto
                         </span>
                       )}
 
-                      <span className="p-1 rounded-full bg-black/40 text-white/80 group-hover:text-white group-hover:bg-red-600 transition-colors">
-                        <YoutubeLogo className="w-4 h-4" weight="fill" />
+                      <span className="p-1 rounded-full bg-black/40 text-white/80 group-hover:text-white group-hover:bg-verde transition-colors motion-reduce:transition-none">
+                        <YoutubeLogo aria-hidden="true" className="w-4 h-4" weight="fill" />
                       </span>
                     </div>
                   </div>
@@ -104,7 +106,7 @@ export async function YouTubeSection() {
                   {/* Informações Textuais */}
                   <div className="p-5 flex flex-col flex-1 justify-between">
                     <div>
-                      <h3 className="font-bold text-marinho group-hover:text-cobalto transition-colors line-clamp-2 text-base leading-snug mb-2">
+                      <h3 className="font-bold text-marinho group-hover:text-cobalto transition-colors motion-reduce:transition-none line-clamp-2 text-base leading-snug mb-2">
                         {video.title}
                       </h3>
                       {video.description && (
@@ -116,7 +118,7 @@ export async function YouTubeSection() {
 
                     <div className="mt-4 pt-3 border-t border-marinho/10 flex items-center justify-between text-xs text-marinho/60">
                       <span>Assistir no YouTube</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-cobalto group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5 text-cobalto group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform motion-reduce:transition-none motion-reduce:transform-none" />
                     </div>
                   </div>
                 </Card>
@@ -130,7 +132,7 @@ export async function YouTubeSection() {
           <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-gelo border border-marinho/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center shrink-0 border border-marinho/10">
-                <YoutubeLogo className="w-6 h-6 text-red-600" weight="fill" />
+                <YoutubeLogo aria-hidden="true" className="w-6 h-6 text-red-600" weight="fill" />
               </div>
               <div>
                 <h4 className="font-bold text-marinho text-base">Acesse nosso canal completo no YouTube</h4>
@@ -140,21 +142,16 @@ export async function YouTubeSection() {
               </div>
             </div>
             <Button
-              asChild
               href={siteConfig.social.youtube}
               variant="primary"
               size="md"
-              className="shrink-0"
+              aria-label="Ver nosso canal no YouTube (abre em nova aba)"
+              className="shrink-0 inline-flex items-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                href={siteConfig.social.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <span>Ver no YouTube</span>
-                <ArrowUpRight className="w-4 h-4" weight="bold" />
-              </a>
+              <span>Ver no YouTube</span>
+              <ArrowUpRight aria-hidden="true" className="w-4 h-4" weight="bold" />
             </Button>
           </div>
         )}

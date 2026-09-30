@@ -72,7 +72,7 @@ export function ServicesSection() {
                     </span>
                     {isNext && (
                       <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-verde/15 text-verde text-[11px] font-bold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-verde animate-pulse" />
+                        <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-verde animate-pulse motion-reduce:animate-none" />
                         Próximo
                       </span>
                     )}
@@ -112,9 +112,9 @@ export function ServicesSection() {
                     }`}
                   >
                     {modality.includes("Live") ? (
-                      <VideoCamera className="w-3.5 h-3.5 text-cobalto" weight="bold" />
+                      <VideoCamera aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" weight="bold" />
                     ) : (
-                      <Users className="w-3.5 h-3.5 text-marinho/50" weight="bold" />
+                      <Users aria-hidden="true" className="w-3.5 h-3.5 text-marinho/50" weight="bold" />
                     )}
                     <span>{modality}</span>
                   </span>

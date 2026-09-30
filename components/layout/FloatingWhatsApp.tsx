@@ -16,15 +16,16 @@ export function FloatingWhatsApp() {
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
 
+  // WhatsApp brand green (#25D366) retained intentionally for brand recognition
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Conversar no WhatsApp"
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center text-3xl shadow-lg hover:scale-110 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+      aria-label="Conversar no WhatsApp (abre em nova aba)"
+      className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center text-3xl shadow-lg hover:scale-110 active:scale-95 transition-all duration-200 motion-reduce:transition-none motion-reduce:transform-none focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
     >
-      <WhatsappLogo size={32} weight="fill" />
+      <WhatsappLogo aria-hidden="true" size={32} weight="fill" />
     </a>
   );
 }

@@ -1,0 +1,985 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Igreja Batista Bethel em Resende | Uma igreja feita de pessoas</title>
+<!-- Google Fonts: Bricolage Grotesque & Caveat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;400;500;600;700;800&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Phosphor Icons -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/thin/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            marinho: '#122035',
+            cobalto: '#1D75DD',
+            ceu: '#48A4FF',
+            gelo: '#D7E9F4',
+            verde: '#00A818',
+            'gelo-light': '#F4F9FD',
+          },
+          fontFamily: {
+            sans: ['"Bricolage Grotesque"', 'sans-serif'],
+            script: ['"Caveat"', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .font-script-accent {
+      font-family: 'Caveat', cursive;
+      font-style: italic;
+      font-weight: 700;
+    }
+    ::selection {
+      background-color: #D7E9F4;
+      color: #122035;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFFFF] text-marinho font-sans antialiased selection:bg-gelo selection:text-marinho relative">
+<!-- 1. MENU FIXO COM NAVEGAÇÃO POR ÂNCORA -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#122035]/10 transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Logo Marca Real -->
+<a class="flex items-center group py-2" href="#inicio">
+<img alt="Igreja Batista Bethel em Resende" class="h-10 sm:h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X91Xsf4ryQjo9az5ak3ecnn4xmpXxEJYR1YjQ5nFkpcj3apITqhJAmbw45Id1DssdFoFqzbglr1xbrh66ITvjm3NO1nOus5ARE0zSJHrFk0Vx5UiqZ7rxrmVAuHCN0O8jvsuwfPZAmwGmyNfA9gjBhBmHTXqgKcTQqT43sBiv_Ut9BbPEOZsftsOpjWdq0mKDiBKPiHCE90RZmYlaSawRuHfozM3WD5GT_utjQXDOkiJ7_G80ajkXDPaE">
+</a>
+<!-- Menu Links Desktop -->
+<nav class="hidden xl:flex items-center gap-7 text-[14px] tracking-tight font-medium text-marinho/80">
+<a class="hover:text-cobalto transition-colors" href="#inicio">Início</a>
+<a class="hover:text-cobalto transition-colors" href="#historia">Nossa história</a>
+<a class="hover:text-cobalto transition-colors" href="#cultos">Cultos</a>
+<a class="hover:text-cobalto transition-colors" href="#eventos">Eventos</a>
+<a class="hover:text-cobalto transition-colors" href="#lives">Lives</a>
+<a class="hover:text-cobalto transition-colors" href="#grupos">PGMs</a>
+<a class="hover:text-cobalto transition-colors" href="#ministerios">Ministérios</a>
+<a class="hover:text-cobalto transition-colors" href="#acao-social">Ação Social</a>
+<a class="hover:text-cobalto transition-colors" href="#oracao">Oração</a>
+<a class="hover:text-cobalto transition-colors" href="#visita">Sou Novo</a>
+<a class="hover:text-cobalto transition-colors" href="#contato">Contato</a>
+</nav>
+<!-- Botão CTA Topo Desktop -->
+<div class="hidden lg:flex items-center gap-4">
+<a class="inline-flex items-center justify-center px-6 h-11 rounded-full bg-cobalto hover:bg-[#165eb3] text-white font-semibold text-xs tracking-wide uppercase transition-all shadow-sm" href="#visita">
+          Planeje sua visita
+        </a>
+</div>
+<!-- Botão Hambúrguer Mobile -->
+<button aria-label="Abrir menu" class="xl:hidden p-2 text-marinho focus:outline-none" id="mobileMenuBtn">
+<i class="ph ph-list text-2xl" id="menuIcon"></i>
+</button>
+</div>
+<!-- Menu Mobile Dropdown -->
+<div class="hidden xl:hidden bg-white border-b border-[#122035]/10 px-6 py-6" id="mobileMenu">
+<div class="flex flex-col gap-3 text-sm font-semibold text-marinho">
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#inicio">Início</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#historia">Nossa história</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#cultos">Cultos e EBD</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#eventos">Próximos Eventos</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#lives">Assista Online (Lives)</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#grupos">Pequenos Grupos (PGMs)</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#ministerios">Ministérios</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#acao-social">Ação Social</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#oracao">Pedidos de Oração</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#visita">Sou Novo / Visite-nos</a>
+<a class="mobile-nav-link py-2 border-b border-[#122035]/5" href="#contribuir">Dízimos e Ofertas</a>
+<a class="mobile-nav-link py-2" href="#contato">Localização e Contato</a>
+<a class="mt-3 w-full h-11 flex items-center justify-center rounded-full bg-cobalto text-white font-bold text-xs uppercase" href="#visita">
+          Planeje sua visita
+        </a>
+</div>
+</div>
+</header>
+<!-- 2. HERO AUTORAL (TELA CHEIA COM CÉU REAL E MOSAICO DE RETRATOS) -->
+<section class="relative min-h-[92vh] pt-28 pb-12 flex flex-col justify-between overflow-hidden bg-cover bg-center" id="inicio" style="background-image: linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(244,249,253,0.85) 60%, rgba(215,233,244,0.95) 100%), url('https://lh3.googleusercontent.com/aida/AEtjO1X20mLMTrnB3dC_YkPsnjhscB-UdbXDCmsmFESZtI3LIwTAKjIYiKr75ldAifBtGxiIPtrPjk5f2K9yDC7QwuFRa6ShOaHguJk0NGHP0T0jxd7HgfLYWv42Djkf6iToIaYMpkwQc-_7Mo2UfLEoF-Xyk_xKEG2_cXyknBzv8L1O7jrcb0cDhZH-7sAg9yMZ2a5V8x1tF0W8vgwMe3knZzKFs1ipSxpHIvGyqrjyfXHRgWSIWc7HwoO_qg');">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 w-full flex-1 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Coluna Esquerda: Tipografia Editorial Gigante -->
+<div class="lg:col-span-6 z-10 pt-4 lg:pt-0">
+<div class="inline-flex items-center gap-2 mb-6">
+<span class="w-2 h-2 rounded-full bg-verde"></span>
+<span class="text-xs uppercase tracking-widest font-semibold text-marinho/70">Vila Isabel, Resende • Venha como você está</span>
+</div>
+<h1 class="text-5xl sm:text-7xl lg:text-[84px] font-extrabold text-marinho tracking-tight leading-[1.02] mb-6">
+          Uma igreja feita de <span class="text-cobalto italic font-extrabold">pessoas.</span>
+</h1>
+<p class="text-xl sm:text-2xl text-marinho/80 font-normal leading-relaxed max-w-xl mb-10">
+          Aqui ninguém caminha só. Venha fazer parte da nossa família em Vila Isabel, Resende.
+        </p>
+<!-- UM ÚNICO BOTÃO PRINCIPAL EM FORMATO PÍLULA AZUL COBALTO -->
+<div>
+<a class="inline-flex items-center justify-center px-10 h-14 rounded-full bg-cobalto hover:bg-[#165eb3] text-white font-bold text-base tracking-wide transition-all shadow-sm hover:scale-[1.02]" href="#visita">
+            Planeje sua visita
+          </a>
+</div>
+</div>
+<!-- Coluna Direita: Mosaico Assimétrico de Retratos Reais com Bordas Finas -->
+<div class="lg:col-span-6 relative flex items-center justify-center min-h-[440px] lg:min-h-[540px]">
+<!-- Imagem Principal (Família reunida) -->
+<div class="w-[78%] rounded-3xl overflow-hidden border-4 border-white shadow-lg relative z-10 transform -rotate-1">
+<img alt="Família da Igreja Bethel reunida ao ar livre" class="w-full h-80 sm:h-96 object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE">
+</div>
+<!-- Retrato 2 sobreposto (Pai e filha) -->
+<div class="absolute -bottom-4 left-2 w-48 sm:w-56 rounded-2xl overflow-hidden border-4 border-white shadow-lg z-20 transform -rotate-3 hover:rotate-0 transition-transform">
+<img alt="Pai e filha sorrindo" class="w-full h-56 sm:h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcTjw0MLVBf0qtsRCk-CXog-l6nZDns2DI2LLFkCVN1-rs51PkyyjCZgwxfrDTguvWggwgAr-j9EicpoV4QpRviB1ISosIanNBeFKajy8ZTtNV0rKkTGTQKxXQ7Mj1dKNHmkVhtHQxABGthX_6bQi2qsX6el5z_mZSs4TLJAr0psbab4263uk8oMJ1a9GBH52FJPxX6vgNHjcC_kkxY0RbfPx_HlLa9QHkXasFlP8wILxTyr-xEGk">
+</div>
+<!-- Retrato 3 sobreposto (Senhora afetuosa) -->
+<div class="absolute -top-4 right-2 w-44 sm:w-52 rounded-2xl overflow-hidden border-4 border-white shadow-lg z-20 transform rotate-3 hover:rotate-0 transition-transform">
+<img alt="Senhora acolhedora da comunidade Bethel" class="w-full h-44 sm:h-52 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1vSXrtt6ziA9Hdx05vEowXs_70oK7m0L7dNIqityk92K3n6qwzX184SSqrcaVe4dOeU1EaimUyhWllH1cQggg33ljEmsFw79Q-n7c43qNyuU46-_ONffOzDsurpOOiAmDWLLMUv44ML1VZtkJm7d-8Z-r34xgVuks745Do-RS-RVSu9GNpyajwUzmrkw00H470A5zDcHv84s-uT6TnnU1KG1tUW-WZFOUw6g2m-TXXQc0cdlNe_H1">
+</div>
+</div>
+</div>
+<!-- Faixa Discreta e Translúcida na Base -->
+<div class="w-full border-t border-[#122035]/10 bg-white/70 backdrop-blur-md mt-10">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-marinho/80 gap-3">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-verde"></span>
+<span class="font-bold text-marinho uppercase tracking-wider">Próximo Encontro:</span>
+<span class="">Domingo de Celebração às 19h00 • Presencial e Live</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="">Rua das Acácias, 120 – Vila Isabel</span>
+<a class="text-cobalto font-bold underline hover:text-marinho" href="#cultos">Ver todos os horários</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. NOSSA HISTÓRIA (EDITORIAL DE LIVRO EM 2 COLUNAS COM LINHAS FINAS) -->
+<section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-12" id="historia">
+<div class="border-b border-[#122035]/15 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">01 / Origem &amp; Caminhada</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+          Uma história de <span class="text-cobalto italic font-extrabold">amor.</span>
+</h2>
+</div>
+<p class="text-marinho/60 text-sm max-w-sm">
+        Resende, outubro de 2000. Uma pequena semente plantada pela dedicação de 28 irmãos.
+      </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Coluna Editorial Texto -->
+<div class="lg:col-span-6 space-y-6 text-base sm:text-lg text-marinho/85 leading-relaxed font-normal">
+<p class="first-letter:text-5xl first-letter:font-extrabold first-letter:text-marinho first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+          A Igreja Batista Bethel nasceu em <strong>28 de outubro de 2000</strong> através de 28 irmãos corajosos que compartilhavam um desejo puro: servir de perto as famílias do bairro de Vila Isabel e arredores, com as mãos prontas para o trabalho e o coração sensível à dor do próximo.
+        </p>
+<p class="">
+          O coração da comunidade começou a pulsar nos projetos com as crianças da periferia de Resende, oferecendo carinho, acolhimento, café da manhã e lições de vida no Evangelho.
+        </p>
+<p class="">
+          Em <strong>7 de novembro de 2003</strong>, com mutirão solidário dos próprios membros, tijolo por tijolo, erguemos em apenas 5 dias corridos a nossa capela em Vila Isabel — batizada carinhosamente por todos de <em>"Igrejinha do Cantão"</em>. Desde esse dia, este solo é um porto seguro para quem procura descanso e recomeço.
+        </p>
+<!-- Marcos Históricos Tipográficos com Linhas Finas (Sem cards) -->
+<div class="pt-8 mt-8 border-t border-[#122035]/15 grid grid-cols-3 gap-6">
+<div>
+<span class="text-3xl font-extrabold text-marinho tracking-tight block">2000</span>
+<span class="text-xs uppercase text-marinho/60 font-semibold mt-1 block">Fundação</span>
+<p class="text-xs text-marinho/70 mt-1">28 irmãos pioneiros</p>
+</div>
+<div class="border-l border-[#122035]/15 pl-6">
+<span class="text-3xl font-extrabold text-marinho tracking-tight block">5 dias</span>
+<span class="text-xs uppercase text-marinho/60 font-semibold mt-1 block">Mutirão</span>
+<p class="text-xs text-marinho/70 mt-1">A Igrejinha do Cantão</p>
+</div>
+<div class="border-l border-[#122035]/15 pl-6">
+<span class="text-3xl font-extrabold text-cobalto tracking-tight block">Hoje</span>
+<span class="text-xs uppercase text-marinho/60 font-semibold mt-1 block">Comunidade</span>
+<p class="text-xs text-marinho/70 mt-1">Portas sempre abertas</p>
+</div>
+</div>
+</div>
+<!-- Coluna Fotografia Humanizada -->
+<div class="lg:col-span-6 space-y-4">
+<div class="rounded-3xl overflow-hidden border border-[#122035]/10">
+<img alt="Família da Igreja Batista Bethel em Vila Isabel Resende" class="w-full h-[420px] object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE">
+</div>
+<div class="flex items-center justify-between text-xs text-marinho/60 px-1">
+<span class="">Encontro comunitário no pátio da capela em Vila Isabel</span>
+<span class="">Resende • RJ</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. HORÁRIOS DE CULTOS E EBD (LISTA EDITORIAL LIMPA COM NUMERAÇÃO '01', '02', '03') -->
+<section class="py-24 bg-gelo-light border-y border-[#122035]/10" id="cultos">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">02 / Encontros Semanais</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+            Cultos e <span class="text-cobalto italic font-extrabold">presença.</span>
+</h2>
+</div>
+<p class="text-marinho/70 text-sm max-w-md">
+          Sem formalidades desnecessárias. Um ambiente sereno para desacelerar da rotina, orar e ouvir a Palavra.
+        </p>
+</div>
+<!-- Lista Editorial Limpa (Sem caixas com sombras) -->
+<div class="divide-y divide-[#122035]/15 border-y border-[#122035]/15">
+<!-- Item 01 -->
+<div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+<div class="md:col-span-2">
+<span class="text-3xl font-extrabold text-cobalto">01</span>
+<span class="block text-xs uppercase tracking-widest text-marinho/60 font-semibold mt-1">Domingo Noite</span>
+</div>
+<div class="md:col-span-5">
+<h3 class="text-2xl sm:text-3xl font-bold text-marinho">Culto de Celebração e Família</h3>
+<p class="text-sm text-marinho/70 mt-2 leading-relaxed">
+              Momento de louvor, mensagem bíblica aplicada ao cotidiano e acolhimento para todas as idades.
+            </p>
+</div>
+<div class="md:col-span-3">
+<div class="text-2xl font-bold text-marinho">19h00 às 20h30</div>
+<span class="text-xs text-verde font-semibold">Ministério Infantil (Bethel Kids) ativo</span>
+</div>
+<div class="md:col-span-2 text-right md:text-left">
+<span class="inline-block text-xs uppercase font-bold text-cobalto tracking-wider bg-white px-3 py-1 rounded-full border border-cobalto/20">
+              Presencial &amp; Live
+            </span>
+</div>
+</div>
+<!-- Item 02 -->
+<div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+<div class="md:col-span-2">
+<span class="text-3xl font-extrabold text-marinho/50">02</span>
+<span class="block text-xs uppercase tracking-widest text-marinho/60 font-semibold mt-1">Domingo Manhã</span>
+</div>
+<div class="md:col-span-5">
+<h3 class="text-2xl sm:text-3xl font-bold text-marinho">Escola Bíblica Dominical (EBD)</h3>
+<p class="text-sm text-marinho/70 mt-2 leading-relaxed">
+              Classes divididas por faixas etárias: crianças, jovens e adultos estudando a Bíblia com diálogo sincero.
+            </p>
+</div>
+<div class="md:col-span-3">
+<div class="text-2xl font-bold text-marinho">09h00 às 10h15</div>
+<span class="text-xs text-marinho/60">Café com pão compartilhado a partir das 08h30</span>
+</div>
+<div class="md:col-span-2 text-right md:text-left">
+<span class="inline-block text-xs uppercase font-bold text-marinho/70 tracking-wider bg-white px-3 py-1 rounded-full border border-[#122035]/15">
+              Presencial
+            </span>
+</div>
+</div>
+<!-- Item 03 -->
+<div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+<div class="md:col-span-2">
+<span class="text-3xl font-extrabold text-marinho/50">03</span>
+<span class="block text-xs uppercase tracking-widest text-marinho/60 font-semibold mt-1">Quinta-feira Noite</span>
+</div>
+<div class="md:col-span-5">
+<h3 class="text-2xl sm:text-3xl font-bold text-marinho">Culto de Oração &amp; Ensino Expositivo</h3>
+<p class="text-sm text-marinho/70 mt-2 leading-relaxed">
+              Pausa no meio da semana para intercessão comunitária, desabafo sincero diante de Deus e reflexão versículo a versículo.
+            </p>
+</div>
+<div class="md:col-span-3">
+<div class="text-2xl font-bold text-marinho">19h30 às 20h45</div>
+<span class="text-xs text-marinho/60">Momento de oração por pedidos pessoais</span>
+</div>
+<div class="md:col-span-2 text-right md:text-left">
+<span class="inline-block text-xs uppercase font-bold text-marinho/70 tracking-wider bg-white px-3 py-1 rounded-full border border-[#122035]/15">
+              Presencial
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. PRÓXIMOS EVENTOS (AGENDA HORIZONTAL COM TIPOGRAFIA DE CALENDÁRIO) -->
+<section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-12" id="eventos">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">03 / Calendário Comunitário</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+          Próximos <span class="text-cobalto italic font-extrabold">encontros.</span>
+</h2>
+</div>
+<p class="text-marinho/60 text-sm max-w-sm">
+        Momentos planejados com carinho para fortalecer a convivência fraterna e acolher novas pessoas.
+      </p>
+</div>
+<!-- Lista Horizontal Elegante -->
+<div class="border-t border-[#122035]/15 divide-y divide-[#122035]/15">
+<!-- Evento 1 -->
+<div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+<div class="lg:col-span-2 flex items-baseline gap-3">
+<span class="text-5xl font-black text-marinho">24</span>
+<span class="text-xs font-bold uppercase tracking-wider text-cobalto">MAIO • SÁB</span>
+</div>
+<div class="lg:col-span-6">
+<h3 class="text-2xl font-bold text-marinho group-hover:text-cobalto transition-colors">Noite da Família Bethel</h3>
+<p class="text-sm text-marinho/70 mt-1 leading-relaxed">
+            Jantar comunitário com conversa aberta sobre relacionamentos saudáveis, louvor acústico e espaço para as crianças brincarem.
+          </p>
+<div class="flex items-center gap-4 text-xs text-marinho/60 mt-2">
+<span class="">19h00 • Capela de Vila Isabel</span>
+<span class="">Entrada franca</span>
+</div>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<button class="px-6 h-11 rounded-full border border-cobalto text-cobalto hover:bg-cobalto hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors" onclick="alert('Inscrições abertas e gratuitas. Esperamos sua família!')">
+            Confirmar presença
+          </button>
+</div>
+</div>
+<!-- Evento 2 -->
+<div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+<div class="lg:col-span-2 flex items-baseline gap-3">
+<span class="text-5xl font-black text-marinho">08</span>
+<span class="text-xs font-bold uppercase tracking-wider text-cobalto">JUNHO • SÁB</span>
+</div>
+<div class="lg:col-span-6">
+<h3 class="text-2xl font-bold text-marinho group-hover:text-cobalto transition-colors">Tarde da Alegria: Bethel Kids</h3>
+<p class="text-sm text-marinho/70 mt-1 leading-relaxed">
+            Atividades ao ar livre, teatro de fantoches, lanche saudável e contação de histórias bíblicas para todas as crianças do bairro.
+          </p>
+<div class="flex items-center gap-4 text-xs text-marinho/60 mt-2">
+<span class="">14h30 • Pátio Bethel</span>
+<span class="">Aberto ao público</span>
+</div>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<button class="px-6 h-11 rounded-full border border-cobalto text-cobalto hover:bg-cobalto hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors" onclick="alert('Traga seus filhos e vizinhos!')">
+            Convidar amigos
+          </button>
+</div>
+</div>
+<!-- Evento 3 -->
+<div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+<div class="lg:col-span-2 flex items-baseline gap-3">
+<span class="text-5xl font-black text-verde">22</span>
+<span class="text-xs font-bold uppercase tracking-wider text-verde">JUNHO • SÁB</span>
+</div>
+<div class="lg:col-span-6">
+<h3 class="text-2xl font-bold text-marinho group-hover:text-cobalto transition-colors">Mutirão de Ação Social Vila Isabel</h3>
+<p class="text-sm text-marinho/70 mt-1 leading-relaxed">
+            Apoio comunitário com doação de alimentos, roupas, aferição de pressão arterial e orientação fraterna às famílias da comunidade.
+          </p>
+<div class="flex items-center gap-4 text-xs text-marinho/60 mt-2">
+<span class="">09h00 às 15h00 • Praça de Vila Isabel</span>
+<span class="">Voluntariado ativo</span>
+</div>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<button class="px-6 h-11 rounded-full border border-[#122035]/20 text-marinho hover:bg-marinho hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors" onclick="alert('Seja voluntário ou traga doações de alimentos!')">
+            Como colaborar
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. ÚLTIMAS LIVES (FUNDO AZUL MARINHO TOTAL COM PLAYER DOMINANTE) -->
+<section class="py-24 bg-marinho text-white" id="lives">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-white/15 pb-8 gap-4">
+<div>
+<span class="text-xs font-bold text-ceu uppercase tracking-widest block mb-2">04 / Transmissões Abertas</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+            Assista onde você <span class="text-ceu italic font-extrabold">estiver.</span>
+</h2>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-ceu hover:text-white transition-colors" href="https://youtube.com" target="_blank">
+          Ver canal no YouTube <i class="ph ph-arrow-up-right text-base"></i>
+</a>
+</div>
+<!-- Player Dominante de Tela Ampla Cinematográfico -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-8">
+<div class="relative aspect-video rounded-3xl overflow-hidden bg-black/60 border border-white/10 group cursor-pointer" onclick="alert('Abrindo culto da Bethel Resende no YouTube')">
+<img alt="Culto transmitido ao vivo" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1X20mLMTrnB3dC_YkPsnjhscB-UdbXDCmsmFESZtI3LIwTAKjIYiKr75ldAifBtGxiIPtrPjk5f2K9yDC7QwuFRa6ShOaHguJk0NGHP0T0jxd7HgfLYWv42Djkf6iToIaYMpkwQc-_7Mo2UfLEoF-Xyk_xKEG2_cXyknBzv8L1O7jrcb0cDhZH-7sAg9yMZ2a5V8x1tF0W8vgwMe3knZzKFs1ipSxpHIvGyqrjyfXHRgWSIWc7HwoO_qg">
+<div class="absolute inset-0 bg-gradient-to-t from-marinho via-black/30 to-transparent flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-cobalto text-white flex items-center justify-center text-3xl shadow-xl group-hover:scale-110 transition-transform">
+<i class="ph ph-play-fill ml-1"></i>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs">
+<span class="px-3 py-1 rounded-full bg-red-600 text-white font-bold uppercase tracking-wider">Último Domingo</span>
+<span class="text-white/80 bg-black/60 px-3 py-1 rounded-full">1h 24min</span>
+</div>
+</div>
+</div>
+<!-- Coluna de Mensagens Recentes -->
+<div class="lg:col-span-4 space-y-6">
+<div class="border-b border-white/10 pb-4">
+<span class="text-xs text-ceu font-bold uppercase tracking-wider">Mensagem recente</span>
+<h3 class="text-2xl font-bold mt-1 text-white">A Graça que Restaura e Reúne Famílias</h3>
+<p class="text-sm text-white/70 mt-2 leading-relaxed">
+              Uma palavra de ânimo sobre como Deus cuida de histórias reais nos momentos de cansaço.
+            </p>
+</div>
+<div class="space-y-4">
+<a class="block p-4 rounded-2xl border border-white/10 hover:border-ceu/50 transition-colors" href="https://youtube.com" target="_blank">
+<span class="text-[11px] text-white/50 block">Quinta-feira passada</span>
+<h4 class="text-sm font-semibold text-white mt-0.5">O Poder da Oração Simples no Cotidiano</h4>
+</a>
+<a class="block p-4 rounded-2xl border border-white/10 hover:border-ceu/50 transition-colors" href="https://youtube.com" target="_blank">
+<span class="text-[11px] text-white/50 block">Estudo Bíblico Dominical</span>
+<h4 class="text-sm font-semibold text-white mt-0.5">Como Ler a Bíblia com Clareza e Prática</h4>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. PEQUENOS GRUPOS (PGMS) - BLOCO INTIMISTA DE MESA COMPARTILHADA -->
+<section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-12" id="grupos">
+<div class="border-b border-[#122035]/15 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">05 / Vida Compartilhada</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+          Pequenos Grupos <span class="text-cobalto italic font-extrabold">(PGMs).</span>
+</h2>
+</div>
+<p class="text-marinho/60 text-sm max-w-sm">
+        A igreja acontecendo na sala das casas durante a semana: cafezinho, conversa honesta e oração.
+      </p>
+</div>
+<!-- Bloco Editorial Intimista: Frase de Destaque -->
+<div class="bg-gelo/30 rounded-3xl p-8 sm:p-12 mb-16 border border-[#122035]/10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-2xl">
+<span class="text-xs uppercase tracking-widest font-bold text-cobalto">Ninguém caminha só</span>
+<p class="text-2xl sm:text-3xl font-extrabold text-marinho mt-2 leading-snug">
+          "Uma mesa posta, café quente e ouvidos atentos para acolher você sem pressa e sem julgamento."
+        </p>
+</div>
+<a class="px-8 h-12 rounded-full bg-cobalto hover:bg-[#165eb3] text-white font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all flex-shrink-0" href="https://wa.me/5524999999999?text=Olá!%20Gostaria%20de%20conhecer%20um%20PGM%20em%20Resende." target="_blank">
+<i class="ph ph-whatsapp-logo text-base"></i> Encontrar meu grupo
+      </a>
+</div>
+<!-- Lista Tipográfica Pura por Bairros (Sem cards decorativos) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="border-t border-[#122035]/15 pt-6">
+<span class="text-xs font-bold text-cobalto uppercase tracking-wider block mb-1">Vila Isabel</span>
+<h3 class="text-2xl font-bold text-marinho">PGM Família &amp; Esperança</h3>
+<p class="text-xs text-marinho/60 mt-1">Terça-feira às 19h30 • Vila Isabel</p>
+<p class="text-sm text-marinho/75 mt-3 leading-relaxed">
+          Reunião para famílias com momentos de partilha e espaço lúdico para as crianças.
+        </p>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-cobalto hover:text-marinho mt-4 transition-colors" href="https://wa.me/5524999999999?text=Quero%20visitar%20o%20PGM%20de%20Vila%20Isabel" target="_blank">
+          Falar com líder pelo WhatsApp <i class="ph ph-arrow-right"></i>
+</a>
+</div>
+<div class="border-t border-[#122035]/15 pt-6">
+<span class="text-xs font-bold text-cobalto uppercase tracking-wider block mb-1">Manejo / Cidade Alegria</span>
+<h3 class="text-2xl font-bold text-marinho">PGM Juventude &amp; Propósito</h3>
+<p class="text-xs text-marinho/60 mt-1">Quarta-feira às 20h00 • Manejo</p>
+<p class="text-sm text-marinho/75 mt-3 leading-relaxed">
+          Roda de conversa descontraída sobre carreira, dúvidas, fé prática e amizades duradouras.
+        </p>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-cobalto hover:text-marinho mt-4 transition-colors" href="https://wa.me/5524999999999?text=Quero%20visitar%20o%20PGM%20Jovem" target="_blank">
+          Falar com líder pelo WhatsApp <i class="ph ph-arrow-right"></i>
+</a>
+</div>
+<div class="border-t border-[#122035]/15 pt-6">
+<span class="text-xs font-bold text-cobalto uppercase tracking-wider block mb-1">Campos Elíseos / Centro</span>
+<h3 class="text-2xl font-bold text-marinho">PGM Graça &amp; Comunhão</h3>
+<p class="text-xs text-marinho/60 mt-1">Quinta-feira às 19h30 • Campos Elíseos</p>
+<p class="text-sm text-marinho/75 mt-3 leading-relaxed">
+          Estudo simples dos Salmos, oração mútua e acolhimento para recém-chegados à cidade de Resende.
+        </p>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-cobalto hover:text-marinho mt-4 transition-colors" href="https://wa.me/5524999999999?text=Quero%20visitar%20o%20PGM%20Campos%20Elíseos" target="_blank">
+          Falar com líder pelo WhatsApp <i class="ph ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- 8. MINISTÉRIOS COM NÚMEROS TIPOGRÁFICOS 01 A 08 E TRAÇO FINO (SEM ÍCONES EM CÍRCULOS) -->
+<section class="py-24 bg-gelo-light border-y border-[#122035]/10" id="ministerios">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">06 / Servir com Alegria</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+            Nossos <span class="text-cobalto italic font-extrabold">ministérios.</span>
+</h2>
+</div>
+<p class="text-marinho/70 text-sm max-w-md">
+          Alcançar vidas, pastorear o rebanho e treinar líderes com amor prático e simplicidade cristã.
+        </p>
+</div>
+<!-- Grade Tipográfica Pura 01 a 08 com Linha Fina (Sem círculos de ícone) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 border-t border-[#122035]/15 pt-10">
+<!-- 01 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">01</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Louvor &amp; Adoração</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Música congregacional que direciona o olhar para Jesus e expressa a voz de toda a igreja reunida.
+          </p>
+</div>
+<!-- 02 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">02</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Bethel Kids</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Cuidado afetuoso e aprendizado bíblico lúdico para as crianças enquanto os pais celebram o culto.
+          </p>
+</div>
+<!-- 03 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">03</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Juventude Bethel</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Amizade verdadeira, encontros descontraídos e engajamento social de jovens e adolescentes.
+          </p>
+</div>
+<!-- 04 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">04</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Mulheres com Propósito</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Encontros fraternos, intercessão, apoio emocional mútuo e acolhimento feminino em todas as idades.
+          </p>
+</div>
+<!-- 05 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">05</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Homens de Honra</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Café mensal, incentivo para pais e esposos exercerem liderança de serviço e integridade no lar.
+          </p>
+</div>
+<!-- 06 -->
+<div>
+<span class="text-4xl font-extrabold text-verde/50">06</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Ação Social Vila Isabel</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Assistência emergencial, distribuição de cestas e suporte humanitário a quem mais necessita na cidade.
+          </p>
+</div>
+<!-- 07 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">07</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Comunicação &amp; Mídia</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            Transmissões ao vivo, fotografia e sonorização com carinho para alcançar quem está longe do templo.
+          </p>
+</div>
+<!-- 08 -->
+<div>
+<span class="text-4xl font-extrabold text-marinho/30">08</span>
+<h4 class="text-xl font-bold text-marinho mt-2">Boas-Vindas &amp; Acolhimento</h4>
+<p class="text-xs text-marinho/70 mt-2 leading-relaxed">
+            O primeiro aperto de mão e o abraço na porta: orientar os visitantes e garantir que sintam-se em casa.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. AÇÃO SOCIAL (FAIXA EDITORIAL COM FOTO REAL DO PAI E FILHA E CITAÇÃO GIGANTE) -->
+<section class="py-24 bg-marinho text-white" id="acao-social">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Retrato Real Pai e Filha -->
+<div class="lg:col-span-5">
+<div class="rounded-3xl overflow-hidden border border-white/20">
+<img alt="Pai e filha sorrindo na comunidade em Resende" class="w-full h-[520px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcTjw0MLVBf0qtsRCk-CXog-l6nZDns2DI2LLFkCVN1-rs51PkyyjCZgwxfrDTguvWggwgAr-j9EicpoV4QpRviB1ISosIanNBeFKajy8ZTtNV0rKkTGTQKxXQ7Mj1dKNHmkVhtHQxABGthX_6bQi2qsX6el5z_mZSs4TLJAr0psbab4263uk8oMJ1a9GBH52FJPxX6vgNHjcC_kkxY0RbfPx_HlLa9QHkXasFlP8wILxTyr-xEGk">
+</div>
+<p class="text-xs text-white/50 mt-3 text-center">
+            Ação solidária contínua junto às famílias do bairro Vila Isabel
+          </p>
+</div>
+<!-- Citação Gigante Editorial & Estatísticas Limpas -->
+<div class="lg:col-span-7 space-y-8">
+<span class="text-xs font-bold text-ceu uppercase tracking-widest block">07 / Amor em Ação</span>
+<blockquote class="text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
+            "A igreja só tem sentido quando se faz presente na dor do <span class="text-ceu italic font-extrabold">vizinho.</span>"
+          </blockquote>
+<p class="text-base sm:text-lg text-white/80 leading-relaxed font-normal">
+            Nosso ministério de ação social atende mensalmente famílias em vulnerabilidade em Vila Isabel e bairros vizinhos em Resende, entregando alimentos, dignidade, respeito e acompanhamento fraterno sem qualquer contrapartida.
+          </p>
+<!-- Estatísticas com Linhas Finas (Sem caixas) -->
+<div class="pt-6 border-t border-white/15 grid grid-cols-3 gap-6">
+<div>
+<span class="text-3xl sm:text-4xl font-extrabold text-ceu tracking-tight block">+3.200</span>
+<span class="text-xs text-white/60 uppercase tracking-wider block mt-1">Cestas doadas</span>
+</div>
+<div class="border-l border-white/15 pl-6">
+<span class="text-3xl sm:text-4xl font-extrabold text-ceu tracking-tight block">+120</span>
+<span class="text-xs text-white/60 uppercase tracking-wider block mt-1">Famílias fixas</span>
+</div>
+<div class="border-l border-white/15 pl-6">
+<span class="text-3xl sm:text-4xl font-extrabold text-verde tracking-tight block">24 anos</span>
+<span class="text-xs text-white/60 uppercase tracking-wider block mt-1">Servindo a cidade</span>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-8 h-12 rounded-full bg-cobalto hover:bg-[#165eb3] text-white font-bold text-xs uppercase tracking-wider transition-all" href="https://wa.me/5524999999999?text=Quero%20contribuir%20com%20alimentos%20para%20a%20Ação%20Social" target="_blank">
+              Quero ajudar este trabalho
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. PEDIDOS DE ORAÇÃO (SEÇÃO IMERSIVA COM FUNDO FOTOGRÁFICO DE ÁGUA E LUZ + BILHETE AFETUOSO) -->
+<section class="py-28 relative bg-cover bg-center overflow-hidden" id="oracao" style="background-image: linear-gradient(180deg, rgba(18, 32, 53, 0.90) 0%, rgba(18, 32, 53, 0.95) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsv7nNw9l9_tm8zwdyd00bpfvTgvmFd1SPRiHE2W7EGoxvhbJXYJGBHaEX5ZYnNKpdGeKIF_FfqQWLkTR36hF-YiV9rcfRNW-WIX4GX09D9ia6uhVYpVRIGmaIk7dA5G1k3pJpaeTf-9WXqYmQ_m_cCgKsBwCqVhLYNsqRm1WkddJsT0_yDd0EaK0TinTZGBCR3kSsas0yT4GCURYAG5z0w18AOTKPMHTYUrdsFyctHIwA2m5V1FnH');">
+<div class="max-w-[760px] mx-auto px-6 relative z-10">
+<!-- Cabeçalho Suave -->
+<div class="text-center mb-10 text-white">
+<span class="text-xs font-bold text-ceu uppercase tracking-widest block mb-2">08 / Escuta Pastoral</span>
+<h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Podemos orar por <span class="text-ceu italic font-extrabold">você?</span>
+</h2>
+<p class="text-white/70 text-sm mt-3 max-w-lg mx-auto leading-relaxed">
+          Compartilhe o que está pesado em seu peito. Nossa equipe pastoral e grupo de intercessão guardará seu pedido em oração diária com total sigilo.
+        </p>
+</div>
+<!-- Bilhete / Carta Afetuosa de Papel Suave (Sem formulário corporativo) -->
+<div class="bg-[#FCFDFE] rounded-3xl p-8 sm:p-12 border border-white/60 shadow-xl relative text-marinho">
+<div class="border-b border-[#122035]/10 pb-4 mb-6 flex justify-between items-center text-xs text-marinho/50">
+<span class="font-semibold uppercase tracking-wider">Bilhete de Oração</span>
+<span class="">Bethel Resende</span>
+</div>
+<form class="space-y-6" id="oracaoForm" onsubmit="event.preventDefault(); enviarOracao();">
+<div>
+<label class="block text-xs uppercase font-bold text-marinho tracking-wider mb-2" for="pedidoTexto">
+              Escreva o que está em seu coração:
+            </label>
+<textarea class="w-full p-4 rounded-2xl bg-white border border-[#122035]/15 text-marinho placeholder:text-marinho/30 focus:border-cobalto focus:ring-1 focus:ring-cobalto outline-none text-sm leading-relaxed transition-all resize-none" id="pedidoTexto" maxlength="400" placeholder="Pode ser por saúde, paz na família, decisão de trabalho, luto ou uma gratidão sincera..." required="" rows="4"></textarea>
+<div class="flex justify-between items-center text-[11px] text-marinho/50 mt-1.5 px-1">
+<span class="">Tratado com carinho, discrição e respeito absoluto.</span>
+<span id="charCount" class="">0/400</span>
+</div>
+</div>
+<!-- Interruptor Anônimo Discreto -->
+<div class="flex items-center justify-between py-3 border-y border-[#122035]/10">
+<div>
+<span class="text-xs font-bold text-marinho block">Deseja enviar sem identificação?</span>
+<span class="text-[11px] text-marinho/60">Seu pedido será orado com o mesmo amor.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="anonimoToggle" onchange="toggleNome(this)" type="checkbox">
+<div class="w-10 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-cobalto"></div>
+</label>
+</div>
+<div id="campoNomeWrapper">
+<label class="block text-xs uppercase font-bold text-marinho tracking-wider mb-2" for="nomePessoa">
+              Seu nome <span class="text-marinho/40 font-normal">(opcional)</span>
+</label>
+<input class="w-full h-12 px-4 rounded-xl bg-white border border-[#122035]/15 text-marinho placeholder:text-marinho/30 focus:border-cobalto focus:ring-1 focus:ring-cobalto outline-none text-sm" id="nomePessoa" placeholder="Ex.: Maria de Fátima" type="text">
+</div>
+<button class="w-full h-14 rounded-full bg-cobalto hover:bg-[#165eb3] text-white font-bold text-xs uppercase tracking-widest transition-all" id="btnEnviarOracao" type="submit">
+            Entregar pedido de oração
+          </button>
+</form>
+<!-- Mensagem de Sucesso Humanizada -->
+<div class="hidden text-center py-8" id="oracaoSucesso">
+<span class="w-12 h-12 rounded-full bg-verde/15 text-verde flex items-center justify-center text-2xl mx-auto mb-4">
+<i class="ph ph-check"></i>
+</span>
+<h4 class="text-2xl font-bold text-marinho mb-2">Seu pedido foi recebido com afeto.</h4>
+<p class="text-sm text-marinho/70 max-w-sm mx-auto leading-relaxed mb-6">
+            Ele já está com nossa equipe de oração. Que o consolo e a paz que ultrapassam todo o entendimento guardem o seu coração.
+          </p>
+<button class="text-xs uppercase font-bold text-cobalto hover:underline tracking-wider" onclick="novoPedido()">
+            Enviar outro pedido
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. PLANEJE SUA VISITA / SOU NOVO (3 PASSOS EM COLUNA EDITORIAL 01, 02, 03 + ACORDEÃO DE LINHAS FINAS) -->
+<section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-12" id="visita">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-[#122035]/15 pb-8 gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">09 / Primeira Vez Conosco</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+          Planeje sua <span class="text-cobalto italic font-extrabold">visita.</span>
+</h2>
+</div>
+<p class="text-marinho/60 text-sm max-w-sm">
+        Sabemos que visitar uma igreja pela primeira vez pode gerar dúvidas. Veja como é simples.
+      </p>
+</div>
+<!-- 3 Passos Editoriais com Numeração Gigante (Sem caixas) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+<div>
+<span class="text-6xl font-extrabold text-marinho/25 block mb-4">01</span>
+<h3 class="text-2xl font-bold text-marinho mb-2">Venha como você está</h3>
+<p class="text-sm text-marinho/70 leading-relaxed">
+          Sem formalidades de vestimenta. Venha com a roupa do seu dia a dia, confortável, exatamente como você é.
+        </p>
+</div>
+<div>
+<span class="text-6xl font-extrabold text-marinho/25 block mb-4">02</span>
+<h3 class="text-2xl font-bold text-marinho mb-2">Recebido com afeto</h3>
+<p class="text-sm text-marinho/70 leading-relaxed">
+          Um aperto de mão sincero na entrada, sem constrangimento público. Ajudamos a encontrar um bom lugar.
+        </p>
+</div>
+<div>
+<span class="text-6xl font-extrabold text-marinho/25 block mb-4">03</span>
+<h3 class="text-2xl font-bold text-marinho mb-2">Sua família tem lugar</h3>
+<p class="text-sm text-marinho/70 leading-relaxed">
+          As crianças são acolhidas no Bethel Kids com atividades seguras enquanto você assiste ao culto em paz.
+        </p>
+</div>
+</div>
+<!-- Acordeão Minimalista de Linhas Finas (FAQ) -->
+<div class="max-w-3xl mx-auto pt-10 border-t border-[#122035]/15">
+<h3 class="text-xl font-bold text-marinho mb-8 text-center">Dúvidas comuns de quem nos visita:</h3>
+<div class="divide-y divide-[#122035]/15 border-y border-[#122035]/15">
+<!-- Pergunta 1 -->
+<div class="py-5">
+<button class="w-full text-left flex justify-between items-center font-bold text-base text-marinho hover:text-cobalto transition-colors" onclick="toggleFaq('faq1')">
+<span class="">Como devo me vestir para ir ao culto?</span>
+<i class="ph ph-plus text-base" id="faq1-icon"></i>
+</button>
+<div class="hidden pt-3 text-sm text-marinho/75 leading-relaxed" id="faq1">
+            Com a roupa que você se sentir bem! Em Vila Isabel você verá pessoas de jeans, camiseta, tênis ou vestidos simples. Deus olha para o coração, nunca para a etiqueta das roupas.
+          </div>
+</div>
+<!-- Pergunta 2 -->
+<div class="py-5">
+<button class="w-full text-left flex justify-between items-center font-bold text-base text-marinho hover:text-cobalto transition-colors" onclick="toggleFaq('faq2')">
+<span class="">Existe espaço para crianças pequenas e berçário?</span>
+<i class="ph ph-plus text-base" id="faq2-icon"></i>
+</button>
+<div class="hidden pt-3 text-sm text-marinho/75 leading-relaxed" id="faq2">
+            Sim! Temos o <strong>Bethel Kids</strong> com monitoras cuidadosas, historinhas bíblicas lúdicas, material para desenhar e banheiro adaptado para os pequenos.
+          </div>
+</div>
+<!-- Pergunta 3 -->
+<div class="py-5">
+<button class="w-full text-left flex justify-between items-center font-bold text-base text-marinho hover:text-cobalto transition-colors" onclick="toggleFaq('faq3')">
+<span class="">Onde posso estacionar meu carro ou moto?</span>
+<i class="ph ph-plus text-base" id="faq3-icon"></i>
+</button>
+<div class="hidden pt-3 text-sm text-marinho/75 leading-relaxed" id="faq3">
+            A Rua das Acácias é calma e residencial. É muito fácil estacionar ao longo da rua em frente à capela. Nossos irmãos na recepção sempre dão suporte na chegada.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. LOCALIZAÇÃO E CONTATO (BLOCO EDITORIAL ASSIMÉTRICO) -->
+<section class="py-24 bg-gelo-light border-y border-[#122035]/10" id="contato">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">10 / Onde Estamos</span>
+<h2 class="text-4xl sm:text-6xl font-extrabold text-marinho tracking-tight">
+            Venha nos <span class="text-cobalto italic font-extrabold">conhecer.</span>
+</h2>
+</div>
+<p class="text-marinho/60 text-sm max-w-sm">
+          No coração de Vila Isabel, com acesso rápido para toda a região de Resende.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Mapa com Traço Fino -->
+<div class="lg:col-span-7 rounded-3xl overflow-hidden border border-[#122035]/15 min-h-[420px] relative bg-white">
+<iframe allowfullscreen="" class="w-full h-full min-h-[420px] border-0" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14738.562725515286!2d-44.4608383!3d-22.4646194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e7943d0e74b3f%3A0x67efc4644a04d221!2sVila%20Isabel%2C%20Resende%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" title="Mapa da Igreja Bethel em Vila Isabel Resende"></iframe>
+</div>
+<!-- Dados de Contato Diretos com Linhas Finas -->
+<div class="lg:col-span-5 space-y-8">
+<div class="border-b border-[#122035]/15 pb-6">
+<span class="text-xs uppercase tracking-wider font-semibold text-marinho/60 block mb-1">Endereço da capela</span>
+<h3 class="text-2xl font-bold text-marinho">Igreja Batista Bethel</h3>
+<p class="text-sm text-marinho/80 mt-2 leading-relaxed">
+              Rua das Acácias, nº 120 (próximo à pracinha)<br>
+              Vila Isabel, Resende – RJ • CEP 27511-000
+            </p>
+</div>
+<div class="border-b border-[#122035]/15 pb-6">
+<span class="text-xs uppercase tracking-wider font-semibold text-marinho/60 block mb-1">Contato Fraterno</span>
+<p class="text-base font-bold text-marinho">(24) 99876-5432</p>
+<p class="text-xs text-marinho/70 mt-0.5">contato@bethelresende.com.br</p>
+</div>
+<div class="border-b border-[#122035]/15 pb-6">
+<span class="text-xs uppercase tracking-wider font-semibold text-marinho/60 block mb-1">Horário das Celebrações</span>
+<p class="text-sm text-marinho/80 leading-relaxed">
+              Domingos: 09h00 (EBD) e 19h00 (Família)<br>
+              Quintas: 19h30 (Oração e Estudo)
+            </p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 px-8 h-12 rounded-full bg-cobalto hover:bg-[#165eb3] text-white font-bold text-xs uppercase tracking-wider transition-all" href="https://maps.google.com" target="_blank">
+              Abrir no GPS / Google Maps <i class="ph ph-arrow-up-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 13. CONTRIBUA (NOTA DISCRETA E ELEGANTE COM CHAVE PIX) -->
+<section class="py-20 max-w-[1440px] mx-auto px-6 lg:px-12" id="contribuir">
+<div class="max-w-3xl mx-auto border-t border-b border-[#122035]/15 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-md">
+<span class="text-xs font-bold text-cobalto uppercase tracking-widest block mb-1">Generosidade &amp; Missões</span>
+<h3 class="text-2xl font-bold text-marinho">Dízimos e Ofertas com alegria</h3>
+<p class="text-xs sm:text-sm text-marinho/70 mt-2 leading-relaxed">
+          Seus recursos mantêm as portas da capela abertas em Vila Isabel e abastecem mensalmente as cestas de alimentos distribuídas às famílias da comunidade.
+        </p>
+</div>
+<div class="text-center sm:text-right w-full md:w-auto">
+<span class="text-xs text-marinho/60 block mb-1">Chave CNPJ (PIX):</span>
+<div class="font-mono text-sm font-bold text-marinho bg-gelo-light px-4 py-2 rounded-lg border border-[#122035]/10 select-all mb-3">
+          04.123.456/0001-78
+        </div>
+<button class="px-6 h-10 rounded-full border border-cobalto text-cobalto hover:bg-cobalto hover:text-white font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-1.5" id="btnCopiarPix" onclick="copiarPix()">
+<i class="ph ph-copy"></i> Copiar chave PIX
+        </button>
+</div>
+</div>
+</section>
+<!-- 14. RODAPÉ INSTITUCIONAL (AZUL MARINHO COM TIPOGRAFIA NOBRE E LOGO REAL) -->
+<footer class="bg-marinho text-white pt-20 pb-12">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+<!-- Identidade e Logo com fundo branco suave -->
+<div class="lg:col-span-5 space-y-4">
+<div class="inline-block bg-white p-2.5 rounded-2xl">
+<img alt="Igreja Batista Bethel Resende" class="h-9 w-auto" src="https://lh3.googleusercontent.com/aida/AEtjO1X91Xsf4ryQjo9az5ak3ecnn4xmpXxEJYR1YjQ5nFkpcj3apITqhJAmbw45Id1DssdFoFqzbglr1xbrh66ITvjm3NO1nOus5ARE0zSJHrFk0Vx5UiqZ7rxrmVAuHCN0O8jvsuwfPZAmwGmyNfA9gjBhBmHTXqgKcTQqT43sBiv_Ut9BbPEOZsftsOpjWdq0mKDiBKPiHCE90RZmYlaSawRuHfozM3WD5GT_utjQXDOkiJ7_G80ajkXDPaE">
+</div>
+<p class="text-lg font-bold text-ceu">Aqui ninguém caminha só.</p>
+<p class="text-xs sm:text-sm text-white/70 max-w-sm leading-relaxed">
+            Uma comunidade de pessoas reais vivendo o Evangelho simples, acolhedor e transformador no bairro de Vila Isabel em Resende (RJ).
+          </p>
+<div class="flex items-center gap-3 pt-2 text-white/80">
+<a aria-label="Instagram" class="hover:text-ceu transition-colors" href="https://instagram.com" target="_blank">
+<i class="ph ph-instagram-logo text-xl"></i>
+</a>
+<a aria-label="YouTube" class="hover:text-ceu transition-colors" href="https://youtube.com" target="_blank">
+<i class="ph ph-youtube-logo text-xl"></i>
+</a>
+<a aria-label="Facebook" class="hover:text-ceu transition-colors" href="https://facebook.com" target="_blank">
+<i class="ph ph-facebook-logo text-xl"></i>
+</a>
+<a aria-label="WhatsApp" class="hover:text-verde transition-colors" href="https://wa.me/5524999999999" target="_blank">
+<i class="ph ph-whatsapp-logo text-xl"></i>
+</a>
+</div>
+</div>
+<!-- Links Rápidos -->
+<div class="lg:col-span-3">
+<span class="text-xs font-bold text-ceu uppercase tracking-wider block mb-4">Navegação</span>
+<ul class="space-y-2 text-xs sm:text-sm text-white/75">
+<li class=""><a class="hover:text-white transition-colors" href="#inicio">Início</a></li>
+<li class=""><a class="hover:text-white transition-colors" href="#historia">Nossa história</a></li>
+<li class=""><a class="hover:text-white transition-colors" href="#cultos">Cultos e horários</a></li>
+<li class=""><a class="hover:text-white transition-colors" href="#eventos">Agenda e eventos</a></li>
+<li class=""><a class="hover:text-white transition-colors" href="#lives">Transmissões ao vivo</a></li>
+<li class=""><a class="hover:text-white transition-colors" href="#visita">Sou novo / Visite-nos</a></li>
+</ul>
+</div>
+<!-- Envolva-se & Localização -->
+<div class="lg:col-span-4">
+<span class="text-xs font-bold text-ceu uppercase tracking-wider block mb-4">Capela em Resende</span>
+<p class="text-xs sm:text-sm text-white/75 leading-relaxed mb-3">
+            Rua das Acácias, nº 120<br>
+            Vila Isabel – Resende / RJ • CEP 27511-000
+          </p>
+<div class="text-xs text-white/60 space-y-1 mb-4">
+<p class="">Culto Domingo: 09h e 19h</p>
+<p class="">Culto Quinta: 19h30</p>
+</div>
+<div class="inline-flex items-center gap-2 text-xs text-verde font-semibold">
+<span class="w-2 h-2 rounded-full bg-verde"></span>
+            Esperamos você de braços abertos
+          </div>
+</div>
+</div>
+<!-- Assinatura Final -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
+<p class="">© Igreja Batista Bethel em Resende – desde 2000. Uma igreja feita de pessoas.</p>
+<p class="">Resende • Rio de Janeiro • Brasil</p>
+</div>
+</div>
+</footer>
+<!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+<a aria-label="Conversar no WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center text-3xl shadow-lg hover:scale-110 active:scale-95 transition-all" href="https://wa.me/5524999999999?text=Olá!%20Visitei%20o%20site%20da%20Igreja%20Batista%20Bethel%20em%20Resende." target="_blank">
+<i class="ph ph-whatsapp-logo"></i>
+</a>
+<!-- SCRIPTS DE INTERATIVIDADE -->
+<script>
+    // Menu Mobile
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Contador de Caracteres Pedido de Oração
+    const txtArea = document.getElementById('pedidoTexto');
+    const charCount = document.getElementById('charCount');
+    txtArea.addEventListener('input', () => {
+      charCount.textContent = `${txtArea.value.length}/400`;
+    });
+
+    // Toggle Anônimo
+    function toggleNome(checkbox) {
+      const wrapper = document.getElementById('campoNomeWrapper');
+      const input = document.getElementById('nomePessoa');
+      if (checkbox.checked) {
+        input.value = '';
+        input.disabled = true;
+        wrapper.classList.add('opacity-30');
+      } else {
+        input.disabled = false;
+        wrapper.classList.remove('opacity-30');
+      }
+    }
+
+    // Enviar Oração
+    function enviarOracao() {
+      const btn = document.getElementById('btnEnviarOracao');
+      btn.textContent = 'Enviando com afeto...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('oracaoForm').classList.add('hidden');
+        document.getElementById('oracaoSucesso').classList.remove('hidden');
+      }, 600);
+    }
+
+    function novoPedido() {
+      txtArea.value = '';
+      charCount.textContent = '0/400';
+      document.getElementById('nomePessoa').value = '';
+      document.getElementById('oracaoForm').classList.remove('hidden');
+      document.getElementById('oracaoSucesso').classList.add('hidden');
+      const btn = document.getElementById('btnEnviarOracao');
+      btn.textContent = 'Entregar pedido de oração';
+      btn.disabled = false;
+    }
+
+    // FAQ Acordeão
+    function toggleFaq(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        icon.classList.remove('ph-plus');
+        icon.classList.add('ph-minus');
+      } else {
+        el.classList.add('hidden');
+        icon.classList.remove('ph-minus');
+        icon.classList.add('ph-plus');
+      }
+    }
+
+    // Copiar Chave PIX
+    function copiarPix() {
+      navigator.clipboard.writeText('04.123.456/0001-78');
+      const btn = document.getElementById('btnCopiarPix');
+      const oldHtml = btn.innerHTML;
+      btn.innerHTML = '<i class="ph ph-check"></i> Chave Copiada!';
+      btn.classList.add('bg-cobalto', 'text-white');
+      setTimeout(() => {
+        btn.innerHTML = oldHtml;
+        btn.classList.remove('bg-cobalto', 'text-white');
+      }, 2500);
+    }
+  </script>
+
+
+</body></html>

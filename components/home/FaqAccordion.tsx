@@ -25,31 +25,34 @@ export function FaqAccordion() {
           const isOpen = openId === item.id;
 
           return (
-            <div key={item.id} className="py-5">
-              <button
-                type="button"
-                id={`faq-btn-${item.id}`}
-                aria-expanded={isOpen}
-                aria-controls={`faq-answer-${item.id}`}
-                onClick={() => toggleItem(item.id)}
-                className="w-full text-left flex justify-between items-center font-bold text-base text-marinho hover:text-cobalto transition-colors group cursor-pointer"
-              >
-                <span className="pr-4">{item.question}</span>
-                <span className="shrink-0 text-cobalto">
-                  {isOpen ? (
-                    <Minus className="w-5 h-5 transition-transform duration-200" weight="bold" />
-                  ) : (
-                    <Plus className="w-5 h-5 transition-transform duration-200" weight="bold" />
-                  )}
-                </span>
-              </button>
+            <div key={item.id}>
+              <h3>
+                <button
+                  type="button"
+                  id={`faq-btn-${item.id}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${item.id}`}
+                  onClick={() => toggleItem(item.id)}
+                  className="w-full py-5 text-left flex justify-between items-center font-bold text-base text-marinho hover:text-cobalto transition-colors motion-reduce:transition-none group cursor-pointer"
+                >
+                  <span className="pr-4">{item.question}</span>
+                  <span className="shrink-0 text-cobalto">
+                    {isOpen ? (
+                      <Minus aria-hidden="true" className="w-5 h-5 transition-transform duration-200 motion-reduce:transition-none" weight="bold" />
+                    ) : (
+                      <Plus aria-hidden="true" className="w-5 h-5 transition-transform duration-200 motion-reduce:transition-none" weight="bold" />
+                    )}
+                  </span>
+                </button>
+              </h3>
 
               <div
                 id={`faq-answer-${item.id}`}
                 role="region"
                 aria-labelledby={`faq-btn-${item.id}`}
-                className={`overflow-hidden transition-all duration-300 ${
-                  isOpen ? "max-h-96 pt-3 opacity-100" : "max-h-0 pt-0 opacity-0"
+                aria-hidden={!isOpen}
+                className={`overflow-hidden transition-all duration-300 motion-reduce:transition-none ${
+                  isOpen ? "max-h-96 pb-5 opacity-100" : "max-h-0 pb-0 opacity-0"
                 }`}
               >
                 <p className="text-sm text-marinho/75 leading-relaxed">{item.answer}</p>
@@ -65,9 +68,10 @@ export function FaqAccordion() {
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-xs font-bold text-cobalto hover:text-marinho uppercase tracking-wider transition-colors"
+          aria-label="Ainda tem dúvidas? Fale conosco no WhatsApp (abre em nova aba)"
+          className="inline-flex items-center gap-2 min-h-[44px] py-2 text-xs font-bold text-cobalto hover:text-marinho uppercase tracking-wider transition-colors motion-reduce:transition-none"
         >
-          <WhatsappLogo className="w-4 h-4" weight="bold" />
+          <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
           <span>Ainda tem dúvidas? Fale conosco no WhatsApp</span>
         </a>
       </div>

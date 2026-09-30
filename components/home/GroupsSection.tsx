@@ -30,7 +30,7 @@ export function GroupsSection() {
       <div className="bg-gelo rounded-3xl p-8 sm:p-12 mb-16 border border-marinho/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xs">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-cobalto mb-2">
-            <Coffee className="w-4 h-4" weight="bold" />
+            <Coffee className="w-4 h-4" weight="bold" aria-hidden="true" />
             <span>Ninguém caminha só</span>
           </div>
           <p className="text-2xl sm:text-3xl font-extrabold text-marinho leading-snug">
@@ -44,9 +44,10 @@ export function GroupsSection() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-8 h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all shrink-0 shadow-xs hover:shadow"
+          aria-label="Falar com líder do grupo no WhatsApp (abre na nova aba)"
+          className="px-8 h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 min-h-[44px] py-2 transition-all shrink-0 shadow-xs hover:shadow"
         >
-          <WhatsappLogo className="w-4 h-4" weight="bold" />
+          <WhatsappLogo className="w-4 h-4" weight="bold" aria-hidden="true" />
           <span>Encontrar meu grupo</span>
         </a>
       </div>
@@ -73,22 +74,21 @@ export function GroupsSection() {
                 <p className="text-sm text-marinho/75 mt-3 leading-relaxed">{group.description}</p>
               </div>
 
-              <div className="pt-4 mt-2">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-cobalto hover:text-marinho transition-colors group"
+                  aria-label={`Falar com líder do grupo ${group.name} no WhatsApp (abre em nova aba)`}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-cobalto hover:text-marinho transition-colors motion-reduce:transition-none group min-h-[44px] py-2"
                 >
-                  <WhatsappLogo className="w-4 h-4" weight="bold" />
+                  <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
                   <span>Falar com líder pelo WhatsApp</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" weight="bold" />
+                  <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 transition-transform motion-reduce:transition-none motion-reduce:transform-none group-hover:translate-x-1" weight="bold" />
                 </a>
               </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
+            );
+          })}
+        </div>
+      </section>
+    );
+  }

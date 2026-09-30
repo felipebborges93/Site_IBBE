@@ -14,7 +14,7 @@ export function Logo({ className, light = false }: LogoProps) {
       href="#inicio"
       className={twMerge(
         clsx(
-          "inline-flex items-center gap-3 select-none group focus:outline-none",
+          "inline-flex items-center gap-3 select-none group min-h-[44px] focus:outline-none",
           className
         )
       )}
@@ -23,11 +23,12 @@ export function Logo({ className, light = false }: LogoProps) {
       {/* Símbolo Cruz / Comunidade em SVG inline */}
       <div
         className={clsx(
-          "w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105",
+          "w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center transition-transform duration-200 motion-reduce:transition-none motion-reduce:transform-none group-hover:scale-105",
           light ? "bg-white text-marinho shadow-md" : "bg-cobalto text-white shadow-elevation-1"
         )}
       >
         <svg
+          aria-hidden="true"
           viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +43,7 @@ export function Logo({ className, light = false }: LogoProps) {
             strokeLinejoin="round"
           />
           {/* Ponto / chama do Espírito Santo */}
-          <circle cx="16" cy="7" r="1.5" fill="#48A4FF" />
+          <circle cx="16" cy="7" r="1.5" className="fill-ceu" />
         </svg>
       </div>
 

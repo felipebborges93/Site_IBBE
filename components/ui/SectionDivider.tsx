@@ -47,6 +47,7 @@ export function SectionDivider({
       )}
     >
       <svg
+        aria-hidden="true"
         viewBox="0 0 1200 60"
         preserveAspectRatio="none"
         className="w-full h-8 sm:h-12 md:h-16 lg:h-20 block"

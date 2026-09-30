@@ -8,15 +8,20 @@
 }
 
 body {
-  color: #122035;
-  background: #FFFFFF;
+  @apply text-marinho bg-white;
   font-family: var(--font-bricolage), sans-serif;
-  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 
 section[id] {
   scroll-margin-top: 5rem;
@@ -28,7 +33,7 @@ section[id] {
 
 /* Anel de foco visível de alto contraste para acessibilidade via teclado (A11Y-03) */
 *:focus-visible {
-  outline: 2px solid #1765C2;
+  outline: 2px solid #1D75DD;
   outline-offset: 2px;
 }
 

@@ -25,7 +25,7 @@ export function Section({
       id={id}
       className={twMerge(
         clsx(
-          "py-16 lg:py-24 relative overflow-hidden transition-colors duration-200",
+          "py-16 lg:py-24 relative overflow-hidden transition-colors duration-200 motion-reduce:transition-none",
           bgClasses[background],
           className
         )

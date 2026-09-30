@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { siteConfig } from "@/content/site";
-import { Heart, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 export function SocialActionSection() {
   const whatsappPhone = siteConfig.contact.whatsapp.replace(/\D/g, "");
@@ -71,9 +71,10 @@ export function SocialActionSection() {
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
+                aria-label="Quero ajudar este trabalho pelo WhatsApp (abre em nova aba)"
+                className="inline-flex items-center gap-2 px-8 min-h-[44px] h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg motion-reduce:transition-none"
               >
-                <WhatsappLogo className="w-4 h-4" weight="bold" />
+                <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
                 <span>Quero ajudar este trabalho</span>
               </a>
             </div>

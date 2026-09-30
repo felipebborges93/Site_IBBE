@@ -31,35 +31,38 @@ export function AddressActions({ address }: AddressActionsProps) {
         href={googleMapsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs hover:shadow"
+        aria-label="Abrir endereço no Google Maps (abre em nova aba)"
+        className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all motion-reduce:transition-none shadow-xs hover:shadow"
       >
         <span>Google Maps</span>
-        <ArrowUpRight className="w-4 h-4" weight="bold" />
+        <ArrowUpRight aria-hidden="true" className="w-4 h-4" weight="bold" />
       </a>
 
       <a
         href={wazeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 h-11 rounded-full border border-marinho/20 hover:border-cobalto text-marinho hover:text-cobalto font-bold text-xs uppercase tracking-wider transition-colors"
+        aria-label="Navegar até a igreja com Waze (abre em nova aba)"
+        className="inline-flex items-center gap-2 px-6 h-11 rounded-full border border-marinho/20 hover:border-cobalto text-marinho hover:text-cobalto font-bold text-xs uppercase tracking-wider transition-colors motion-reduce:transition-none"
       >
-        <NavigationArrow className="w-4 h-4" weight="bold" />
+        <NavigationArrow aria-hidden="true" className="w-4 h-4" weight="bold" />
         <span>Waze</span>
       </a>
 
       <button
         type="button"
         onClick={handleCopy}
-        className="inline-flex items-center gap-1.5 px-4 h-11 rounded-full text-xs font-bold uppercase tracking-wider text-marinho/70 hover:text-marinho hover:bg-black/5 transition-colors cursor-pointer"
+        aria-live="polite"
+        className="inline-flex items-center gap-1.5 px-4 h-11 rounded-full text-xs font-bold uppercase tracking-wider text-marinho/70 hover:text-marinho hover:bg-black/5 transition-colors motion-reduce:transition-none cursor-pointer"
       >
         {copied ? (
           <>
-            <Check className="w-4 h-4 text-verde" weight="bold" />
+            <Check aria-hidden="true" className="w-4 h-4 text-verde" weight="bold" />
             <span className="text-verde">Endereço copiado!</span>
           </>
         ) : (
           <>
-            <Copy className="w-4 h-4 text-marinho/50" weight="bold" />
+            <Copy aria-hidden="true" className="w-4 h-4 text-marinho/50" weight="bold" />
             <span>Copiar endereço</span>
           </>
         )}

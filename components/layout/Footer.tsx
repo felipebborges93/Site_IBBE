@@ -26,7 +26,8 @@ export function Footer() {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gelo hover:text-ceu transition-colors text-sm font-semibold underline underline-offset-4"
+                aria-label="Instagram da IBBE (abre em nova aba)"
+                className="text-gelo hover:text-ceu transition-colors motion-reduce:transition-none text-sm font-semibold underline underline-offset-4 py-2 inline-block min-h-[44px]"
               >
                 Instagram
               </a>
@@ -34,7 +35,8 @@ export function Footer() {
                 href={siteConfig.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gelo hover:text-ceu transition-colors text-sm font-semibold underline underline-offset-4"
+                aria-label="YouTube da IBBE (abre em nova aba)"
+                className="text-gelo hover:text-ceu transition-colors motion-reduce:transition-none text-sm font-semibold underline underline-offset-4 py-2 inline-block min-h-[44px]"
               >
                 YouTube
               </a>
@@ -42,7 +44,8 @@ export function Footer() {
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gelo hover:text-ceu transition-colors text-sm font-semibold underline underline-offset-4"
+                aria-label="Facebook da IBBE (abre em nova aba)"
+                className="text-gelo hover:text-ceu transition-colors motion-reduce:transition-none text-sm font-semibold underline underline-offset-4 py-2 inline-block min-h-[44px]"
               >
                 Facebook
               </a>
@@ -54,38 +57,40 @@ export function Footer() {
             <h4 className="text-base font-bold text-white uppercase tracking-wider mb-6">
               Navegação
             </h4>
-            <ul className="space-y-3 text-sm text-gelo/80">
-              <li>
-                <Link href="#inicio" className="hover:text-white transition-colors">
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link href="#historia" className="hover:text-white transition-colors">
-                  Nossa História
-                </Link>
-              </li>
-              <li>
-                <Link href="#cultos" className="hover:text-white transition-colors">
-                  Horários de Cultos
-                </Link>
-              </li>
-              <li>
-                <Link href="#eventos" className="hover:text-white transition-colors">
-                  Programação & Eventos
-                </Link>
-              </li>
-              <li>
-                <Link href="#grupos" className="hover:text-white transition-colors">
-                  Pequenos Grupos (PGMs)
-                </Link>
-              </li>
-              <li>
-                <Link href="#visita" className="hover:text-white transition-colors">
-                  Planeje sua Visita
-                </Link>
-              </li>
-            </ul>
+            <nav aria-label="Navegação secundária do rodapé">
+              <ul className="space-y-1 text-sm text-gelo/80">
+                <li>
+                  <Link href="#inicio" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Início
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#historia" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Nossa História
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#cultos" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Horários de Cultos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#eventos" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Programação & Eventos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#grupos" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Pequenos Grupos (PGMs)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#visita" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Planeje sua Visita
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           {/* Coluna 3: Cultos e Encontros */}

@@ -43,7 +43,7 @@ export function Card({
     <div
       className={twMerge(
         clsx(
-          "p-6 transition-all duration-200",
+                      "p-6 transition-all duration-200 motion-reduce:transition-none",
           variantClasses[variant],
           roundedClasses[rounded],
           variant !== "transparent" && elevationClasses[elevation],

@@ -9,6 +9,7 @@ import { SocialActionSection } from "@/components/home/SocialActionSection";
 import { VisitSection } from "@/components/home/VisitSection";
 import { LocationSection } from "@/components/home/LocationSection";
 import { PixSection } from "@/components/home/PixSection";
+import { PrayerSection } from "@/components/home/PrayerSection";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { getLatestLives } from "@/lib/youtube";
 
@@ -59,8 +60,14 @@ export default async function Home() {
       {/* 7. Amor em Ação / Ação Social (#acao-social) em bloco escuro contrastante */}
       <SocialActionSection />
 
-      {/* Âncora reservada para Pedidos de Oração (Fase 5) */}
-      <div id="oracao" className="scroll-mt-20" />
+      {/* Divisor Diagonal para Gelo */}
+      <SectionDivider variant="diagonal" to="gelo" />
+
+      {/* Pedidos de Oração (#oracao) */}
+      <PrayerSection />
+
+      {/* Divisor Arc para Branco */}
+      <SectionDivider variant="arc" to="white" />
 
       {/* 8. Planeje sua Visita e FAQ Interativo (#visita) */}
       <VisitSection />

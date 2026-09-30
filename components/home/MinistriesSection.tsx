@@ -32,13 +32,13 @@ export function MinistriesSection() {
             return (
               <div key={ministry.id} className="group">
                 <span
-                  className={`text-4xl font-extrabold block transition-colors ${
+                  className={`text-4xl font-extrabold block transition-colors motion-reduce:transition-none ${
                     isSpecial ? "text-verde/60 group-hover:text-verde" : "text-marinho/30 group-hover:text-cobalto/60"
                   }`}
                 >
                   {numberLabel}
                 </span>
-                <h4 className="text-xl font-bold text-marinho mt-2 group-hover:text-cobalto transition-colors">
+                <h4 className="text-xl font-bold text-marinho mt-2 group-hover:text-cobalto transition-colors motion-reduce:transition-none">
                   {ministry.name}
                 </h4>
                 <p className="text-xs sm:text-sm text-marinho/70 mt-2 leading-relaxed">{ministry.description}</p>

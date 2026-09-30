@@ -48,7 +48,7 @@ export function EventsSection() {
       {/* Caso sem eventos futuros: Estado Vazio Acolhedor */}
       {futureEvents.length === 0 ? (
         <div className="p-8 sm:p-12 rounded-3xl bg-gelo border border-marinho/10 text-center max-w-2xl mx-auto">
-          <CalendarBlank className="w-12 h-12 text-cobalto mx-auto mb-4" weight="duotone" />
+          <CalendarBlank aria-hidden="true" className="w-12 h-12 text-cobalto mx-auto mb-4" weight="duotone" />
           <h3 className="text-xl font-bold text-marinho">Nenhum evento especial no momento</h3>
           <p className="mt-2 text-sm text-marinho/75 leading-relaxed">
             Nossas portas estão abertas em todos os cultos regulares de domingo e quinta-feira. Esperamos por você e sua
@@ -60,7 +60,7 @@ export function EventsSection() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cobalto text-white text-xs font-bold uppercase tracking-wider hover:bg-cobalto/90 transition-colors"
             >
               <span>Ver horários dos cultos</span>
-              <ArrowRight className="w-4 h-4" weight="bold" />
+              <ArrowRight aria-hidden="true" className="w-4 h-4" weight="bold" />
             </Link>
           </div>
         </div>
@@ -108,12 +108,12 @@ export function EventsSection() {
                     <p className="text-sm text-marinho/75 mt-1 leading-relaxed">{event.description}</p>
                     <div className="flex items-center gap-4 text-xs text-marinho/60 mt-2 font-medium">
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-cobalto" />
+                        <Clock aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
                         {event.time || "Horário a confirmar"}
                       </span>
                       <span>•</span>
                       <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-cobalto" />
+                        <MapPin aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
                         {event.location}
                       </span>
                       <span>•</span>
@@ -126,9 +126,10 @@ export function EventsSection() {
                       href={waLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 h-11 rounded-full border border-cobalto text-cobalto hover:bg-cobalto hover:text-white font-semibold text-xs tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-2xs hover:shadow-xs"
+                      aria-label={`Confirmar presença no evento ${event.title} via WhatsApp (abre na nova aba)`}
+                      className="px-6 min-h-[44px] py-3 rounded-full border border-cobalto text-cobalto hover:bg-cobalto hover:text-white font-semibold text-xs tracking-wider uppercase transition-all motion-reduce:transition-none inline-flex items-center gap-2 shadow-2xs hover:shadow-xs"
                     >
-                      <WhatsappLogo className="w-4 h-4" weight="bold" />
+                      <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
                       <span>Confirmar presença</span>
                     </a>
                   </div>
@@ -165,11 +166,11 @@ export function EventsSection() {
                   <div className="mt-6 pt-4 border-t border-marinho/10">
                     <div className="space-y-1 text-xs text-marinho/60 mb-4">
                       <div className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-cobalto" />
+                        <Clock aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
                         <span>{event.time || "A confirmar"}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-cobalto" />
+                        <MapPin aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
                         <span className="truncate">{event.location}</span>
                       </div>
                     </div>
@@ -178,9 +179,10 @@ export function EventsSection() {
                       href={waLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-2.5 rounded-full bg-cobalto text-white text-xs font-bold tracking-wider uppercase inline-flex items-center justify-center gap-2 shadow-2xs"
+                      aria-label={`Confirmar presença no evento ${event.title} via WhatsApp (abre em nova aba)`}
+                      className="w-full min-h-[44px] py-3 rounded-full bg-cobalto hover:bg-cobalto/90 text-white text-xs font-bold tracking-wider uppercase inline-flex items-center justify-center gap-2 shadow-2xs transition-colors motion-reduce:transition-none"
                     >
-                      <WhatsappLogo className="w-4 h-4" weight="bold" />
+                      <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
                       <span>Confirmar presença</span>
                     </a>
                   </div>

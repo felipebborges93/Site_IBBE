@@ -48,7 +48,7 @@ export function HistorySection() {
 
           {/* Destaque Bíblico de Jeremias 29:11 */}
           <div className="p-5 rounded-2xl bg-gelo border border-marinho/10 flex items-start gap-4">
-            <BookOpen className="w-6 h-6 text-cobalto shrink-0 mt-0.5" weight="duotone" />
+            <BookOpen aria-hidden="true" className="w-6 h-6 text-cobalto shrink-0 mt-0.5" weight="duotone" />
             <div>
               <p className="text-xs sm:text-sm text-marinho/80 italic font-medium leading-relaxed">
                 &ldquo;{historyData.jeremiasVerse.verse}&rdquo;
@@ -82,10 +82,10 @@ export function HistorySection() {
           <div className="pt-4">
             <Link
               href="/nossa-historia"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-cobalto hover:bg-cobalto/90 text-white text-sm font-bold tracking-wide transition-all shadow-sm hover:shadow group"
+              className="inline-flex items-center gap-2 px-6 py-3.5 min-h-[44px] rounded-full bg-cobalto hover:bg-cobalto/90 text-white text-sm font-bold tracking-wide transition-all shadow-sm hover:shadow group"
             >
               <span>Conheça nossa história completa</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" weight="bold" />
+              <ArrowRight aria-hidden="true" className="w-4 h-4 transition-transform motion-reduce:transition-none group-hover:translate-x-1 motion-reduce:transform-none" weight="bold" />
             </Link>
           </div>
         </div>

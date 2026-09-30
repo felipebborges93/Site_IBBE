@@ -24,9 +24,9 @@ export default function NossaHistoriaPage() {
         <div className="mb-10">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cobalto hover:text-marinho uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 min-h-[44px] py-2 text-xs sm:text-sm font-bold text-cobalto hover:text-marinho uppercase tracking-wider transition-colors motion-reduce:transition-none"
           >
-            <ArrowLeft className="w-4 h-4" weight="bold" />
+            <ArrowLeft aria-hidden="true" className="w-4 h-4" weight="bold" />
             <span>Voltar para a página inicial</span>
           </Link>
         </div>
@@ -51,7 +51,7 @@ export default function NossaHistoriaPage() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-6 rounded-2xl bg-white border border-marinho/10 shadow-xs">
               <div className="flex items-center gap-2 text-cobalto font-bold text-xs uppercase tracking-wider mb-2">
-                <BookOpen className="w-4 h-4" weight="bold" />
+                <BookOpen aria-hidden="true" className="w-4 h-4" weight="bold" />
                 <span>Versículo Tema</span>
               </div>
               <p className="text-sm text-marinho/85 italic leading-relaxed">
@@ -62,7 +62,7 @@ export default function NossaHistoriaPage() {
 
             <div className="p-6 rounded-2xl bg-white border border-marinho/10 shadow-xs">
               <div className="flex items-center gap-2 text-cobalto font-bold text-xs uppercase tracking-wider mb-2">
-                <Sparkle className="w-4 h-4" weight="bold" />
+                <Sparkle aria-hidden="true" className="w-4 h-4" weight="bold" />
                 <span>Promessa Divina</span>
               </div>
               <p className="text-sm text-marinho/85 italic leading-relaxed">
@@ -114,13 +114,13 @@ export default function NossaHistoriaPage() {
             {historyData.timeline.map((item, index) => (
               <div key={index} className="relative group">
                 {/* Marcador Circular */}
-                <span className="absolute -left-8 sm:-left-12 top-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border-4 border-cobalto shadow-sm flex items-center justify-center text-[10px] font-black text-cobalto transition-transform group-hover:scale-110">
+                <span aria-hidden="true" className="absolute -left-8 sm:-left-12 top-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border-4 border-cobalto shadow-sm flex items-center justify-center text-[10px] font-black text-cobalto transition-transform motion-reduce:transition-none motion-reduce:transform-none group-hover:scale-110">
                   •
                 </span>
 
-                <div className="p-6 sm:p-8 rounded-3xl bg-white border border-marinho/10 shadow-xs hover:border-cobalto/30 transition-all">
+                <div className="p-6 sm:p-8 rounded-3xl bg-white border border-marinho/10 shadow-xs hover:border-cobalto/30 transition-all motion-reduce:transition-none">
                   <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-4 h-4 text-cobalto" weight="bold" />
+                    <Calendar aria-hidden="true" className="w-4 h-4 text-cobalto" weight="bold" />
                     <span className="text-sm font-extrabold text-cobalto tracking-wide">{item.year}</span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-marinho">{item.title}</h3>
@@ -151,7 +151,7 @@ export default function NossaHistoriaPage() {
               >
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-gelo flex items-center justify-center text-cobalto mb-6">
-                    <UserCheck className="w-6 h-6" weight="duotone" />
+                    <UserCheck aria-hidden="true" className="w-6 h-6" weight="duotone" />
                   </div>
                   <span className="text-xs font-bold text-cobalto uppercase tracking-wider block mb-1">
                     {pastor.role}
@@ -177,14 +177,14 @@ export default function NossaHistoriaPage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/#visita"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-sm tracking-wide transition-colors inline-flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 min-h-[44px] rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-sm tracking-wide transition-colors motion-reduce:transition-none inline-flex items-center justify-center gap-2"
             >
               <span>Planeje sua visita</span>
-              <ArrowRight className="w-4 h-4" weight="bold" />
+              <ArrowRight aria-hidden="true" className="w-4 h-4" weight="bold" />
             </Link>
             <Link
               href="/#cultos"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm tracking-wide transition-colors border border-white/20"
+              className="w-full sm:w-auto px-8 py-3.5 min-h-[44px] rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm tracking-wide transition-colors motion-reduce:transition-none border border-white/20 inline-flex items-center justify-center"
             >
               <span>Ver horários dos cultos</span>
             </Link>

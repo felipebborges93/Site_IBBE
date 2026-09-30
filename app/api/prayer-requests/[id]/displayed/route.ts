@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const authHeader = request.headers.get("Authorization");
   const expectedToken = process.env.TELAO_API_TOKEN;
@@ -12,12 +12,12 @@ export async function POST(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const id = params.id;
+  const { id } = await params;
   if (!id) {
     return NextResponse.json({ error: "Missing ID" }, { status: 400 });
   }
 
-  const supabase = createClient();
+  const supabase = await createClient();
   const { error } = await supabase
     .from("prayer_requests")
     .update({ displayed: true })

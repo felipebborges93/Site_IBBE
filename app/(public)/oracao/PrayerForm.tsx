@@ -20,12 +20,12 @@ export default function PrayerForm() {
   const [requestText, setRequestText] = useState("");
 
   return (
-    <form action={formAction} className="space-y-6 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-neutral-200">
+    <form action={formAction} className="space-y-6 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-marinho">
       {state?.message && (
         <div
-          role="status"
-          aria-live="polite"
-          className={`p-4 rounded-lg text-sm font-medium ${state.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}
+          role="alert"
+          aria-live="assertive"
+          className={`p-4 rounded-lg text-sm font-medium ${state.success ? 'bg-verde-50 text-verde-800' : 'bg-red-50 text-red-800'}`}
         >
           {state.message}
         </div>
@@ -45,33 +45,38 @@ export default function PrayerForm() {
           value="true"
           checked={isAnonymous}
           onChange={(e) => setIsAnonymous(e.target.checked)}
-          className="w-5 h-5 text-cobalto rounded border-neutral-300 focus:ring-cobalto cursor-pointer"
+          className="w-5 h-5 text-cobalto rounded border-marinho/20 focus:ring-cobalto cursor-pointer"
         />
-        <label htmlFor="is_anonymous" className="text-neutral-700 font-medium cursor-pointer">
+        <label htmlFor="is_anonymous" className="text-marinho/80 font-medium cursor-pointer">
           Quero fazer este pedido anonimamente
         </label>
       </div>
 
       {!isAnonymous && (
         <div className="space-y-2">
-          <label htmlFor="name" className="block text-sm font-medium text-neutral-700">Seu Nome (opcional)</label>
+          <label htmlFor="name" className="block text-sm font-medium text-marinho/80">Seu Nome (opcional)</label>
           <input
             type="text"
             name="name"
             id="name"
+            aria-invalid={Boolean(state?.errors?.name)}
+            aria-describedby={state?.errors?.name ? "name-error" : undefined}
             placeholder="Como podemos te chamar?"
-            className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-marinho/20 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors motion-reduce:transition-none"
           />
           {state?.errors?.name && (
-            <p className="text-red-500 text-sm mt-1">{state.errors.name[0]}</p>
+            <p id="name-error" className="text-red-500 text-sm mt-1">{state.errors.name[0]}</p>
           )}
         </div>
       )}
 
       <div className="space-y-2">
         <div className="flex justify-between items-center">
-          <label htmlFor="request" className="block text-sm font-medium text-neutral-700">Seu Pedido</label>
-          <span className={`text-xs ${requestText.length > 1000 ? 'text-red-500 font-bold' : requestText.length > 0 && requestText.length < 10 ? 'text-amber-600' : 'text-neutral-400'}`}>
+          <label htmlFor="request" className="block text-sm font-medium text-marinho/80">Seu Pedido</label>
+          <span
+            aria-live="polite"
+            className={`text-xs ${requestText.length > 1000 ? 'text-red-500 font-bold' : requestText.length > 0 && requestText.length < 10 ? 'text-cobalto font-medium' : 'text-marinho/40'}`}
+          >
             {requestText.length}/1000 caracteres {requestText.length > 0 && requestText.length < 10 && "(mínimo 10)"}
           </span>
         </div>
@@ -82,12 +87,14 @@ export default function PrayerForm() {
           value={requestText}
           onChange={(e) => setRequestText(e.target.value)}
           maxLength={1000}
+          aria-invalid={Boolean(state?.errors?.request)}
+          aria-describedby={state?.errors?.request ? "request-error" : undefined}
           placeholder="Escreva aqui seu pedido de oração (mínimo 10 caracteres)..."
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors resize-y"
+          className="w-full px-4 py-3 rounded-lg border border-marinho/20 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors motion-reduce:transition-none resize-y"
           required
         ></textarea>
         {state?.errors?.request && (
-          <p className="text-red-500 text-sm mt-1">{state.errors.request[0]}</p>
+          <p id="request-error" className="text-red-500 text-sm mt-1">{state.errors.request[0]}</p>
         )}
       </div>
 

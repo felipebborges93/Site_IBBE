@@ -12,22 +12,52 @@ export interface MobileDrawerProps {
 }
 
 export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
-  // Trava de rolagem no body e listener para fechar com Escape
+  const drawerRef = React.useRef<HTMLElement>(null);
+  const closeBtnRef = React.useRef<HTMLButtonElement>(null);
+
+  // Trava de rolagem no body, escape listener e focus trap
   useEffect(() => {
     if (!isOpen) return;
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    // Foco inicial no botão fechar
+    const timer = setTimeout(() => {
+      closeBtnRef.current?.focus();
+    }, 50);
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+        return;
+      }
+
+      if (e.key === "Tab" && drawerRef.current) {
+        const focusableElements = drawerRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
+        }
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      clearTimeout(timer);
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -51,7 +81,7 @@ export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
     <>
       {/* Backdrop com desfoque e fade */}
       <div
-        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 motion-reduce:transition-none ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
@@ -60,10 +90,13 @@ export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
 
       {/* Drawer lateral deslizando da direita */}
       <aside
+        ref={drawerRef}
         id="mobile-nav-drawer"
+        role="dialog"
+        aria-modal="true"
         aria-label="Menu de navegação móvel"
         aria-hidden={!isOpen}
-        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-xs sm:max-w-sm bg-marinho text-white shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-xs sm:max-w-sm bg-marinho text-white shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out motion-reduce:transition-none motion-reduce:transform-none ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
