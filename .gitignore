@@ -28,3 +28,7 @@ playwright-report/
 
 .env*
 !.env.example
+
+# GSD
+gsd-core
+
