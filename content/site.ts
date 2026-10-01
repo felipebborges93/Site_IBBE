@@ -49,7 +49,7 @@ export const siteConfig: SiteConfig = {
     phone: "(24) 99203-7665",
     whatsapp: "5524992037665",
     email: "ibbecomunicacao@gmail.com",
-    pixKey: "04.123.456/0001-78",
+    pixKey: "04.198.205/0001-84",
   },
   social: {
     instagram: "https://instagram.com/ibberesende",

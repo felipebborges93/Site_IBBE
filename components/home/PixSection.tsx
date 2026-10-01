@@ -5,7 +5,7 @@ import { Heart, HandHeart, Sparkle, ShieldCheck, CheckCircle } from "@phosphor-i
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
 
 export function PixSection() {
-  const pixKey = siteConfig.contact.pixKey || "04.123.456/0001-78";
+  const pixKey = siteConfig.contact.pixKey || "04.198.205/0001-84";
 
   return (
     <section id="contribuir" className="py-20 lg:py-24 max-w-[1440px] mx-auto px-6 lg:px-12 scroll-mt-20">
