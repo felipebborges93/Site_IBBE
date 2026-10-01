@@ -3,15 +3,17 @@ import { z } from "zod"
 const envSchema = z.object({
   NEXT_PUBLIC_SUPABASE_URL: z
     .string()
-    .min(1, "NEXT_PUBLIC_SUPABASE_URL é obrigatória.")
-    .url("NEXT_PUBLIC_SUPABASE_URL deve ser uma URL válida (ex: https://xyz.supabase.co).")
     .optional()
-    .default("https://placeholder.supabase.co"),
+    .transform((val) => {
+      if (!val || !val.startsWith("http")) {
+        return "https://placeholder.supabase.co"
+      }
+      return val
+    }),
   NEXT_PUBLIC_SUPABASE_ANON_KEY: z
     .string()
-    .min(1, "NEXT_PUBLIC_SUPABASE_ANON_KEY é obrigatória. Obtenha no Supabase Dashboard em Project Settings -> API.")
     .optional()
-    .default("placeholder-anon-key"),
+    .transform((val) => val || "placeholder-anon-key"),
   SUPABASE_SERVICE_ROLE_KEY: z
     .string()
     .min(1, "SUPABASE_SERVICE_ROLE_KEY é obrigatória para operações privilegiadas de servidor.")
