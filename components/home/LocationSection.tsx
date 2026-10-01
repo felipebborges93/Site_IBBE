@@ -47,7 +47,7 @@ export function LocationSection() {
               </span>
               <h3 className="text-2xl font-bold text-marinho">{siteConfig.name}</h3>
               <p className="text-sm text-marinho/80 mt-2 leading-relaxed">
-                {siteConfig.location.address} (próximo à pracinha)
+                {siteConfig.location.address} (Atrás do supermercado Atacadão)
                 <br />
                 {siteConfig.location.neighborhood}, {siteConfig.location.city} – {siteConfig.location.state} • CEP{" "}
                 {siteConfig.location.cep}
@@ -56,7 +56,7 @@ export function LocationSection() {
 
             <div className="border-b border-marinho/15 pb-6">
               <span className="text-xs uppercase tracking-wider font-semibold text-marinho/60 block mb-1">
-                Contato Fraterno
+                Contato
               </span>
               <p className="text-base font-bold text-marinho">{siteConfig.contact.phone}</p>
               <p className="text-xs text-marinho/70 mt-0.5">{siteConfig.contact.email}</p>

@@ -46,9 +46,9 @@ export const siteConfig: SiteConfig = {
     googleMapsUrl: "https://maps.google.com/?q=R.+Treze,+Vila+Izabel,+Resende+-+RJ,+27525-544",
   },
   contact: {
-    phone: "(24) 99876-5432",
-    whatsapp: "5524998765432",
-    email: "contato@bethelresende.com.br",
+    phone: "(24) 99203-7665",
+    whatsapp: "5524992037665",
+    email: "ibbecomunicacao@gmail.com",
     pixKey: "04.123.456/0001-78",
   },
   social: {

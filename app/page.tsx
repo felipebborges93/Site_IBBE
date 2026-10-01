@@ -4,9 +4,7 @@ import { YouTubeSection } from "@/components/youtube/YouTubeSection";
 import { HistorySection } from "@/components/home/HistorySection";
 import { EventsSection } from "@/components/home/EventsSection";
 import { GroupsSection } from "@/components/home/GroupsSection";
-import { MinistriesSection } from "@/components/home/MinistriesSection";
 import { SocialActionSection } from "@/components/home/SocialActionSection";
-import { VisitSection } from "@/components/home/VisitSection";
 import { LocationSection } from "@/components/home/LocationSection";
 import { PixSection } from "@/components/home/PixSection";
 import { PrayerSection } from "@/components/home/PrayerSection";
@@ -18,13 +16,13 @@ export default async function Home() {
 
   return (
     <div className="w-full">
-      {/* 1. Hero Fiel ao Stitch com Mosaico e NextServiceBar */}
+      {/* 1. Hero Fiel com Mosaico e NextServiceBar */}
       <Hero liveVideoUrl={liveVideoUrl} isLiveNow={isLiveNow} />
 
       {/* Divisor Onda para Gelo */}
       <SectionDivider variant="wave" to="gelo" />
 
-      {/* 01. Cultos e EBD com Destaque Dinâmico (#cultos) */}
+      {/* 01. Cultos e Atividades (#cultos) */}
       <ServicesSection />
 
       {/* Divisor Diagonal para Branco */}
@@ -54,31 +52,22 @@ export default async function Home() {
       {/* Divisor Wave para Gelo */}
       <SectionDivider variant="wave" to="gelo" />
 
-      {/* 06. Nossos Ministérios (#ministerios) */}
-      <MinistriesSection />
-
-      {/* 07. Amor em Ação / Ação Social (#acao-social) em bloco escuro contrastante */}
+      {/* 06. Amor em Ação / Ação Social (#acao-social) em bloco escuro contrastante */}
       <SocialActionSection />
 
       {/* Divisor Diagonal para Gelo */}
       <SectionDivider variant="diagonal" to="gelo" />
 
-      {/* Pedidos de Oração (#oracao) */}
+      {/* 07. Pedidos de Oração (#oracao) */}
       <PrayerSection />
 
       {/* Divisor Arc para Branco */}
       <SectionDivider variant="arc" to="white" />
 
-      {/* 08. Planeje sua Visita e FAQ Interativo (#visita) */}
-      <VisitSection />
-
-      {/* Divisor Arc para Gelo */}
-      <SectionDivider variant="arc" to="gelo" />
-
-      {/* 09. Localização e Contato (#contato) */}
+      {/* 08. Localização e Contato (#contato) */}
       <LocationSection />
 
-      {/* 10. Chave PIX e Contribuição (#contribuir) */}
+      {/* 09. Chave PIX e Contribuição (#contribuir) */}
       <PixSection />
     </div>
   );

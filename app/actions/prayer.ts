@@ -19,6 +19,8 @@ export async function submitPrayerRequest(
   try {
     const rawData = Object.fromEntries(formData.entries());
     const isAnonymous = rawData.is_anonymous === "on" || rawData.is_anonymous === "true";
+    const allowPublicDisplay =
+      !isAnonymous && (rawData.allow_public_display === "on" || rawData.allow_public_display === "true");
 
     // 1. Honeypot check (D-01, PRAY-02): Se preenchido por bot, aborta silenciosamente simulando sucesso
     const honeypot = typeof rawData.honeypot === "string" ? rawData.honeypot.trim() : "";
@@ -42,6 +44,7 @@ export async function submitPrayerRequest(
       name: sanitizedName,
       request: sanitizedRequest,
       is_anonymous: isAnonymous,
+      allow_public_display: allowPublicDisplay,
       honeypot,
     };
 
@@ -73,6 +76,7 @@ export async function submitPrayerRequest(
       name: finalName,
       request: validated.data.request,
       is_anonymous: validated.data.is_anonymous,
+      allow_public_display: validated.data.allow_public_display,
       status: "pending",
       displayed: false,
     });

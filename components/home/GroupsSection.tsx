@@ -1,7 +1,7 @@
 import React from "react";
 import { groups } from "@/content/groups";
 import { siteConfig } from "@/content/site";
-import { WhatsappLogo, ArrowRight, Coffee } from "@phosphor-icons/react/dist/ssr";
+import { WhatsappLogo, ArrowRight, Coffee, MapPin, Clock } from "@phosphor-icons/react/dist/ssr";
 
 export function GroupsSection() {
   const defaultPhone = siteConfig.contact.whatsapp.replace(/\D/g, "");
@@ -22,7 +22,7 @@ export function GroupsSection() {
           </h2>
         </div>
         <p className="text-marinho/70 text-sm max-w-sm leading-relaxed">
-          A igreja acontecendo na sala das casas durante a semana: cafezinho, conversa honesta e oração.
+          A igreja acontecendo nos lares e na comunidade durante a semana: cafezinho, conversa honesta e oração.
         </p>
       </div>
 
@@ -40,11 +40,11 @@ export function GroupsSection() {
 
         <a
           href={`https://wa.me/${defaultPhone}?text=${encodeURIComponent(
-            "Olá! Gostaria de conhecer um Pequeno Grupo (PGM) da IBBE em Resende."
+            "Olá! Gostaria de saber mais sobre os Pequenos Grupos (PGMs) da IBBE em Resende."
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Falar com líder do grupo no WhatsApp (abre na nova aba)"
+          aria-label="Falar sobre os grupos no WhatsApp (abre na nova aba)"
           className="px-8 h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 min-h-[44px] py-2 transition-all shrink-0 shadow-xs hover:shadow"
         >
           <WhatsappLogo className="w-4 h-4" weight="bold" aria-hidden="true" />
@@ -52,43 +52,64 @@ export function GroupsSection() {
         </a>
       </div>
 
-      {/* Lista Tipográfica Pura por Bairros (Grid 3 colunas) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* Lista Tipográfica / Cards de PGMs (Grid responsivo) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {groups.map((group) => {
-          const groupPhone = (group.contactPhone ? group.contactPhone.replace(/\D/g, "") : "") || defaultPhone;
           const encodedMessage = encodeURIComponent(
-            `Olá! Gostaria de participar do Pequeno Grupo no bairro ${group.neighborhood} da IBBE.`
+            `Olá! Gostaria de participar do PGM ${group.name} da IBBE.`
           );
-          const whatsappUrl = `https://wa.me/${groupPhone}?text=${encodedMessage}`;
+          const whatsappUrl = `https://wa.me/${defaultPhone}?text=${encodedMessage}`;
 
           return (
-            <div key={group.id} className="border-t border-marinho/15 pt-6 flex flex-col justify-between">
+            <div
+              key={group.id}
+              className="p-6 sm:p-7 rounded-3xl bg-white border border-marinho/10 shadow-xs hover:border-marinho/25 hover:shadow-sm flex flex-col justify-between transition-all"
+            >
               <div>
                 <span className="text-xs font-bold text-cobalto uppercase tracking-wider block mb-1">
-                  {group.neighborhood}
+                  PGM
                 </span>
                 <h3 className="text-2xl font-bold text-marinho">{group.name}</h3>
-                <p className="text-xs text-marinho/60 mt-1 font-medium">
-                  {group.meetingDay} às {group.meetingTime} • {group.neighborhood}
-                </p>
-                <p className="text-sm text-marinho/75 mt-3 leading-relaxed">{group.description}</p>
+
+                <div className="mt-4 space-y-2 text-xs sm:text-sm text-marinho/75">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 text-cobalto shrink-0 mt-0.5" weight="bold" aria-hidden="true" />
+                    <span>{group.address}</span>
+                  </div>
+                  <div className="flex items-center gap-2 font-semibold text-marinho">
+                    <Clock className="w-4 h-4 text-cobalto shrink-0" weight="bold" aria-hidden="true" />
+                    <span>{group.meetingSchedule}</span>
+                  </div>
+                </div>
+
+                {group.description && (
+                  <p className="text-xs text-marinho/65 mt-3 leading-relaxed border-t border-marinho/10 pt-3">
+                    {group.description}
+                  </p>
+                )}
               </div>
 
+              <div className="pt-6 mt-4 border-t border-marinho/10">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Falar com líder do grupo ${group.name} no WhatsApp (abre em nova aba)`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-cobalto hover:text-marinho transition-colors motion-reduce:transition-none group min-h-[44px] py-2"
+                  aria-label={`Saber mais sobre o PGM ${group.name} no WhatsApp (abre em nova aba)`}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-cobalto hover:text-marinho transition-colors motion-reduce:transition-none group min-h-[44px] py-1"
                 >
                   <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
-                  <span>Falar com líder pelo WhatsApp</span>
-                  <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 transition-transform motion-reduce:transition-none motion-reduce:transform-none group-hover:translate-x-1" weight="bold" />
+                  <span>Saber mais no WhatsApp</span>
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="w-3.5 h-3.5 transition-transform motion-reduce:transition-none motion-reduce:transform-none group-hover:translate-x-1"
+                    weight="bold"
+                  />
                 </a>
               </div>
-            );
-          })}
-        </div>
-      </section>
-    );
-  }
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

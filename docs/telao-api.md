@@ -16,7 +16,7 @@ O token é definido na variável de ambiente `TELAO_API_TOKEN` no servidor da Ve
 
 ### 1. Buscar Pedidos Pendentes de Exibição
 
-Retorna os pedidos que já foram **aprovados** na moderação, mas ainda não foram **exibidos** no telão.
+Retorna os pedidos que foram **aprovados** na moderação pastoral, possuem **consentimento do usuário para exibição pública (`allow_public_display = true`)** e ainda não foram **exibidos** no telão. Pedidos que não autorizaram a exibição pública permanecem apenas para intercessão reservada da equipe pastoral e não são retornados por esta rota.
 
 **Requisição:**
 `GET /api/prayer-requests/display`

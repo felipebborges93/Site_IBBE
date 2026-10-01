@@ -41,17 +41,23 @@ export default function PrivacidadePage() {
           <section className="bg-white p-6 md:p-8 rounded-2xl border border-gelo shadow-xs">
             <h2 className="text-xl md:text-2xl font-bold text-marinho mb-3 flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-verde inline-block" />
-              2. Pedidos de Oração e Opção de Anonimato
+              2. Pedidos de Oração, Anonimato e Exibição no Telão
             </h2>
             <p>
-              Nosso canal de oração existe exclusivamente para abençoar e interceder por você e sua família:
+              Nosso canal de oração existe exclusivamente para abençoar e interceder por você e sua família, com total respeito à sua privacidade e às diretrizes da LGPD (Lei nº 13.709/2018):
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-3 text-marinho/80">
               <li>
-                <strong>Anonimato Completo:</strong> Você tem a total liberdade de marcar a opção de envio anônimo. Nesse caso, nenhum nome é solicitado ou armazenado junto ao seu pedido.
+                <strong>Anonimato Completo:</strong> Você tem a total liberdade de marcar a opção de envio anônimo. Nesse caso, nenhum nome é solicitado ou armazenado junto ao seu pedido, garantindo sigilo absoluto.
               </li>
               <li>
-                <strong>Finalidade Exclusiva:</strong> Se você optar por nos dizer seu primeiro nome, ele será utilizado unicamente pelo ministério pastoral e equipe de intercessão da igreja durante os momentos de oração.
+                <strong>Intercessão Pastoral:</strong> Quando você fornece seu primeiro nome sem autorizar exibição pública, os dados são utilizados estritamente pelo ministério pastoral e equipe de intercessão da igreja durante os momentos reservados de oração.
+              </li>
+              <li>
+                <strong>Exibição Pública no Telão da Igreja:</strong> Em nossos cultos, projetamos motivos de oração da comunidade para que toda a igreja ore em conjunto. A exibição do seu nome e motivo no telão é <strong>estritamente voluntária e condicionada à sua autorização explícita</strong> no formulário. Pedidos não autorizados ou anônimos jamais são exibidos com identificação nominal.
+              </li>
+              <li>
+                <strong>Moderação Humana Prévia:</strong> Todos os pedidos passam por moderação pastoral antes de qualquer leitura ou projeção, visando proteger a intimidade das pessoas e evitar exposição indevida de dados pessoais ou sensíveis de terceiros.
               </li>
               <li>
                 <strong>Sem Repasse Comercial:</strong> Em hipótese alguma compartilhamos, vendemos ou cedemos pedidos de oração ou nomes a empresas ou terceiros.

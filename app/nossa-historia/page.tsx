@@ -176,10 +176,10 @@ export default function NossaHistoriaPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/#visita"
+              href="/#contato"
               className="w-full sm:w-auto px-8 py-3.5 min-h-[44px] rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-sm tracking-wide transition-colors motion-reduce:transition-none inline-flex items-center justify-center gap-2"
             >
-              <span>Planeje sua visita</span>
+              <span>Venha nos Visitar</span>
               <ArrowRight aria-hidden="true" className="w-4 h-4" weight="bold" />
             </Link>
             <Link

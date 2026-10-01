@@ -19,7 +19,7 @@ export default async function AdminOracaoPage() {
   // D-01: Fila ordenada em FIFO (mais antigos primeiro: ascending: true)
   const { data: requests, error } = await supabase
     .from("prayer_requests")
-    .select("id, name, request, status, is_anonymous, created_at")
+    .select("id, name, request, status, is_anonymous, allow_public_display, created_at")
     .order("created_at", { ascending: true });
 
   if (error) {

@@ -16,6 +16,7 @@ export interface PrayerRequestItem {
   request: string;
   status: ModerationStatus;
   is_anonymous: boolean;
+  allow_public_display?: boolean;
   created_at: string;
 }
 
@@ -195,7 +196,18 @@ export function ModerationDashboard({ requests }: ModerationDashboardProps) {
                     {req.is_anonymous ? (
                       <span className="text-marinho/40 italic">Anônimo</span>
                     ) : (
-                      req.name
+                      <div className="flex flex-col">
+                        <span>{req.name}</span>
+                        {req.allow_public_display ? (
+                          <span className="text-micro font-semibold text-verde mt-0.5">
+                            ✓ Telão Autorizado
+                          </span>
+                        ) : (
+                          <span className="text-micro text-marinho/45 mt-0.5">
+                            Apenas Intercessão
+                          </span>
+                        )}
+                      </div>
                     )}
                   </td>
                   <td className="px-6 py-4 max-w-sm">

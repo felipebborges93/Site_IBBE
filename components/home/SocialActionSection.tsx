@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { siteConfig } from "@/content/site";
-import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { WhatsappLogo, Basket, CookingPot, Compass, HandHeart } from "@phosphor-icons/react/dist/ssr";
 
 export function SocialActionSection() {
   const whatsappPhone = siteConfig.contact.whatsapp.replace(/\D/g, "");
@@ -17,10 +17,10 @@ export function SocialActionSection() {
       />
       
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Retrato Real Pai e Filha com Cantos Arredondados */}
-          <div className="lg:col-span-5">
-            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[440px] sm:h-[500px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Coluna Esquerda: Foto Real e Cartão de Apoio */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[400px] sm:h-[460px]">
               <Image
                 src="/images/acao_social.jpg"
                 alt="Ação Social na comunidade em Resende"
@@ -29,16 +29,32 @@ export function SocialActionSection() {
                 className="object-cover"
               />
             </div>
-            <p className="text-xs text-white/60 mt-3 text-center">
-              Ação solidária contínua junto às famílias do bairro Vila Izabel
-            </p>
+            
+            <div className="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <h4 className="text-base font-bold text-ceu mb-2">Como você pode participar</h4>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                Você pode ser voluntário em nossas oficinas e atividades com as crianças, doar alimentos não perecíveis para as cestas básicas ou contribuir financeiramente com nossos projetos sociais.
+              </p>
+              <div className="mt-4">
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Quero ajudar este trabalho pelo WhatsApp (abre em nova aba)"
+                  className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
+                >
+                  <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
+                  <span>Quero apoiar estes projetos</span>
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Citação Gigante Editorial & Estatísticas Limpas */}
+          {/* Coluna Direita: Apresentação dos 4 Projetos Sociais */}
           <div className="lg:col-span-7 space-y-8">
             <div>
               <span className="text-xs font-bold text-ceu uppercase tracking-widest block mb-4">
-                07 / Amor em Ação
+                06 / Amor em Ação
               </span>
               <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white">
                 &ldquo;A igreja só tem sentido quando se faz presente na dor do{" "}
@@ -50,39 +66,75 @@ export function SocialActionSection() {
             </div>
 
             <p className="text-base sm:text-lg text-white/80 leading-relaxed font-normal">
-              Nosso ministério de ação social atende mensalmente famílias em vulnerabilidade em Vila Izabel e bairros
-              vizinhos em Resende, entregando alimentos, dignidade, respeito e acompanhamento fraterno sem qualquer
-              contrapartida.
+              Nosso compromisso social vai além das palavras: cuidamos de famílias, alimentamos quem precisa e investimos no futuro de crianças e adolescentes com amor prático e o Evangelho de Jesus.
             </p>
 
-            {/* Estatísticas com Linhas Finas (Sem caixas) */}
-            <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-6">
-              <div>
-                <span className="text-3xl sm:text-4xl font-extrabold text-ceu tracking-tight block">+3.200</span>
-                <span className="text-xs text-white/70 uppercase tracking-wider block mt-1">Cestas doadas</span>
+            {/* Grid dos 4 Projetos */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
+              {/* 1. Cestas Básicas */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-cobalto/30 flex items-center justify-center text-ceu mb-3">
+                  <Basket className="w-5 h-5" weight="bold" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-1">Distribuição de Cestas Básicas</h4>
+                <p className="text-xs text-white/75 leading-relaxed">
+                  Assistência contínua a famílias em vulnerabilidade em Vila Izabel e bairros vizinhos de Resende, levando alimento à mesa e suporte fraterno.
+                </p>
               </div>
-              <div className="border-l border-white/15 pl-4 sm:pl-6">
-                <span className="text-3xl sm:text-4xl font-extrabold text-ceu tracking-tight block">+120</span>
-                <span className="text-xs text-white/70 uppercase tracking-wider block mt-1">Famílias fixas</span>
+
+              {/* 2. Jantar Bethel Kids */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-cobalto/30 flex items-center justify-center text-ceu mb-3">
+                  <CookingPot className="w-5 h-5" weight="bold" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-1">Jantar para as Crianças</h4>
+                <p className="text-xs text-white/75 leading-relaxed">
+                  Após as atividades do Bethel Kids, servimos um jantar quentinho e nutritivo preparado com muito carinho para todas as crianças atendidas.
+                </p>
               </div>
-              <div className="border-l border-white/15 pl-4 sm:pl-6">
-                <span className="text-3xl sm:text-4xl font-extrabold text-verde tracking-tight block">24 anos</span>
-                <span className="text-xs text-white/70 uppercase tracking-wider block mt-1">Servindo a cidade</span>
+
+              {/* 3. Projeto Doce Amor */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-cobalto/30 flex items-center justify-center text-ceu mb-3">
+                  <HandHeart className="w-5 h-5" weight="bold" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-1">Projeto Doce Amor</h4>
+                <p className="text-xs text-white/75 leading-relaxed">
+                  Aulas de culinária para meninas aliadas a discipulado bíblico, acolhimento, desenvolvimento de habilidades e evangelização.
+                </p>
+              </div>
+
+              {/* 4. Embaixadores do Rei */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-cobalto/30 flex items-center justify-center text-ceu mb-3">
+                  <Compass className="w-5 h-5" weight="bold" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-1">Embaixadores do Rei</h4>
+                <p className="text-xs text-white/75 leading-relaxed">
+                  Organização missionária batista para meninos de 9 a 17 anos focada em desenvolvimento físico, moral e espiritual, estudo da Bíblia, missões e serviço.
+                </p>
               </div>
             </div>
 
-            {/* Botão CTA para voluntariado ou doações */}
-            <div className="pt-4">
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Quero ajudar este trabalho pelo WhatsApp (abre em nova aba)"
-                className="inline-flex items-center gap-2 px-8 min-h-[44px] h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg motion-reduce:transition-none"
-              >
-                <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
-                <span>Quero ajudar este trabalho</span>
-              </a>
+            {/* Detalhamento expandido dos Embaixadores do Rei */}
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-xs sm:text-sm text-white/80 space-y-3">
+              <h5 className="font-bold text-ceu text-sm uppercase tracking-wider">
+                Embaixadores do Rei — Objetivos e Pilares
+              </h5>
+              <ul className="space-y-2 text-xs leading-relaxed text-white/75">
+                <li>
+                  <strong className="text-white">• Desenvolvimento integral:</strong> Crescimento físico, moral e espiritual de cada participante.
+                </li>
+                <li>
+                  <strong className="text-white">• Pilares de atuação:</strong> Estudo bíblico, oração, missões, mordomia e serviço cristão.
+                </li>
+                <li>
+                  <strong className="text-white">• Atividades práticas:</strong> Reuniões regulares, acampamentos, prática esportiva, gincanas e projetos comunitários.
+                </li>
+                <li>
+                  <strong className="text-white">• Significado:</strong> Representar Jesus Cristo na Terra com honra e fidelidade (baseado em 2 Coríntios 5:20).
+                </li>
+              </ul>
             </div>
           </div>
         </div>

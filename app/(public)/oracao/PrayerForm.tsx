@@ -22,6 +22,7 @@ export default function PrayerForm() {
   );
   const formRef = useRef<HTMLFormElement>(null);
   const [isAnonymous, setIsAnonymous] = useState(false);
+  const [allowPublicDisplay, setAllowPublicDisplay] = useState(true);
   const [requestText, setRequestText] = useState("");
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function PrayerForm() {
       formRef.current?.reset();
       setRequestText("");
       setIsAnonymous(false);
+      setAllowPublicDisplay(true);
     }
   }, [state]);
 
@@ -69,19 +71,38 @@ export default function PrayerForm() {
         />
       </div>
 
-      <div className="flex items-center space-x-3 mb-6">
-        <input
-          type="checkbox"
-          id="is_anonymous"
-          name="is_anonymous"
-          value="true"
-          checked={isAnonymous}
-          onChange={(e) => setIsAnonymous(e.target.checked)}
-          className="w-5 h-5 text-cobalto rounded border-marinho/20 focus:ring-cobalto cursor-pointer"
-        />
-        <label htmlFor="is_anonymous" className="text-marinho/80 font-medium cursor-pointer select-none">
-          Quero fazer este pedido anonimamente
-        </label>
+      <div className="space-y-3">
+        <div className="flex items-center space-x-3">
+          <input
+            type="checkbox"
+            id="is_anonymous"
+            name="is_anonymous"
+            value="true"
+            checked={isAnonymous}
+            onChange={(e) => setIsAnonymous(e.target.checked)}
+            className="w-5 h-5 text-cobalto rounded border-marinho/20 focus:ring-cobalto cursor-pointer"
+          />
+          <label htmlFor="is_anonymous" className="text-marinho/80 font-medium cursor-pointer select-none">
+            Quero fazer este pedido anonimamente
+          </label>
+        </div>
+
+        {!isAnonymous && (
+          <div className="flex items-start space-x-3 pt-1">
+            <input
+              type="checkbox"
+              id="allow_public_display"
+              name="allow_public_display"
+              value="true"
+              checked={allowPublicDisplay}
+              onChange={(e) => setAllowPublicDisplay(e.target.checked)}
+              className="w-5 h-5 text-cobalto rounded border-marinho/20 focus:ring-cobalto cursor-pointer mt-0.5"
+            />
+            <label htmlFor="allow_public_display" className="text-xs sm:text-sm text-marinho/75 font-normal cursor-pointer select-none leading-relaxed">
+              Autorizo a exibição do meu nome e motivo no telão da igreja durante os momentos de oração dos cultos.
+            </label>
+          </div>
+        )}
       </div>
 
       {!isAnonymous && (

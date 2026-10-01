@@ -12,6 +12,27 @@ body {
   font-family: var(--font-bricolage), sans-serif;
 }
 
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: rgba(255, 255, 255, 0);
+}
+
+@layer utilities {
+  .aurora-bg-animate {
+    animation: aurora 60s linear infinite;
+  }
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

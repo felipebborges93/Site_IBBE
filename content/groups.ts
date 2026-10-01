@@ -1,37 +1,67 @@
 export interface Group {
   id: string;
   name: string;
-  neighborhood: string;
-  meetingDay: string;
-  meetingTime: string;
-  description: string;
-  leader?: string;
-  contactPhone?: string;
+  address: string;
+  meetingSchedule: string;
+  description?: string;
+  neighborhood?: string;
 }
 
 export const groups: Group[] = [
   {
-    id: "pgm-vila-isabel",
-    name: "PGM Família & Esperança",
+    id: "principe-da-paz",
+    name: "Príncipe da Paz",
+    address: "Rua Amazonas, 96 - Morada do Contorno",
+    meetingSchedule: "Sexta-feira às 19h30",
+    neighborhood: "Morada do Contorno",
+    description: "Comunhão nos lares, estudo bíblico e oração mútua.",
+  },
+  {
+    id: "ebenezer",
+    name: "Ebenézer",
+    address: "Rua Amazonas, nº 96 - Morada do Contorno",
+    meetingSchedule: "Sábado às 16h00",
+    neighborhood: "Morada do Contorno",
+    description: "Acolhimento de famílias e crescimento na Palavra aos sábados.",
+  },
+  {
+    id: "princesas-de-cristo",
+    name: "Princesas de Cristo",
+    address: "Local: Igreja Batista Bethel",
+    meetingSchedule: "Quinta-feira às 19h30",
+    neighborhood: "Vila Izabel (Igreja)",
+    description: "Encontro feminino de edificação, partilha e intercessão.",
+  },
+  {
+    id: "emanuel",
+    name: "Emanuel",
+    address: "Local: Igreja Batista Bethel",
+    meetingSchedule: "Terça-feira às 19h30",
+    neighborhood: "Vila Izabel (Igreja)",
+    description: "Cuidado pastoral, comunhão fraterna e estudo bíblico.",
+  },
+  {
+    id: "alianca-com-deus",
+    name: "Aliança com Deus",
+    address: "Rua Amapá, 490 - Morada do Contorno",
+    meetingSchedule: "Quinta-feira às 19h30",
+    neighborhood: "Morada do Contorno",
+    description: "Fortalecendo laços de fé e amizade na comunidade.",
+  },
+  {
+    id: "peniel",
+    name: "Peniel",
+    address: "Local: Igreja Batista Bethel",
+    meetingSchedule: "Quinta-feira às 19h30",
+    neighborhood: "Vila Izabel (Igreja)",
+    description: "Buscando a face de Deus com oração e estudo das Escrituras.",
+  },
+  {
+    id: "siao",
+    name: "Sião",
+    address: "Rua 13, nº 91",
+    meetingSchedule: "Quintas-feiras às 19h30",
     neighborhood: "Vila Izabel",
-    meetingDay: "Terça-feira",
-    meetingTime: "19:30",
-    description: "Reunião para famílias com momentos de partilha sincera, oração e espaço lúdico para as crianças.",
-  },
-  {
-    id: "pgm-manejo",
-    name: "PGM Juventude & Propósito",
-    neighborhood: "Manejo / Cidade Alegria",
-    meetingDay: "Quarta-feira",
-    meetingTime: "20:00",
-    description: "Roda de conversa descontraída sobre carreira, dúvidas, fé prática e amizades duradouras.",
-  },
-  {
-    id: "pgm-campos-eliseos",
-    name: "PGM Graça & Comunhão",
-    neighborhood: "Campos Elíseos / Centro",
-    meetingDay: "Quinta-feira",
-    meetingTime: "19:30",
-    description: "Estudo simples dos Salmos, oração mútua e acolhimento para quem mora ou trabalha na região central.",
+    description: "Portas abertas para receber vizinhos e amigos com afeto.",
   },
 ];

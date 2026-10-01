@@ -15,6 +15,7 @@ export async function GET(request: Request) {
     .select("id, name, request, is_anonymous")
     .eq("status", "approved")
     .eq("displayed", false)
+    .eq("allow_public_display", true)
     .order("created_at", { ascending: true })
     .limit(10); // Batch size
 

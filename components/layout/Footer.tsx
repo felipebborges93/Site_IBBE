@@ -91,8 +91,8 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#visita" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
-                    Planeje sua Visita
+                  <Link href="#contato" className="hover:text-white transition-colors motion-reduce:transition-none py-2 inline-block">
+                    Contato & Localização
                   </Link>
                 </li>
               </ul>

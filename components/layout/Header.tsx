@@ -17,10 +17,8 @@ const navLinks = [
   { label: "Nossa história", href: "#historia", id: "historia" },
   { label: "Eventos", href: "#eventos", id: "eventos" },
   { label: "PGMs", href: "#grupos", id: "grupos" },
-  { label: "Ministérios", href: "#ministerios", id: "ministerios" },
   { label: "Ação Social", href: "#acao-social", id: "acao-social" },
   { label: "Oração", href: "#oracao", id: "oracao" },
-  { label: "Sou Novo", href: "#visita", id: "visita" },
   { label: "Contato", href: "#contato", id: "contato" },
 ];
 
@@ -68,12 +66,12 @@ export function Header() {
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               {/* Botão CTA Principal */}
               <Button
-                href="#visita"
+                href="#contato"
                 variant="primary"
                 size="sm"
                 className="hidden sm:inline-flex whitespace-nowrap text-xs font-semibold px-4 py-2"
               >
-                Planeje sua Visita
+                Venha nos Visitar
               </Button>
 
               {/* Botão de Hambúrguer Mobile (visível abaixo de xl) */}

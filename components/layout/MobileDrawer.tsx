@@ -71,10 +71,8 @@ export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
     { label: "Nossa história", href: "#historia", id: "historia" },
     { label: "Eventos", href: "#eventos", id: "eventos" },
     { label: "PGMs", href: "#grupos", id: "grupos" },
-    { label: "Ministérios", href: "#ministerios", id: "ministerios" },
     { label: "Ação Social", href: "#acao-social", id: "acao-social" },
     { label: "Oração", href: "#oracao", id: "oracao" },
-    { label: "Sou Novo", href: "#visita", id: "visita" },
     { label: "Contato", href: "#contato", id: "contato" },
   ];
 
@@ -145,11 +143,11 @@ export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
             <p>{siteConfig.location.city} - {siteConfig.location.state}</p>
           </div>
           <Link
-            href="#visita"
+            href="#contato"
             onClick={onClose}
             className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-cobalto hover:bg-cobalto/90 text-white text-sm font-bold shadow-md transition-all active:scale-95"
           >
-            <span>Planeje sua visita</span>
+            <span>Venha nos Visitar</span>
             <ArrowRight size={16} weight="bold" />
           </Link>
         </div>
