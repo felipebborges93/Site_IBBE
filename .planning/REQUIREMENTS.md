@@ -1,4 +1,4 @@
-# Requirements: Site Oficial IBBE — Milestone v1.1
+# Requirements: Site Oficial IBBE
 
 **Defined:** 2026-10-01  
 **Core Value:** Acolhimento acessível: permitir que congregantes e visitantes enviem pedidos de oração confidenciais ou anônimos com segurança, garantir moderação pastoral em tempo hábil e disponibilizar os pedidos aprovados para projeção no telão durante os cultos.
@@ -32,11 +32,17 @@
 - [ ] **MOD-03**: Implementar ação de desfazer ("Desfazer") permitindo reverter pedidos aprovados ou rejeitados de volta para `pending`
 - [ ] **MOD-04**: Exibir feedback visual acolhedor (toasts) e revalidar o cache da rota (`revalidatePath`) imediatamente após cada ação
 
-### Integração do Telão (DISP)
+### Integração de APIs do Telão (DISP)
 
 - [ ] **DISP-01**: Implementar `createAdminClient` isolado no servidor utilizando `SUPABASE_SERVICE_ROLE_KEY` com verificação `server-only`
 - [ ] **DISP-02**: Conectar `GET /api/prayer-requests/display` com validação de Bearer token (`TELAO_API_TOKEN`) retornando pedidos aprovados e não exibidos
 - [ ] **DISP-03**: Conectar `POST /api/prayer-requests/[id]/displayed` com validação de token atualizando `displayed = true` após exibição em projeção
+
+### Exibição no Telão (TELA)
+
+- [ ] **TELA-01**: Criar página web (`/telao`) otimizada para exibição em tela cheia (1080p/4K), sem barra de rolagem e com tipografia de alto contraste para leitura à distância.
+- [ ] **TELA-02**: Exibir um número fixo de pedidos aprovados (ex: 4 a 6) de forma estática, distribuídos em grade ou lista para maximizar a legibilidade.
+- [ ] **TELA-03**: Implementar interface para o operador marcar os pedidos na tela como exibidos (acionar API `displayed = true`) com um botão de avanço/conclusão, sem que o layout se desloque inesperadamente.
 
 ## v2 Requirements
 
@@ -45,11 +51,6 @@
 - **REAL-01**: Inscrição Supabase Realtime (WebSocket) no `/admin/oracao` para atualizar novos pedidos ao vivo sem reload
 - **NOTF-01**: Disparo de notificação WhatsApp/Push para equipe pastoral ou intercessores quando novo pedido urgente for recebido
 
-### Aplicativo do Telão Dedicado (PROJ)
-
-- **PROJ-01**: Interface web de carrossel em tela cheia com transição automática entre pedidos aprovados para exibição em culto
-- **PROJ-02**: Controle remoto de avanço de slides pelo pastor ou operador via painel mobile
-
 ## Out of Scope
 
 | Feature | Reason |
@@ -57,38 +58,18 @@
 | Inscrição pública de contas de usuário | O sistema de moderação é restrito à liderança pastoral; auto-cadastro aumentaria risco de segurança |
 | Armazenamento de IP em formato bruto | Violação direta da LGPD; limitação de taxa opera apenas sobre hash criptográfico SHA-256 efêmero |
 | Edição do texto da oração pelo administrador | Preservação da integridade da intenção do membro/visitante; pastor apenas aprova ou rejeita |
-| Webapp completo do telão com efeitos 3D/gráficos | Escopo do marco v1.1 foca em APIs e backend robusto; interface visual do telão será desenvolvida em marco futuro |
+| Rotação/ciclo automático no telão | Pedido explícito do usuário: as orações devem ficar estáticas no telão durante o momento de oração para melhor leitura. |
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SUPA-01 | Phase 8 | Pending |
-| SUPA-02 | Phase 8 | Pending |
-| SUPA-03 | Phase 8 | Pending |
-| AUTH-01 | Phase 9 | Pending |
-| AUTH-02 | Phase 9 | Pending |
-| AUTH-03 | Phase 9 | Pending |
-| AUTH-04 | Phase 9 | Pending |
-| PRAY-01 | Phase 10 | Pending |
-| PRAY-02 | Phase 10 | Pending |
-| PRAY-03 | Phase 10 | Pending |
-| PRAY-04 | Phase 10 | Pending |
-| MOD-01 | Phase 11 | Pending |
-| MOD-02 | Phase 11 | Pending |
-| MOD-03 | Phase 11 | Pending |
-| MOD-04 | Phase 11 | Pending |
-| DISP-01 | Phase 12 | Pending |
-| DISP-02 | Phase 12 | Pending |
-| DISP-03 | Phase 12 | Pending |
 
 **Coverage:**
-- v1 requirements: 18 total
-- Mapped to phases: 18
-- Unmapped: 0
+- v1 requirements: 21 total
+- Mapped to phases: 0
+- Unmapped: 21 ⚠️
 
 ---
 *Requirements defined: 2026-10-01*  
-*Last updated: 2026-10-01 after roadmap creation*
+*Last updated: 2026-10-01 for milestone v1.2*
