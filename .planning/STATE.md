@@ -2,11 +2,11 @@
 gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: Configuração do Supabase e Pedidos de Oração
-status: planning
-last_updated: "2026-10-01T03:32:56.417Z"
+status: ready
+last_updated: "2026-10-01T03:45:00.000Z"
 last_activity: 2026-10-01
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,19 +17,17 @@ progress:
 
 ## Current Phase
 
-Phase 4: Integração YouTube (Concluída)
+Phase 8: Infraestrutura Supabase e Banco de Dados (Pronta para planejamento)
 
-## Phase Status
+## Phase Status (Milestone v1.1)
 
 | Phase | Status | Started | Completed |
 |-------|--------|---------|-----------|
-| 1. Fundação do Projeto | completed | 2026-09-29 | 2026-09-29 |
-| 2. Layout Base e Navegação | completed | 2026-09-29 | 2026-09-29 |
-| 3. Seções de Conteúdo Estático | completed | 2026-09-29 | 2026-09-29 |
-| 4. Integração YouTube | completed | 2026-09-29 | 2026-09-29 |
-| 5. Pedidos de Oração | completed | 2026-09-29 | 2026-09-29 |
-| 6. SEO, Acessibilidade, Performance e LGPD | completed | 2026-09-29 | 2026-09-29 |
-| 7. Testes, README e Checklist Final | pending | — | — |
+| 8. Infraestrutura Supabase e Banco de Dados | pending | — | — |
+| 9. Autenticação e Proteção de Rotas | pending | — | — |
+| 10. Ingestão e Proteção de Pedidos | pending | — | — |
+| 11. Moderação Pastoral | pending | — | — |
+| 12. Integração e APIs do Telão | pending | — | — |
 
 ## Key Decisions Log
 
@@ -37,7 +35,11 @@ Phase 4: Integração YouTube (Concluída)
 |------|----------|---------|
 | 2026-09-29 | Stack confirmada: Next.js App Router + TS + Tailwind + Supabase | Pedido explícito do usuário |
 | 2026-09-29 | Design Stitch como referência visual primária | Projeto "Igreja Batista Bethel Landing Page" no Stitch |
-| 2026-09-29 | 7 fases seguindo ordem do usuário | Alinhamento com a seção "Ordem de execução" do documento |
+| 2026-09-29 | 7 fases no MVP seguindo ordem do usuário | Fases 1 a 7 concluídas no milestone v1.0 |
+| 2026-10-01 | Milestone v1.1 dividido em 5 fases sequenciais (8 a 12) | Separação estrita de infraestrutura, sessão, ingestão, moderação e APIs do telão |
+| 2026-10-01 | RLS estrito: insert anon com check (pending/false), select/update apenas authenticated | Prevenção de injeção de orações não moderadas |
+| 2026-10-01 | Projeção telão consome via createAdminClient isolado e TELAO_API_TOKEN | Evita falhas silenciosas de leitura vazia por anon key |
+| 2026-10-01 | Hash de IP (SHA-256 + salt) sem gravar IP bruto | Conformidade com LGPD (Lei 13.709/2018) |
 
 ## Blockers
 
@@ -45,33 +47,17 @@ Phase 4: Integração YouTube (Concluída)
 
 ## Notes
 
+- Milestone v1.0 concluído com sucesso e arquivado em `milestones/v1.0-ROADMAP.md`
 - Design system extraído do Stitch guardado nos HTMLs `stitch-desktop.html` e `stitch-mobile.html`
 - Regra de conflito: design vence no visual, documento vence no comportamento/dados
 
-## Session
-
-**Last session:** 2026-09-30T01:59:11.933Z
-**Stopped at:** Phase 7 context gathered
-**Resume file:** .planning/phases/07-testes-readme-e-checklist-final/07-CONTEXT.md
-
-## Performance Metrics
-
-| Plan | Duration | Tasks | Files |
-|------|----------|-------|-------|
-| Phase 05 P01 | 30m | 4 tasks | 12 files |
-
-## Decisions
-
-- [Phase ?]: O campo honeypot será ocultado via CSS.
-- [Phase ?]: O token TELAO_API_TOKEN será configurado na Vercel.
-
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Phase 8 (Infraestrutura Supabase e Banco de Dados)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-10-01 — Milestone v1.1 started
+Status: Ready for planning
+Last activity: 2026-10-01 — Roadmap created for milestone v1.1 (Phases 8-12)
 
 ## Operator Next Steps
 
-- Start the next milestone with /gsd-new-milestone
+- Execute `/gsd-plan-phase 8` para iniciar o planejamento da Fase 8

@@ -65,30 +65,30 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SUPA-01 | TBD | Pending |
-| SUPA-02 | TBD | Pending |
-| SUPA-03 | TBD | Pending |
-| AUTH-01 | TBD | Pending |
-| AUTH-02 | TBD | Pending |
-| AUTH-03 | TBD | Pending |
-| AUTH-04 | TBD | Pending |
-| PRAY-01 | TBD | Pending |
-| PRAY-02 | TBD | Pending |
-| PRAY-03 | TBD | Pending |
-| PRAY-04 | TBD | Pending |
-| MOD-01 | TBD | Pending |
-| MOD-02 | TBD | Pending |
-| MOD-03 | TBD | Pending |
-| MOD-04 | TBD | Pending |
-| DISP-01 | TBD | Pending |
-| DISP-02 | TBD | Pending |
-| DISP-03 | TBD | Pending |
+| SUPA-01 | Phase 8 | Pending |
+| SUPA-02 | Phase 8 | Pending |
+| SUPA-03 | Phase 8 | Pending |
+| AUTH-01 | Phase 9 | Pending |
+| AUTH-02 | Phase 9 | Pending |
+| AUTH-03 | Phase 9 | Pending |
+| AUTH-04 | Phase 9 | Pending |
+| PRAY-01 | Phase 10 | Pending |
+| PRAY-02 | Phase 10 | Pending |
+| PRAY-03 | Phase 10 | Pending |
+| PRAY-04 | Phase 10 | Pending |
+| MOD-01 | Phase 11 | Pending |
+| MOD-02 | Phase 11 | Pending |
+| MOD-03 | Phase 11 | Pending |
+| MOD-04 | Phase 11 | Pending |
+| DISP-01 | Phase 12 | Pending |
+| DISP-02 | Phase 12 | Pending |
+| DISP-03 | Phase 12 | Pending |
 
 **Coverage:**
 - v1 requirements: 18 total
-- Mapped to phases: 0
-- Unmapped: 18 ⚠️
+- Mapped to phases: 18
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-10-01*  
-*Last updated: 2026-10-01 after initial definition*
+*Last updated: 2026-10-01 after roadmap creation*
