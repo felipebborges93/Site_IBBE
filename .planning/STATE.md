@@ -2,11 +2,13 @@
 gsd_state_version: "1.0"
 milestone: v1.2
 milestone_name: Tela de Exibição do Telão
-status: planning
+current_phase: 09
+current_phase_name: Autenticação e Proteção de Rotas
+status: pending
 last_updated: "2026-10-01T12:35:29.517Z"
 last_activity: 2026-10-01
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,17 +19,17 @@ progress:
 
 ## Current Phase
 
-Phase 8: Infraestrutura Supabase e Banco de Dados (Concluída)
+Phase 9: Autenticação e Proteção de Rotas (Pendente)
 
-## Phase Status (Milestone v1.1)
+## Phase Status (Milestone v1.2)
 
 | Phase | Status | Started | Completed |
 |-------|--------|---------|-----------|
-| 8. Infraestrutura Supabase e Banco de Dados | complete | 2026-10-01 | 2026-10-01 |
 | 9. Autenticação e Proteção de Rotas | pending | — | — |
 | 10. Ingestão e Proteção de Pedidos | pending | — | — |
 | 11. Moderação Pastoral | pending | — | — |
 | 12. Integração e APIs do Telão | pending | — | — |
+| 13. Exibição no Telão | pending | — | — |
 
 ## Key Decisions Log
 
@@ -53,10 +55,10 @@ Phase 8: Infraestrutura Supabase e Banco de Dados (Concluída)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 09 (Autenticação e Proteção de Rotas)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-10-01 — Milestone v1.2 started
+Status: Pending
+Last activity: 2026-10-01 — Roadmap para v1.2 criado com sucesso
 
 ## Operator Next Steps
 

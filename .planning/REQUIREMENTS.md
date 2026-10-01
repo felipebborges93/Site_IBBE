@@ -64,11 +64,32 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
+| SUPA-01 | Phase 8 | Complete |
+| SUPA-02 | Phase 8 | Complete |
+| SUPA-03 | Phase 8 | Complete |
+| AUTH-01 | Phase 9 | Pending |
+| AUTH-02 | Phase 9 | Pending |
+| AUTH-03 | Phase 9 | Pending |
+| AUTH-04 | Phase 9 | Pending |
+| PRAY-01 | Phase 10 | Pending |
+| PRAY-02 | Phase 10 | Pending |
+| PRAY-03 | Phase 10 | Pending |
+| PRAY-04 | Phase 10 | Pending |
+| MOD-01 | Phase 11 | Pending |
+| MOD-02 | Phase 11 | Pending |
+| MOD-03 | Phase 11 | Pending |
+| MOD-04 | Phase 11 | Pending |
+| DISP-01 | Phase 12 | Pending |
+| DISP-02 | Phase 12 | Pending |
+| DISP-03 | Phase 12 | Pending |
+| TELA-01 | Phase 13 | Pending |
+| TELA-02 | Phase 13 | Pending |
+| TELA-03 | Phase 13 | Pending |
 
 **Coverage:**
-- v1 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21 ⚠️
+- v1 requirements: 24 total
+- Mapped to phases: 24
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-10-01*  
