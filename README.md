@@ -53,6 +53,11 @@ npm run test:e2e -- --project=chromium
 npx playwright test --ui
 ```
 
+## 🔐 Autenticação e Gestão Administrativa
+
+Para informações sobre o acesso restrito (`/admin`), criação manual da conta de pastor no Supabase e bloqueio de signups públicos, consulte o guia dedicado:
+- [Guia de Provisionamento de Administrador](docs/admin-provisioning.md)
+
 ## 🏗 Estrutura do Projeto
 
 - `src/app`: Rotas e páginas usando o Next.js App Router.
