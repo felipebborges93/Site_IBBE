@@ -28,11 +28,11 @@
 
 ### Wave 1
 
-- [ ] 09-01-PLAN.md — Middleware e Refatoração
+- [x] 09-01-PLAN.md — Middleware e Refatoração
 
 ### Wave 2 *(blocked on Wave 1 completion)*
 
-- [ ] 09-02-PLAN.md — UI de Login e Ações de Servidor
+- [x] 09-02-PLAN.md — UI de Login e Ações de Servidor
 
 ---
 

@@ -1,18 +1,12 @@
 {
   "contract": "1.0.0",
   "flavor": "core",
-  "milestone": "v1.1",
-  "phases": [
-    { "id": 8, "name": "Infraestrutura Supabase e Banco de Dados", "status": "pending" },
-    { "id": 9, "name": "Autenticação e Proteção de Rotas", "status": "pending" },
-    { "id": 10, "name": "Ingestão e Proteção de Pedidos", "status": "pending" },
-    { "id": 11, "name": "Moderação Pastoral", "status": "pending" },
-    { "id": 12, "name": "Integração e APIs do Telão", "status": "pending" }
-  ],
+  "milestone": "v1.2 — Tela de Exibição do Telão",
+  "phases": [],
   "next": {
-    "command": "/gsd-plan-phase 8",
-    "label": "Plan phase 8",
-    "reason": "Roadmap created — plan the first phase of milestone v1.1"
+    "command": "/gsd-progress --next",
+    "label": "Advance to the next step",
+    "reason": "Phase 09 of 5 · 0% · executing"
   },
-  "updated_at": "2026-10-01T03:45:00.000Z"
+  "updated_at": "2026-10-01T12:49:15.308Z"
 }
