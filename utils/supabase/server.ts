@@ -1,7 +1,9 @@
+import 'server-only'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 
-import { env } from '@/lib/env'
+import { env, validateServerSecrets } from '@/lib/env'
 
 export async function createClient() {
   const cookieStore = await cookies()
@@ -38,3 +40,16 @@ export async function createClient() {
     }
   )
 }
+
+export function createAdminClient() {
+  const { SUPABASE_SERVICE_ROLE_KEY } = validateServerSecrets()
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL
+
+  return createSupabaseClient(supabaseUrl, SUPABASE_SERVICE_ROLE_KEY, {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+    },
+  })
+}
+

@@ -1,14 +1,21 @@
-import { createClient } from "@/utils/supabase/server";
+import { createAdminClient } from "@/utils/supabase/server";
+import { validateServerSecrets } from "@/lib/env";
 import { NextResponse } from "next/server";
 
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const authHeader = request.headers.get("Authorization");
-  const expectedToken = process.env.TELAO_API_TOKEN;
+  let secrets: { TELAO_API_TOKEN: string };
+  try {
+    secrets = validateServerSecrets();
+  } catch (err) {
+    console.error("Erro na validação das variáveis do telão:", err);
+    return NextResponse.json({ error: "Configuração do servidor inválida." }, { status: 500 });
+  }
 
-  if (!expectedToken || authHeader !== `Bearer ${expectedToken}`) {
+  const authHeader = request.headers.get("Authorization");
+  if (!authHeader || authHeader !== `Bearer ${secrets.TELAO_API_TOKEN}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -17,15 +24,22 @@ export async function POST(
     return NextResponse.json({ error: "Missing ID" }, { status: 400 });
   }
 
-  const supabase = await createClient();
-  const { error } = await supabase
-    .from("prayer_requests")
-    .update({ displayed: true })
-    .eq("id", id);
+  try {
+    const supabase = createAdminClient();
+    const { error } = await supabase
+      .from("prayer_requests")
+      .update({ displayed: true })
+      .eq("id", id);
 
-  if (error) {
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    if (error) {
+      console.error("Erro ao marcar pedido como exibido:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Erro desconhecido";
+    console.error("Erro inesperado no endpoint /api/prayer-requests/[id]/displayed:", err);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
-
-  return NextResponse.json({ success: true });
 }
