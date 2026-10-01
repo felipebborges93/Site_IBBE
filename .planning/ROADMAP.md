@@ -48,6 +48,16 @@
 
 **Requirements:** PRAY-01, PRAY-02, PRAY-03, PRAY-04
 
+**Plans:** 2 plans
+
+### Wave 1
+
+- [ ] 10-01-PLAN.md — Segurança, Sanitização e Ingestão no Supabase
+
+### Wave 2 *(blocked on Wave 1 completion)*
+
+- [ ] 10-02-PLAN.md — Interface do Formulário de Oração e Verificação E2E
+
 ---
 
 ### Phase 11: Moderação Pastoral
