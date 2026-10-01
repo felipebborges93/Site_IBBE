@@ -13,7 +13,7 @@ export const groups: Group[] = [
   {
     id: "pgm-vila-isabel",
     name: "PGM Família & Esperança",
-    neighborhood: "Vila Isabel",
+    neighborhood: "Vila Izabel",
     meetingDay: "Terça-feira",
     meetingTime: "19:30",
     description: "Reunião para famílias com momentos de partilha sincera, oração e espaço lúdico para as crianças.",

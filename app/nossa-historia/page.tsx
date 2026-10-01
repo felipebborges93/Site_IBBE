@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Calendar, Sparkle, UserCheck } from "@
 export const metadata: Metadata = {
   title: "Nossa História | Igreja Batista Bethel em Resende",
   description:
-    "Conheça a trajetória da IBBE desde a fundação em 2000 por 28 pioneiros e a histórica construção da Capela dos 5 Dias em Vila Isabel, Resende - RJ.",
+    "Conheça a trajetória da IBBE desde a fundação em 2000 por 28 pioneiros e a histórica construção da Capela dos 5 Dias em Vila Izabel, Resende - RJ.",
   openGraph: {
     title: "Nossa História | Igreja Batista Bethel em Resende",
     description:
@@ -87,7 +87,7 @@ export default function NossaHistoriaPage() {
             <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-md bg-white">
               <div className="relative w-full h-80">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE"
+                  src="/images/culto_2.jpg"
                   alt="Comunhão da Igreja Batista Bethel"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -95,7 +95,7 @@ export default function NossaHistoriaPage() {
                 />
               </div>
               <div className="p-4 bg-white text-xs text-marinho/70 border-t border-marinho/10">
-                A capela de Vila Isabel: um testemunho vivo construído pela união e perseverança da comunidade.
+                A capela de Vila Izabel: um testemunho vivo construído pela união e perseverança da comunidade.
               </div>
             </div>
           </div>

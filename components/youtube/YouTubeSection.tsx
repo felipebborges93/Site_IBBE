@@ -18,7 +18,7 @@ export async function YouTubeSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs font-bold text-cobalto uppercase tracking-widest">
-                03 / Mensagens e Transmissões
+                02 / Mensagens e Transmissões
               </span>
               {isLiveNow && (
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-verde text-white text-micro font-extrabold uppercase animate-pulse motion-reduce:animate-none">

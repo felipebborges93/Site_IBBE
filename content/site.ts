@@ -38,12 +38,12 @@ export const siteConfig: SiteConfig = {
   },
   foundationDate: "28/10/2000",
   location: {
-    address: "Rua das Acácias, 120",
-    neighborhood: "Vila Isabel",
+    address: "R. Treze",
+    neighborhood: "Vila Izabel",
     city: "Resende",
     state: "RJ",
-    cep: "27511-000",
-    googleMapsUrl: "https://maps.google.com/?q=Rua+das+Acacias+120+Vila+Isabel+Resende+RJ",
+    cep: "27525-544",
+    googleMapsUrl: "https://maps.google.com/?q=R.+Treze,+Vila+Izabel,+Resende+-+RJ,+27525-544",
   },
   contact: {
     phone: "(24) 99876-5432",
@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
   },
   social: {
     instagram: "https://instagram.com/ibberesende",
-    youtube: "https://youtube.com/@ibberesende",
+    youtube: "https://www.youtube.com/@IgrejaBatistaBethelemResende",
     facebook: "https://facebook.com/ibberesende",
   },
 };

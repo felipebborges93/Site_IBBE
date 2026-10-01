@@ -3,7 +3,7 @@ import { siteConfig } from "@/content/site";
 import { AddressActions } from "./AddressActions";
 
 export function LocationSection() {
-  const fullAddress = `${siteConfig.location.address}, Vila Isabel, ${siteConfig.location.city} - ${siteConfig.location.state}, CEP ${siteConfig.location.cep}`;
+  const fullAddress = `${siteConfig.location.address}, ${siteConfig.location.neighborhood}, ${siteConfig.location.city} - ${siteConfig.location.state}, CEP ${siteConfig.location.cep}`;
 
   return (
     <section id="contato" className="py-20 lg:py-24 bg-gelo-light border-y border-marinho/10 scroll-mt-20">
@@ -12,7 +12,7 @@ export function LocationSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>
             <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
-              10 / Onde Estamos
+              09 / Onde Estamos
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-marinho tracking-tight">
               Venha nos{" "}
@@ -22,7 +22,7 @@ export function LocationSection() {
             </h2>
           </div>
           <p className="text-marinho/70 text-sm max-w-sm leading-relaxed">
-            No coração de Vila Isabel, com acesso rápido para toda a região de Resende.
+            No coração de Vila Izabel, com acesso rápido para toda a região de Resende.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export function LocationSection() {
               className="w-full h-full min-h-[420px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa da Igreja Batista Bethel em Vila Isabel Resende"
+              title="Mapa da Igreja Batista Bethel em Vila Izabel Resende"
               allowFullScreen
             />
           </div>
@@ -67,9 +67,11 @@ export function LocationSection() {
                 Horário das Celebrações
               </span>
               <p className="text-sm text-marinho/80 leading-relaxed">
-                Domingos: 09h00 (EBD) e 19h00 (Família)
+                Domingos: 08h30 (Manhã), 10h (EBD) e 18h (Noite)
                 <br />
-                Quintas: 19h30 (Oração e Estudo)
+                Quintas: 19h30 (Bethel Kids)
+                <br />
+                Durante a semana: Pequenos Grupos (PGMs)
               </p>
             </div>
 

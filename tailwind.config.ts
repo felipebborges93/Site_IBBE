@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         marinho: "#122035",
-        cobalto: "#1765C2",
+        cobalto: "#1D75DD",
         ceu: "#48A4FF",
         gelo: "#D7E9F4",
         "gelo-light": "#F4F9FD",

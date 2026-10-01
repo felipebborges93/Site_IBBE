@@ -24,40 +24,40 @@ export default async function Home() {
       {/* Divisor Onda para Gelo */}
       <SectionDivider variant="wave" to="gelo" />
 
-      {/* 2. Cultos e EBD com Destaque Dinâmico (#cultos) */}
+      {/* 01. Cultos e EBD com Destaque Dinâmico (#cultos) */}
       <ServicesSection />
 
       {/* Divisor Diagonal para Branco */}
       <SectionDivider variant="diagonal" to="white" />
 
-      {/* 3. Transmissões e Últimas Mensagens do YouTube (#lives) */}
+      {/* 02. Transmissões e Últimas Mensagens do YouTube (#lives) */}
       <YouTubeSection />
 
       {/* Divisor Arc para Gelo */}
       <SectionDivider variant="arc" to="gelo" />
 
-      {/* 3. Nossa História (#historia) */}
+      {/* 03. Nossa História (#historia) */}
       <HistorySection />
 
       {/* Divisor Arc para Gelo */}
       <SectionDivider variant="arc" to="gelo" />
 
-      {/* 4. Próximos Encontros / Eventos (#eventos) */}
+      {/* 04. Próximos Encontros / Eventos (#eventos) */}
       <EventsSection />
 
       {/* Divisor Diagonal para Branco */}
       <SectionDivider variant="diagonal" to="white" />
 
-      {/* 5. Pequenos Grupos nos Lares / PGMs (#grupos) */}
+      {/* 05. Pequenos Grupos nos Lares / PGMs (#grupos) */}
       <GroupsSection />
 
       {/* Divisor Wave para Gelo */}
       <SectionDivider variant="wave" to="gelo" />
 
-      {/* 6. Nossos Ministérios (#ministerios) */}
+      {/* 06. Nossos Ministérios (#ministerios) */}
       <MinistriesSection />
 
-      {/* 7. Amor em Ação / Ação Social (#acao-social) em bloco escuro contrastante */}
+      {/* 07. Amor em Ação / Ação Social (#acao-social) em bloco escuro contrastante */}
       <SocialActionSection />
 
       {/* Divisor Diagonal para Gelo */}
@@ -69,13 +69,13 @@ export default async function Home() {
       {/* Divisor Arc para Branco */}
       <SectionDivider variant="arc" to="white" />
 
-      {/* 8. Planeje sua Visita e FAQ Interativo (#visita) */}
+      {/* 08. Planeje sua Visita e FAQ Interativo (#visita) */}
       <VisitSection />
 
       {/* Divisor Arc para Gelo */}
       <SectionDivider variant="arc" to="gelo" />
 
-      {/* 9. Localização e Contato (#contato) */}
+      {/* 09. Localização e Contato (#contato) */}
       <LocationSection />
 
       {/* 10. Chave PIX e Contribuição (#contribuir) */}

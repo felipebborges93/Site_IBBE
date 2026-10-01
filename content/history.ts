@@ -38,15 +38,15 @@ export const historyData: HistoryData = {
     reference: "Jeremias 29:11",
   },
   foundationText:
-    "A Igreja Batista Bethel em Resende nasceu em 28 de outubro de 2000, fruto de uma semente de amor e fé plantada por 28 irmãos no bairro Toyota. Sob a liderança do Pr. Paulo de Souza Neto e em comunhão com a PIB de Engenheiro Passos, a congregação foi emancipada para glorificar a Deus na região das Agulhas Negras.",
+    "A Igreja Batista Bethel em Resende nasceu em 28 de outubro de 2000, desenvolvendo-se pela instrumentalidade de 28 irmãos corajosos. Tudo começou com a preocupação de expandir o evangelho e alcançar o coração das crianças da periferia da cidade, especificamente na rua B do bairro Toyota, que se tornaria a sede provisória da nossa igreja.",
   capelaText:
-    "Em 2003, através de um verdadeiro milagre de união, dedicação e graça divina, os irmãos adquiriram o terreno na Rua das Acácias, Vila Isabel. Em um mutirão histórico de apenas 5 dias, a capela inicial foi erguida e inaugurada com louvores e lágrimas de gratidão em 7 de novembro de 2003.",
+    "Três anos depois (2003), com o apoio de missionários americanos, um pequeno grupo de irmãos se deslocou ousadamente para um grande terreno no emergente bairro Vila Izabel. Ali construímos em apenas 5 dias a nossa atual capela, sendo o culto de inauguração na noite de 07 de novembro de 2003. Aos poucos, construíamos nossa identidade como 'Igrejinha do cantão'.",
   pastors: [
     {
       name: "Pr. Paulo de Souza Neto",
       role: "Pastor Fundador",
       period: "2000 - 2004",
-      note: "Pioneiro da fundação no bairro Toyota e da conquista do templo em Vila Isabel.",
+      note: "Pioneiro da fundação no bairro Toyota e da conquista do templo em Vila Izabel.",
     },
     {
       name: "Pr. João Carlos Franco",
@@ -70,7 +70,7 @@ export const historyData: HistoryData = {
     {
       year: "2003",
       title: "A Capela dos 5 Dias",
-      description: "Mudança para Vila Isabel e construção milagrosa do templo em um mutirão de fé coletivo.",
+      description: "Mudança para Vila Izabel e construção milagrosa do templo em um mutirão de fé coletivo.",
     },
     {
       year: "2020",

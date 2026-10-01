@@ -8,8 +8,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-marinho text-white pt-20 pb-12 border-t border-marinho/20">
-      <Container size="lg">
+    <footer className="bg-marinho text-white pt-20 pb-12 border-t border-marinho/20 relative overflow-hidden">
+      {/* Texture Pattern Background */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+        style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+      />
+      
+      <Container size="lg" className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Coluna 1: Identidade e Redes */}
           <div className="flex flex-col gap-4">
@@ -100,16 +106,24 @@ export function Footer() {
             </h4>
             <div className="space-y-3 text-sm text-gelo/80">
               <div>
-                <p className="font-semibold text-white">Domingo às 09:00</p>
+                <p className="font-semibold text-white">Domingo às 08:30</p>
+                <p className="text-xs text-gelo/60">Culto da Manhã</p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Domingo às 10:00</p>
                 <p className="text-xs text-gelo/60">Escola Bíblica Dominical (EBD)</p>
               </div>
               <div>
-                <p className="font-semibold text-white">Domingo às 19:00</p>
-                <p className="text-xs text-gelo/60">Culto de Celebração</p>
+                <p className="font-semibold text-white">Domingo às 18:00</p>
+                <p className="text-xs text-gelo/60">Culto da Noite</p>
               </div>
               <div>
                 <p className="font-semibold text-white">Quinta-feira às 19:30</p>
-                <p className="text-xs text-gelo/60">Culto de Oração e Doutrina</p>
+                <p className="text-xs text-gelo/60">Bethel Kids</p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Durante a semana</p>
+                <p className="text-xs text-gelo/60">Pequenos Grupos (PGMs)</p>
               </div>
               <div className="pt-2">
                 <span className="inline-block px-3 py-1 bg-verde/20 text-verde rounded-full text-xs font-semibold">

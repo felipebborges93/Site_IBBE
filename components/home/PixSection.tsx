@@ -14,7 +14,7 @@ export function PixSection() {
           </span>
           <h3 className="text-2xl font-bold text-marinho">Dízimos e Ofertas com alegria</h3>
           <p className="text-xs sm:text-sm text-marinho/70 mt-2 leading-relaxed">
-            Seus recursos mantêm as portas da capela abertas em Vila Isabel e abastecem mensalmente as cestas de alimentos
+            Seus recursos mantêm as portas da capela abertas em Vila Izabel e abastecem mensalmente as cestas de alimentos
             distribuídas às famílias da comunidade.
           </p>
         </div>

@@ -5,8 +5,14 @@ import PrayerForm from "@/app/(public)/oracao/PrayerForm";
 
 export function PrayerSection() {
   return (
-    <section id="oracao" className="py-20 bg-gelo scroll-mt-20">
-      <Container size="md">
+    <section id="oracao" className="py-20 bg-gelo scroll-mt-20 relative overflow-hidden">
+      {/* Texture Pattern Background */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-multiply"
+        style={{ backgroundImage: "url('/images/patterns/pattern-10.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+      />
+      
+      <Container size="md" className="relative z-10">
         <SectionTitle
           highlight="Orar"
           subtitle="Compartilhe sua necessidade ou motivo de agradecimento. Nossa equipe de intercessão estará orando por você com sigilo e carinho."

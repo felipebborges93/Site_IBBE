@@ -18,7 +18,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "estacionamento",
     question: "A igreja possui estacionamento ou local para parar?",
-    answer: "A Rua das Acácias é calma e residencial, permitindo estacionamento tranquilo e seguro em frente e nas proximidades do templo.",
+    answer: "A R. Treze é calma e residencial, permitindo estacionamento tranquilo e seguro em frente e nas proximidades do templo.",
   },
   {
     id: "visita",

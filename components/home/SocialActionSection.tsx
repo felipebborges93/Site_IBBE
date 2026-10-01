@@ -9,22 +9,28 @@ export function SocialActionSection() {
   const waLink = `https://wa.me/${whatsappPhone}?text=${encodedMsg}`;
 
   return (
-    <section id="acao-social" className="py-20 lg:py-24 bg-marinho text-white scroll-mt-20">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+    <section id="acao-social" className="py-20 lg:py-24 bg-marinho text-white scroll-mt-20 relative overflow-hidden">
+      {/* Texture Pattern Background */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+        style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+      />
+      
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Retrato Real Pai e Filha com Cantos Arredondados */}
           <div className="lg:col-span-5">
             <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[440px] sm:h-[500px]">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcTjw0MLVBf0qtsRCk-CXog-l6nZDns2DI2LLFkCVN1-rs51PkyyjCZgwxfrDTguvWggwgAr-j9EicpoV4QpRviB1ISosIanNBeFKajy8ZTtNV0rKkTGTQKxXQ7Mj1dKNHmkVhtHQxABGthX_6bQi2qsX6el5z_mZSs4TLJAr0psbab4263uk8oMJ1a9GBH52FJPxX6vgNHjcC_kkxY0RbfPx_HlLa9QHkXasFlP8wILxTyr-xEGk"
-                alt="Pai e filha sorrindo na comunidade em Resende"
+                src="/images/acao_social.jpg"
+                alt="Ação Social na comunidade em Resende"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover"
               />
             </div>
             <p className="text-xs text-white/60 mt-3 text-center">
-              Ação solidária contínua junto às famílias do bairro Vila Isabel
+              Ação solidária contínua junto às famílias do bairro Vila Izabel
             </p>
           </div>
 
@@ -44,7 +50,7 @@ export function SocialActionSection() {
             </div>
 
             <p className="text-base sm:text-lg text-white/80 leading-relaxed font-normal">
-              Nosso ministério de ação social atende mensalmente famílias em vulnerabilidade em Vila Isabel e bairros
+              Nosso ministério de ação social atende mensalmente famílias em vulnerabilidade em Vila Izabel e bairros
               vizinhos em Resende, entregando alimentos, dignidade, respeito e acompanhamento fraterno sem qualquer
               contrapartida.
             </p>

@@ -30,13 +30,13 @@ export function calculateNextService(
   // Fallback defensivo padrão
   const defaultFallback: NextServiceResult = {
     service: {
-      id: "celebracao",
-      title: "Culto de Celebração",
+      id: "culto-manha",
+      title: "Culto da Manhã",
       day: "Domingo",
-      time: "19:00",
-      description: "Nosso encontro congregacional com louvor e palavra.",
+      time: "08:30",
+      description: "Nosso encontro congregacional com louvor, adoração e ministração expositiva da Palavra pela manhã.",
     },
-    formattedDate: "Domingo às 19:00",
+    formattedDate: "Domingo às 08:30",
     isToday: false,
   };
 

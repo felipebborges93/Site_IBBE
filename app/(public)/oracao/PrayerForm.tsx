@@ -1,8 +1,8 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { submitPrayerRequest } from "@/app/actions/prayer";
-import { useState } from "react";
+import { useState, useActionState } from "react";
 import { Button } from "@/components/ui/Button";
 
 function SubmitButton() {
@@ -15,7 +15,7 @@ function SubmitButton() {
 }
 
 export default function PrayerForm() {
-  const [state, formAction] = useFormState(submitPrayerRequest, null);
+  const [state, formAction] = useActionState(submitPrayerRequest, null);
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [requestText, setRequestText] = useState("");
 

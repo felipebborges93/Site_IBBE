@@ -8,7 +8,7 @@ export function VisitSection() {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-marinho/15 pb-8 gap-4">
         <div>
           <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
-            09 / Primeira Vez Conosco
+            08 / Primeira Vez Conosco
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-marinho tracking-tight">
             Planeje sua{" "}

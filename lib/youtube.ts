@@ -15,7 +15,7 @@ export interface YouTubeResponse {
   source: "api" | "rss" | "fallback";
 }
 
-const DEFAULT_CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID || "UC-ibberesende-placeholder";
+const DEFAULT_CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID || "UCoovhcjnprUTLNljABnwVeQ";
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
 /**
@@ -28,7 +28,7 @@ export const FALLBACK_VIDEOS: YouTubeVideo[] = [
     description: "Assista à nossa última transmissão ao vivo na Igreja Batista Bethel em Resende.",
     publishedAt: new Date().toISOString(),
     thumbnailUrl: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://youtube.com/@ibberesende",
+    videoUrl: "https://www.youtube.com/@IgrejaBatistaBethelemResende",
     isLive: false,
   },
   {
@@ -37,7 +37,7 @@ export const FALLBACK_VIDEOS: YouTubeVideo[] = [
     description: "Estudo bíblico e comunhão para todas as idades.",
     publishedAt: new Date(Date.now() - 86400000 * 7).toISOString(),
     thumbnailUrl: "https://images.unsplash.com/photo-1544427920-c49ccfb85579?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://youtube.com/@ibberesende",
+    videoUrl: "https://www.youtube.com/@IgrejaBatistaBethelemResende",
     isLive: false,
   },
   {
@@ -46,7 +46,7 @@ export const FALLBACK_VIDEOS: YouTubeVideo[] = [
     description: "Momentos de oração pelos lares, enfermos e pedidos da igreja.",
     publishedAt: new Date(Date.now() - 86400000 * 10).toISOString(),
     thumbnailUrl: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://youtube.com/@ibberesende",
+    videoUrl: "https://www.youtube.com/@IgrejaBatistaBethelemResende",
     isLive: false,
   },
   {
@@ -55,7 +55,7 @@ export const FALLBACK_VIDEOS: YouTubeVideo[] = [
     description: "Acompanhe a reflexão da Palavra de Deus compartilhada no último domingo.",
     publishedAt: new Date(Date.now() - 86400000 * 14).toISOString(),
     thumbnailUrl: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://youtube.com/@ibberesende",
+    videoUrl: "https://www.youtube.com/@IgrejaBatistaBethelemResende",
     isLive: false,
   },
 ];

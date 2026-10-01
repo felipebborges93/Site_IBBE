@@ -4,6 +4,8 @@ import { Service } from "@/content/services";
 import { calculateNextService } from "@/lib/utils/services";
 import { Container } from "@/components/ui/Container";
 
+import { siteConfig } from "@/content/site";
+
 export interface NextServiceBarProps {
   services: Service[];
 }
@@ -29,7 +31,7 @@ export function NextServiceBar({ services }: NextServiceBarProps) {
           {/* Lado Direito: Endereço e Link de horários */}
           <div className="flex items-center gap-6">
             <span className="hidden md:inline text-marinho/70">
-              Rua das Acácias, 120 – Vila Isabel
+              {siteConfig.location.address} – {siteConfig.location.neighborhood}
             </span>
                           <Link
                 href="#cultos"

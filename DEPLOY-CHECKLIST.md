@@ -11,13 +11,13 @@ Este documento descreve os passos necessários para configurar o ambiente de pro
 - [ ] Copiar `SUPABASE_SERVICE_ROLE_KEY` (se aplicável para rotas seguras de API).
 
 ## 2. YouTube Data API v3
-- [ ] Acessar [Google Cloud Console](https://console.cloud.google.com/).
-- [ ] Criar um novo projeto.
-- [ ] Habilitar a **YouTube Data API v3**.
-- [ ] Criar credencial de **Chave de API**.
-- [ ] **Segurança da Chave:** Restringir a chave para o domínio de produção (se chamada pelo frontend) ou ocultá-la no backend/Vercel (se chamada só no server-side).
-- [ ] Obter o Channel ID do YouTube da Igreja.
-- [ ] Inserir `YOUTUBE_API_KEY` e `YOUTUBE_CHANNEL_ID` nas variáveis da Vercel.
+- [x] Acessar [Google Cloud Console](https://console.cloud.google.com/).
+- [x] Criar um novo projeto.
+- [x] Habilitar a **YouTube Data API v3**.
+- [x] Criar credencial de **Chave de API**.
+- [x] **Segurança da Chave:** Restringir a chave para o domínio de produção (se chamada pelo frontend) ou ocultá-la no backend/Vercel (se chamada só no server-side).
+- [x] Obter o Channel ID do YouTube da Igreja.
+- [x] Inserir `YOUTUBE_API_KEY` e `YOUTUBE_CHANNEL_ID` nas variáveis da Vercel.
 
 ## 3. Vercel KV (Redis)
 - [ ] Acessar painel do projeto na Vercel.

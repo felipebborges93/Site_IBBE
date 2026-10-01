@@ -13,7 +13,7 @@ export function ServicesSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>
             <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
-              02 / Encontros Semanais
+              01 / Encontros Semanais
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-marinho tracking-tight">
               Cultos e{" "}
@@ -37,20 +37,32 @@ export function ServicesSection() {
             let scheduleBadge = item.time;
             let note = "Entrada livre • Todos bem-vindos";
             let modality = "Presencial";
-            let timeRange = `${item.time} às ${item.id === "ebd" ? "10h15" : item.id === "celebracao" ? "20h30" : "20h45"}`;
-
-            if (item.id === "celebracao") {
-              scheduleBadge = "Domingo Noite";
-              note = "Ministério Infantil (Bethel Kids) ativo";
-              modality = "Presencial & Live";
-            } else if (item.id === "ebd") {
+            let timeRange = "";
+            if (item.id === "culto-manha") {
               scheduleBadge = "Domingo Manhã";
-              note = "Café com pão compartilhado a partir das 08h30";
+              note = "Entrada livre • Todos bem-vindos";
+              modality = "Presencial & Live";
+              timeRange = "08:30 às 10:00";
+            } else if (item.id === "ebd") {
+              scheduleBadge = "Domingo";
+              note = "Classes para todas as idades";
               modality = "Presencial";
-            } else if (item.id === "oracao") {
+              timeRange = "10:00 às 11:00";
+            } else if (item.id === "culto-noite") {
+              scheduleBadge = "Domingo Noite";
+              note = "Entrada livre • Todos bem-vindos";
+              modality = "Presencial & Live";
+              timeRange = "18:00 às 19:30";
+            } else if (item.id === "bethel-kids") {
               scheduleBadge = "Quinta-feira Noite";
-              note = "Momento de oração por pedidos pessoais";
+              note = "Ministério Infantil na Igreja";
               modality = "Presencial";
+              timeRange = "19:30 às 21:00";
+            } else if (item.id === "pgm") {
+              scheduleBadge = "Durante a semana";
+              note = "Nos lares";
+              modality = "Presencial";
+              timeRange = "Vários horários";
             }
 
             return (

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { X, ArrowRight } from "@phosphor-icons/react";
 import { Logo } from "./Logo";
+import { siteConfig } from "@/content/site";
 
 export interface MobileDrawerProps {
   isOpen: boolean;
@@ -65,10 +66,10 @@ export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
 
   const navLinks = [
     { label: "Início", href: "#inicio", id: "inicio" },
-    { label: "Nossa história", href: "#historia", id: "historia" },
     { label: "Cultos", href: "#cultos", id: "cultos" },
-    { label: "Eventos", href: "#eventos", id: "eventos" },
     { label: "Lives", href: "#lives", id: "lives" },
+    { label: "Nossa história", href: "#historia", id: "historia" },
+    { label: "Eventos", href: "#eventos", id: "eventos" },
     { label: "PGMs", href: "#grupos", id: "grupos" },
     { label: "Ministérios", href: "#ministerios", id: "ministerios" },
     { label: "Ação Social", href: "#acao-social", id: "acao-social" },
@@ -139,9 +140,9 @@ export function MobileDrawer({ isOpen, onClose, activeId }: MobileDrawerProps) {
         {/* Rodapé do Drawer: Endereço resumido e CTA Visitar */}
         <div className="px-6 py-6 border-t border-white/10 bg-marinho space-y-4">
           <div className="text-xs text-white/60 space-y-0.5">
-            <p className="font-semibold text-white/80">Igreja Batista Bethel</p>
-            <p>Rua das Acácias, 120 — Vila Isabel</p>
-            <p>Resende - RJ</p>
+            <p className="font-semibold text-white/80">{siteConfig.shortName}</p>
+            <p>{siteConfig.location.address} — {siteConfig.location.neighborhood}</p>
+            <p>{siteConfig.location.city} - {siteConfig.location.state}</p>
           </div>
           <Link
             href="#visita"

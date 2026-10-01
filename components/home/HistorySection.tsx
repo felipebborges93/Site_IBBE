@@ -11,7 +11,7 @@ export function HistorySection() {
       <div className="border-b border-marinho/15 pb-8 mb-14 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
-            01 / Origem &amp; Caminhada
+            03 / Origem &amp; Caminhada
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-marinho tracking-tight">
             Uma história de{" "}
@@ -41,7 +41,7 @@ export function HistorySection() {
 
           <p>
             Em <strong>7 de novembro de 2003</strong>, com mutirão solidário dos próprios membros, tijolo por tijolo,
-            erguemos em apenas 5 dias corridos a nossa capela em Vila Isabel — batizada carinhosamente por todos de{" "}
+            erguemos em apenas 5 dias corridos a nossa capela em Vila Izabel — batizada carinhosamente por todos de{" "}
             <em>&quot;Igrejinha do Cantão&quot;</em>. Desde esse dia, este solo é um porto seguro para quem procura descanso e
             recomeço.
           </p>
@@ -94,7 +94,7 @@ export function HistorySection() {
         <div className="lg:col-span-6 space-y-4">
           <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light relative w-full h-[380px] sm:h-[440px]">
             <Image
-              src="https://lh3.googleusercontent.com/aida/AEtjO1VSGtMBUe7IfJXHWFl_Mow4VMJKqrNgmxT1WKKx9dukdEOgB7sBsohq1QpW7ihIX6i5f1xBq233G_MKoGhgLPZ6qY26peMK0oIo_tdIN5HtYmoeFQQBYDQ_9St3ZOvAzDpBR3VETMKbOnlc7DyXYIvy-TOfWFbRYQCMAok8lrvz5K8G-WJNBnXSEJunLk1GDVkqAMjRoHwVr9e9-8TBVJA8JzYfEECkCz1nTgVWWYbxTUflFky1nOrAeYE"
+              src="/images/culto_3.jpg"
               alt="Comunidade acolhedora da Igreja Batista Bethel reunida em Resende"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -102,7 +102,7 @@ export function HistorySection() {
             />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-marinho/60 px-1 gap-1">
-            <span>Encontro comunitário no pátio da capela em Vila Isabel</span>
+            <span>Encontro comunitário no pátio da capela em Vila Izabel</span>
             <span>Resende • RJ</span>
           </div>
         </div>
