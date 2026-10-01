@@ -34,7 +34,7 @@ export const ministries: Ministry[] = [
   },
   {
     id: "acao-social",
-    name: "Ação Social Vila Izabel",
+    name: "Ação Social Vila Isabel",
     description: "Assistência emergencial, distribuição de cestas e suporte humanitário a quem mais necessita na cidade.",
   },
   {

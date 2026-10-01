@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { historyData } from "@/content/history";
 import { BookOpen } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -64,20 +63,21 @@ export function HistorySection() {
           </div>
         </FadeIn>
 
-        {/* Coluna Fotografia Humanizada */}
+        {/* Coluna Vídeo Institucional */}
         <FadeIn delay={0.2} className="lg:col-span-6 space-y-4">
-          <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light relative w-full h-[280px] sm:h-[420px] lg:h-[480px]">
-            <Image
-              src="/images/culto_3.jpg"
-              alt="Comunidade acolhedora da Igreja Batista Bethel reunida em Resende"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+          <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-marinho relative w-full aspect-video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/WIMS_qEPMbA?rel=0"
+              title="Vídeo comemorativo da história da Igreja Batista Bethel"
+              className="absolute inset-0 w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
             />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-marinho/60 px-1 gap-1">
-            <span>Encontro comunitário na capela em Vila Izabel</span>
-            <span>Resende • RJ</span>
+            <span>Registro da nossa história e caminhada de fé</span>
+            <span>Igreja Batista Bethel • Resende - RJ</span>
           </div>
         </FadeIn>
       </div>

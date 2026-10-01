@@ -45,7 +45,7 @@ export const historyData: HistoryData = {
   foundationText:
     "Somos a Igreja Batista Bethel, organizada em Resende desde 28 de outubro de 2000. Nosso trabalho começou no coração de Deus e ganhou forma pelas mãos de 28 irmãos corajosos, com o desejo de levar o evangelho às crianças da periferia, na rua B do bairro Toyota, nossa primeira sede.",
   capelaText:
-    'Três anos depois, com o apoio de missionários americanos, nos mudamos para um grande terreno na Vila Isabel. Ali construímos, em apenas cinco dias, a capela onde estamos até hoje, inaugurada em 7 de novembro de 2003 com a celebração do primeiro casamento. Nascia a nossa querida "Igrejinha do Cantão".',
+    'Três anos depois, com o apoio de missionários americanos, nos mudamos para um grande terreno na Vila Isabel. Ali construímos, em apenas cinco dias, a igreja onde estamos até hoje, inaugurada em 7 de novembro de 2003 com a celebração do primeiro casamento. Nascia a nossa querida "Igrejinha do Cantão".',
   middleText:
     "Desde então, vimos os batismos acontecerem, novos membros chegarem e novos ministérios surgirem, sempre contemplando a mão do Senhor Jesus agindo em nosso meio.",
   missionsText:
@@ -57,7 +57,7 @@ export const historyData: HistoryData = {
       name: "Pr. Paulo de Souza Neto",
       role: "Pastor Fundador",
       period: "2000 - 2004",
-      note: "Pioneiro da fundação no bairro Toyota e da conquista do templo em Vila Izabel.",
+      note: "Pioneiro da fundação no bairro Toyota e da conquista do templo em Vila Isabel.",
     },
     {
       name: "Pr. João Carlos Franco",
@@ -74,8 +74,8 @@ export const historyData: HistoryData = {
     },
     {
       year: "2003",
-      title: "A Capela dos 5 Dias",
-      description: "Mudança para a Vila Isabel e construção da capela histórica em mutirão solidário.",
+      title: "A Igreja dos 5 Dias",
+      description: "Mudança para a Vila Isabel e construção da igreja histórica em mutirão solidário.",
     },
   ],
 };

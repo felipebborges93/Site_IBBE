@@ -40,7 +40,7 @@ export function PixSection() {
                 </div>
 
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed font-normal">
-                  Cada contribuição é um ato voluntário de gratidão e compromisso cristão. Seus recursos mantêm a capela acolhedora de portas abertas em Vila Izabel e financiam diretamente o atendimento às famílias necessitadas.
+                  Cada contribuição é um ato voluntário de gratidão e compromisso cristão. Seus recursos mantêm a igreja acolhedora de portas abertas em Vila Isabel e financiam diretamente o atendimento às famílias necessitadas.
                 </p>
 
                 {/* 3 Pilares Transparentes de Destinação */}
@@ -69,7 +69,7 @@ export function PixSection() {
                     <div className="w-8 h-8 rounded-lg bg-cobalto/30 flex items-center justify-center text-ceu mb-2">
                       <ShieldCheck aria-hidden="true" className="w-4 h-4" weight="bold" />
                     </div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Capela Viva</h4>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Igreja Viva</h4>
                     <p className="text-micro text-white/70 leading-relaxed">
                       Manutenção, cultos presenciais e infraestrutura aberta a todos.
                     </p>

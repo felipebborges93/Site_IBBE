@@ -81,7 +81,7 @@ export function SocialActionSection() {
                 </div>
                 <h4 className="text-lg font-bold text-white mb-1">Distribuição de Cestas Básicas</h4>
                 <p className="text-xs text-white/75 leading-relaxed">
-                  Assistência contínua a famílias em vulnerabilidade em Vila Izabel e bairros vizinhos de Resende, levando alimento à mesa e suporte fraterno.
+                  Assistência contínua a famílias em vulnerabilidade em Vila Isabel e bairros vizinhos de Resende, levando alimento à mesa e suporte fraterno.
                 </p>
               </FadeInItem>
 
@@ -118,27 +118,6 @@ export function SocialActionSection() {
                 </p>
               </FadeInItem>
             </FadeInStagger>
-
-            {/* Detalhamento expandido dos Embaixadores do Rei */}
-            <FadeIn delay={0.2} className="p-6 rounded-2xl bg-white/5 border border-white/10 text-xs sm:text-sm text-white/80 space-y-3">
-              <h5 className="font-bold text-ceu text-sm uppercase tracking-wider">
-                Embaixadores do Rei — Objetivos e Pilares
-              </h5>
-              <ul className="space-y-2 text-xs leading-relaxed text-white/75">
-                <li>
-                  <strong className="text-white">• Desenvolvimento integral:</strong> Crescimento físico, moral e espiritual de cada participante.
-                </li>
-                <li>
-                  <strong className="text-white">• Pilares de atuação:</strong> Estudo bíblico, oração, missões, mordomia e serviço cristão.
-                </li>
-                <li>
-                  <strong className="text-white">• Atividades práticas:</strong> Reuniões regulares, acampamentos, prática esportiva, gincanas e projetos comunitários.
-                </li>
-                <li>
-                  <strong className="text-white">• Significado:</strong> Representar Jesus Cristo na Terra com honra e fidelidade (baseado em 2 Coríntios 5:20).
-                </li>
-              </ul>
-            </FadeIn>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Calendar, Sparkle, UserCheck } from "@
 export const metadata: Metadata = {
   title: "Nossa História | Igreja Batista Bethel em Resende",
   description:
-    "Conheça a trajetória da IBBE desde a fundação em 2000 por 28 pioneiros e a histórica construção da Capela dos 5 Dias em Vila Izabel, Resende - RJ.",
+    "Conheça a trajetória da IBBE desde a fundação em 2000 por 28 pioneiros e a histórica construção da Igreja dos 5 Dias em Vila Isabel, Resende - RJ.",
   openGraph: {
     title: "Nossa História | Igreja Batista Bethel em Resende",
     description:
@@ -95,7 +95,7 @@ export default function NossaHistoriaPage() {
                 />
               </div>
               <div className="p-4 bg-white text-xs text-marinho/70 border-t border-marinho/10">
-                A capela de Vila Izabel: um testemunho vivo construído pela união e perseverança da comunidade.
+                A igreja de Vila Isabel: um testemunho vivo construído pela união e perseverança da comunidade.
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ export function LocationSection() {
               </h2>
             </div>
             <p className="text-marinho/70 text-sm max-w-sm leading-relaxed">
-              No coração de Vila Izabel, com acesso rápido para toda a região de Resende.
+              No coração de Vila Isabel, com acesso rápido para toda a região de Resende.
             </p>
           </div>
         </FadeIn>
@@ -37,7 +37,7 @@ export function LocationSection() {
               className="w-full h-full min-h-[320px] sm:min-h-[420px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa da Igreja Batista Bethel em Vila Izabel Resende"
+              title="Mapa da Igreja Batista Bethel em Vila Isabel Resende"
               allowFullScreen
             />
           </FadeIn>
@@ -46,7 +46,7 @@ export function LocationSection() {
           <FadeIn delay={0.2} className="lg:col-span-5 space-y-8">
             <div className="border-b border-marinho/15 pb-6">
               <span className="text-xs uppercase tracking-wider font-semibold text-marinho/60 block mb-1">
-                Endereço da capela
+                Endereço da igreja
               </span>
               <h3 className="text-2xl font-bold text-marinho">{siteConfig.name}</h3>
               <p className="text-sm text-marinho/80 mt-2 leading-relaxed">

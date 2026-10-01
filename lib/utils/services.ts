@@ -45,9 +45,28 @@ export function calculateNextService(
   }
 
   try {
-    const currentDay = now.getDay(); // 0 a 6
-    const currentHours = now.getHours();
-    const currentMinutes = now.getMinutes();
+    // Obter data e hora no fuso horário oficial da igreja (Horário de Brasília)
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Sao_Paulo",
+      weekday: "short",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false,
+    });
+    const parts = formatter.formatToParts(now);
+    const dayNameMap: Record<string, number> = {
+      Sun: 0,
+      Mon: 1,
+      Tue: 2,
+      Wed: 3,
+      Thu: 4,
+      Fri: 5,
+      Sat: 6,
+    };
+    const weekdayStr = parts.find((p) => p.type === "weekday")?.value || "Sun";
+    const currentDay = dayNameMap[weekdayStr] ?? 0;
+    const currentHours = parseInt(parts.find((p) => p.type === "hour")?.value || "0", 10);
+    const currentMinutes = parseInt(parts.find((p) => p.type === "minute")?.value || "0", 10);
     const currentTimeInMinutes = currentHours * 60 + currentMinutes;
 
     interface Candidate {

@@ -39,11 +39,11 @@ export const siteConfig: SiteConfig = {
   foundationDate: "28/10/2000",
   location: {
     address: "R. Treze",
-    neighborhood: "Vila Izabel",
+    neighborhood: "Vila Isabel",
     city: "Resende",
     state: "RJ",
     cep: "27525-544",
-    googleMapsUrl: "https://maps.google.com/?q=R.+Treze,+Vila+Izabel,+Resende+-+RJ,+27525-544",
+    googleMapsUrl: "https://maps.google.com/?q=R.+Treze,+Vila+Isabel,+Resende+-+RJ,+27525-544",
   },
   contact: {
     phone: "(24) 99203-7665",

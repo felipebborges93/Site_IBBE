@@ -29,7 +29,7 @@ export const groups: Group[] = [
     name: "Princesas de Cristo",
     address: "Local: Igreja Batista Bethel",
     meetingSchedule: "Quinta-feira às 19h30",
-    neighborhood: "Vila Izabel (Igreja)",
+    neighborhood: "Vila Isabel (Igreja)",
     description: "Encontro feminino de edificação, partilha e intercessão.",
   },
   {
@@ -37,7 +37,7 @@ export const groups: Group[] = [
     name: "Emanuel",
     address: "Local: Igreja Batista Bethel",
     meetingSchedule: "Terça-feira às 19h30",
-    neighborhood: "Vila Izabel (Igreja)",
+    neighborhood: "Vila Isabel (Igreja)",
     description: "Cuidado pastoral, comunhão fraterna e estudo bíblico.",
   },
   {
@@ -53,7 +53,7 @@ export const groups: Group[] = [
     name: "Peniel",
     address: "Local: Igreja Batista Bethel",
     meetingSchedule: "Quinta-feira às 19h30",
-    neighborhood: "Vila Izabel (Igreja)",
+    neighborhood: "Vila Isabel (Igreja)",
     description: "Buscando a face de Deus com oração e estudo das Escrituras.",
   },
   {
@@ -61,7 +61,7 @@ export const groups: Group[] = [
     name: "Sião",
     address: "Rua 13, nº 91",
     meetingSchedule: "Quintas-feiras às 19h30",
-    neighborhood: "Vila Izabel",
+    neighborhood: "Vila Isabel",
     description: "Portas abertas para receber vizinhos e amigos com afeto.",
   },
 ];
