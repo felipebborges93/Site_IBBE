@@ -1,108 +1,97 @@
 "use server";
 
+import { headers } from "next/headers";
 import { prayerFormSchema } from "@/lib/validations/prayer";
 import { createClient } from "@/utils/supabase/server";
-import { headers } from "next/headers";
+import { hashIp, checkRateLimit } from "@/lib/rate-limit";
+import { sanitizeHtml } from "@/lib/sanitize";
 
-// In-memory rate limiting for simplicity (since it's a vertical MVP).
-// In production, use Redis (Vercel KV) or a Supabase table.
-const rateLimit = new Map<string, { count: number; lastReset: number }>();
-
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const MAX_REQUESTS = 3;
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimit.get(ip);
-
-  if (!record || now - record.lastReset > RATE_LIMIT_WINDOW) {
-    rateLimit.set(ip, { count: 1, lastReset: now });
-    return true;
-  }
-
-  if (record.count >= MAX_REQUESTS) {
-    return false;
-  }
-
-  record.count += 1;
-  return true;
+export interface PrayerActionState {
+  success: boolean;
+  message: string;
+  errors?: Record<string, string[]>;
 }
 
-/**
- * Sanitiza texto removendo tags HTML e caracteres de controle para prevenir injeção (SEC-03).
- */
-function sanitizeText(input: string): string {
-  if (!input) return "";
-  return input
-    .replace(/<[^>]*>/g, "") // Remove tags HTML
-    .replace(/[<>'"&]/g, (char) => {
-      switch (char) {
-        case "<": return "&lt;";
-        case ">": return "&gt;";
-        case "'": return "&#39;";
-        case '"': return "&quot;";
-        case "&": return "&amp;";
-        default: return char;
-      }
-    })
-    .trim();
-}
-
-export async function submitPrayerRequest(prevState: any, formData: FormData) {
+export async function submitPrayerRequest(
+  prevState: PrayerActionState | null,
+  formData: FormData
+): Promise<PrayerActionState> {
   try {
-    const data = Object.fromEntries(formData.entries());
-    const isAnonymous = data.is_anonymous === "on" || data.is_anonymous === "true";
+    const rawData = Object.fromEntries(formData.entries());
+    const isAnonymous = rawData.is_anonymous === "on" || rawData.is_anonymous === "true";
 
-    const parsedData = {
-      name: typeof data.name === "string" ? sanitizeText(data.name) : "",
-      request: typeof data.request === "string" ? sanitizeText(data.request) : "",
-      is_anonymous: isAnonymous,
-      honeypot: typeof data.honeypot === "string" ? data.honeypot : "",
-    };
-
-    // Honeypot check
-    if (parsedData.honeypot) {
-      console.warn("Honeypot triggered");
-      return { success: false, message: "Spam detectado." };
+    // 1. Honeypot check (D-01, PRAY-02): Se preenchido por bot, aborta silenciosamente simulando sucesso
+    const honeypot = typeof rawData.honeypot === "string" ? rawData.honeypot.trim() : "";
+    if (honeypot) {
+      console.warn("Honeypot acionado: bot detectado. Abortando silenciosamente.");
+      return { success: true, message: "Pedido enviado com sucesso!" };
     }
 
-    // IP Rate Limiting
+    // 2. Rate Limiting por Hash SHA-256 de IP (D-02, PRAY-03)
     const headerList = await headers();
     const forwardedFor = headerList.get("x-forwarded-for");
-    const ip = forwardedFor ? forwardedFor.split(",")[0] : "unknown";
-    
-    if (!checkRateLimit(ip)) {
-      return { success: false, message: "Muitos pedidos em pouco tempo. Tente novamente mais tarde." };
+    const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "127.0.0.1";
+    const ipHashed = hashIp(ip);
+
+    const { allowed } = checkRateLimit(ipHashed);
+    if (!allowed) {
+      return {
+        success: false,
+        message: "Limite de pedidos atingido (máximo de 3 pedidos por hora). Por favor, tente novamente mais tarde.",
+      };
     }
 
-    // Zod validation
-    const validated = prayerFormSchema.safeParse(parsedData);
+    // 3. Sanitização de HTML no servidor (D-03, PRAY-02)
+    const sanitizedName = typeof rawData.name === "string" ? sanitizeHtml(rawData.name) : "";
+    const sanitizedRequest = typeof rawData.request === "string" ? sanitizeHtml(rawData.request) : "";
+
+    const payloadToValidate = {
+      name: sanitizedName,
+      request: sanitizedRequest,
+      is_anonymous: isAnonymous,
+      honeypot,
+    };
+
+    // 4. Validação Zod
+    const validated = prayerFormSchema.safeParse(payloadToValidate);
     if (!validated.success) {
-      return { success: false, errors: validated.error.flatten().fieldErrors };
+      return {
+        success: false,
+        message: "Verifique os campos do formulário.",
+        errors: validated.error.flatten().fieldErrors,
+      };
     }
 
-    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-      // Modo desenvolvimento sem Supabase configurado: simula sucesso para não travar testes locais
-      console.log("Mock submission (Supabase não configurado):", validated.data);
-      return { success: true, message: "Pedido enviado com sucesso! (Modo de desenvolvimento)" };
-    }
+    // 5. Redação de nome para anônimos (D-04, PRAY-04)
+    const finalName = validated.data.is_anonymous ? null : validated.data.name;
 
+    // 6. Persistência via Supabase SSR anônimo (PRAY-01)
     const supabase = await createClient();
-    
     const { error } = await supabase.from("prayer_requests").insert({
-      name: validated.data.is_anonymous ? null : validated.data.name,
+      name: finalName,
       request: validated.data.request,
       is_anonymous: validated.data.is_anonymous,
+      status: "pending",
+      displayed: false,
     });
 
     if (error) {
-      console.error("Supabase insert error:", error);
-      return { success: false, message: "Erro ao enviar pedido de oração." };
+      console.error("Erro ao inserir pedido de oração no Supabase:", error);
+      return {
+        success: false,
+        message: "Não foi possível enviar seu pedido agora. Tente novamente em instantes.",
+      };
     }
 
-    return { success: true, message: "Pedido enviado com sucesso!" };
+    return {
+      success: true,
+      message: "Seu pedido de oração foi recebido com carinho e nossa equipe estará orando por você!",
+    };
   } catch (error) {
-    console.error("Submit error:", error);
-    return { success: false, message: "Erro interno no servidor." };
+    console.error("Erro inesperado na Server Action submitPrayerRequest:", error);
+    return {
+      success: false,
+      message: "Ocorreu um erro inesperado no servidor. Tente novamente mais tarde.",
+    };
   }
 }
