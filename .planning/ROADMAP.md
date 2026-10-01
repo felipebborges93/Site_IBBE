@@ -17,6 +17,7 @@
 **Goal:** Implementar a camada de autenticação com Supabase Auth no Next.js 15 App Router, proteção de rotas e provisionamento de administrador.
 **Mode:** standard
 **Success Criteria:**
+
 1. Middleware interceptando requisições e redirecionando acesso não autorizado a `/admin/*` para `/login`.
 2. Página `/login` funcional redirecionando para `/admin/oracao`.
 3. Usuário administrador pastoral provisionado.
@@ -41,6 +42,7 @@
 **Goal:** Conectar o formulário público ao Supabase com anonimização e proteção anti-spam.
 **Mode:** standard
 **Success Criteria:**
+
 1. Formulário público salva registros no Supabase via Server Action.
 2. Anti-spam via honeypot invisível bloqueando bots.
 3. Rate limiting implementado via hash SHA-256 de IP.
@@ -48,7 +50,7 @@
 
 **Requirements:** PRAY-01, PRAY-02, PRAY-03, PRAY-04
 
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 ### Wave 1
 
@@ -65,6 +67,7 @@
 **Goal:** Painel de administração para moderação (aprovar/rejeitar/desfazer) de pedidos de oração.
 **Mode:** standard
 **Success Criteria:**
+
 1. Painel `/admin/oracao` renderizado no servidor exibindo fila pendente.
 2. Ações de aprovação e rejeição ativas.
 3. Ação "Desfazer" funcional.
@@ -79,6 +82,7 @@
 **Goal:** Implementar endpoints seguros para fornecer pedidos aprovados para projeção e marcá-os como exibidos.
 **Mode:** standard
 **Success Criteria:**
+
 1. Client com service role key configurado.
 2. `GET /api/prayer-requests/display` retornando pedidos aprovados não exibidos, protegido por Bearer token.
 3. `POST /api/prayer-requests/[id]/displayed` atualizando flag para exibido, também protegido.
@@ -92,6 +96,7 @@
 **Goal:** Interface front-end estática e em tela cheia otimizada para projetar pedidos de oração na igreja, acessível exclusivamente via URL secreta.
 **Mode:** standard
 **Success Criteria:**
+
 1. Rota dinâmica `/telao/[token]` validando o parâmetro contra `TELAO_API_TOKEN` com layout de tela cheia, alto contraste, sem barra de rolagem.
 2. Visualização de um número fixo de orações aprovadas em grade/lista.
 3. Botões de ação para navegação e marcação das orações como exibidas.

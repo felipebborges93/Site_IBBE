@@ -20,10 +20,10 @@
 
 ### Ingestão e Proteção de Pedidos (PRAY)
 
-- [ ] **PRAY-01**: Conectar o Server Action do formulário de oração (`submitPrayerRequest`) ao Supabase usando cliente `@supabase/ssr` anônimo
-- [ ] **PRAY-02**: Implementar proteção anti-spam com campo honeypot invisível e sanitização de tags HTML
-- [ ] **PRAY-03**: Implementar limitação de taxa (rate limiting) por hash SHA-256 de IP conforme diretrizes da LGPD
-- [ ] **PRAY-04**: Redigir o campo `name` para `null` no banco quando o usuário marcar a opção de oração anônima (`is_anonymous: true`)
+- [x] **PRAY-01**: Conectar o Server Action do formulário de oração (`submitPrayerRequest`) ao Supabase usando cliente `@supabase/ssr` anônimo
+- [x] **PRAY-02**: Implementar proteção anti-spam com campo honeypot invisível e sanitização de tags HTML
+- [x] **PRAY-03**: Implementar limitação de taxa (rate limiting) por hash SHA-256 de IP conforme diretrizes da LGPD
+- [x] **PRAY-04**: Redigir o campo `name` para `null` no banco quando o usuário marcar a opção de oração anônima (`is_anonymous: true`)
 
 ### Moderação Pastoral (MOD)
 
@@ -71,10 +71,10 @@
 | AUTH-02 | Phase 9 | Pending |
 | AUTH-03 | Phase 9 | Pending |
 | AUTH-04 | Phase 9 | Pending |
-| PRAY-01 | Phase 10 | Pending |
-| PRAY-02 | Phase 10 | Pending |
-| PRAY-03 | Phase 10 | Pending |
-| PRAY-04 | Phase 10 | Pending |
+| PRAY-01 | Phase 10 | Complete |
+| PRAY-02 | Phase 10 | Complete |
+| PRAY-03 | Phase 10 | Complete |
+| PRAY-04 | Phase 10 | Complete |
 | MOD-01 | Phase 11 | Pending |
 | MOD-02 | Phase 11 | Pending |
 | MOD-03 | Phase 11 | Pending |
