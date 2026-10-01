@@ -27,10 +27,10 @@
 
 ### Moderação Pastoral (MOD)
 
-- [ ] **MOD-01**: Conectar o painel `/admin/oracao` ao Supabase com `createServerClient` autenticado exibindo lista de pedidos pendentes
-- [ ] **MOD-02**: Implementar ações de moderação com Server Actions para aprovar (`status = 'approved'`) ou rejeitar (`status = 'rejected'`) pedidos
-- [ ] **MOD-03**: Implementar ação de desfazer ("Desfazer") permitindo reverter pedidos aprovados ou rejeitados de volta para `pending`
-- [ ] **MOD-04**: Exibir feedback visual acolhedor (toasts) e revalidar o cache da rota (`revalidatePath`) imediatamente após cada ação
+- [x] **MOD-01**: Conectar o painel `/admin/oracao` ao Supabase com `createServerClient` autenticado exibindo lista de pedidos pendentes
+- [x] **MOD-02**: Implementar ações de moderação com Server Actions para aprovar (`status = 'approved'`) ou rejeitar (`status = 'rejected'`) pedidos
+- [x] **MOD-03**: Implementar ação de desfazer ("Desfazer") permitindo reverter pedidos aprovados ou rejeitados de volta para `pending`
+- [x] **MOD-04**: Exibir feedback visual acolhedor (toasts) e revalidar o cache da rota (`revalidatePath`) imediatamente após cada ação
 
 ### Integração de APIs do Telão (DISP)
 
@@ -75,10 +75,10 @@
 | PRAY-02 | Phase 10 | Complete |
 | PRAY-03 | Phase 10 | Complete |
 | PRAY-04 | Phase 10 | Complete |
-| MOD-01 | Phase 11 | Pending |
-| MOD-02 | Phase 11 | Pending |
-| MOD-03 | Phase 11 | Pending |
-| MOD-04 | Phase 11 | Pending |
+| MOD-01 | Phase 11 | Complete |
+| MOD-02 | Phase 11 | Complete |
+| MOD-03 | Phase 11 | Complete |
+| MOD-04 | Phase 11 | Complete |
 | DISP-01 | Phase 12 | Pending |
 | DISP-02 | Phase 12 | Pending |
 | DISP-03 | Phase 12 | Pending |
@@ -87,6 +87,7 @@
 | TELA-03 | Phase 13 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 24 total
 - Mapped to phases: 24
 - Unmapped: 0 ✓

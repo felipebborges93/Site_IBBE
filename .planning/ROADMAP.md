@@ -75,7 +75,7 @@
 
 **Requirements:** MOD-01, MOD-02, MOD-03, MOD-04
 
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 ### Wave 1
 
