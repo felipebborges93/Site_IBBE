@@ -116,6 +116,12 @@
 
 **Requirements:** TELA-01, TELA-02, TELA-03
 
+**Plans:** 1 plan
+
+### Wave 1
+
+- [ ] 13-01-PLAN.md — Interface de telão em tela cheia com validação de token, grade 2x2 e marcação de exibidos
+
 ---
 
 ## Archived Milestones
