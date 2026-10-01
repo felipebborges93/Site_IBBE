@@ -52,7 +52,7 @@ test.describe("Ingestão e Proteção de Pedidos de Oração", () => {
     await page.locator("button[type='submit']").click();
 
     // UI deve retornar sucesso sem alertar o bot de que foi bloqueado silenciosamente (D-01)
-    const alertBox = page.locator("[role='alert']");
+    const alertBox = page.locator("form [role='alert']");
     await expect(alertBox).toBeVisible();
     await expect(alertBox).toContainText(/sucesso/i);
   });
@@ -69,7 +69,7 @@ test.describe("Ingestão e Proteção de Pedidos de Oração", () => {
     await page.locator("button[type='submit']").click();
 
     // Deve exibir aviso de validação ou erro na UI
-    const alertBox = page.locator("[role='alert']");
+    const alertBox = page.locator("form [role='alert']");
     await expect(alertBox).toBeVisible();
     await expect(alertBox).toContainText(/Verifique os campos|mínimo/i);
   });

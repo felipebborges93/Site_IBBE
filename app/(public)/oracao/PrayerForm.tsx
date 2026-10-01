@@ -30,7 +30,7 @@ export default function PrayerForm() {
       setRequestText("");
       setIsAnonymous(false);
     }
-  }, [state?.success]);
+  }, [state]);
 
   return (
     <form

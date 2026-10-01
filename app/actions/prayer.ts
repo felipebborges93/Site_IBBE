@@ -27,19 +27,12 @@ export async function submitPrayerRequest(
       return { success: true, message: "Pedido enviado com sucesso!" };
     }
 
-    // 2. Rate Limiting por Hash SHA-256 de IP (D-02, PRAY-03)
+    // 2. IP Detection e Hash SHA-256 (D-02, PRAY-03)
     const headerList = await headers();
+    const realIp = headerList.get("x-real-ip");
     const forwardedFor = headerList.get("x-forwarded-for");
-    const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "127.0.0.1";
+    const ip = realIp || (forwardedFor ? forwardedFor.split(",")[0].trim() : "127.0.0.1");
     const ipHashed = hashIp(ip);
-
-    const { allowed } = checkRateLimit(ipHashed);
-    if (!allowed) {
-      return {
-        success: false,
-        message: "Limite de pedidos atingido (máximo de 3 pedidos por hora). Por favor, tente novamente mais tarde.",
-      };
-    }
 
     // 3. Sanitização de HTML no servidor (D-03, PRAY-02)
     const sanitizedName = typeof rawData.name === "string" ? sanitizeHtml(rawData.name) : "";
@@ -52,13 +45,22 @@ export async function submitPrayerRequest(
       honeypot,
     };
 
-    // 4. Validação Zod
+    // 4. Validação Zod antes de consumir rate limit
     const validated = prayerFormSchema.safeParse(payloadToValidate);
     if (!validated.success) {
       return {
         success: false,
         message: "Verifique os campos do formulário.",
         errors: validated.error.flatten().fieldErrors,
+      };
+    }
+
+    // 5. Rate Limiting consumido apenas para requisições válidas (D-02, PRAY-03)
+    const { allowed } = checkRateLimit(ipHashed);
+    if (!allowed) {
+      return {
+        success: false,
+        message: "Limite de pedidos atingido (máximo de 3 pedidos por hora). Por favor, tente novamente mais tarde.",
       };
     }
 

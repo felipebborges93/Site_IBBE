@@ -20,11 +20,23 @@ export function hashIp(ip: string, salt: string = process.env.RATE_LIMIT_SALT ||
     .digest("hex");
 }
 
+function cleanupExpiredRecords(now: number): void {
+  if (rateLimitStore.size > 1000) {
+    for (const [key, record] of rateLimitStore.entries()) {
+      if (now - record.lastReset > RATE_LIMIT_WINDOW_MS) {
+        rateLimitStore.delete(key);
+      }
+    }
+  }
+}
+
 /**
  * Verifica e incrementa a taxa de requisições baseada no hash do IP.
  * Limite de 3 requisições por hora (D-02, PRAY-03).
  */
 export function checkRateLimit(ipHash: string, now: number = Date.now()): { allowed: boolean; remaining: number } {
+  cleanupExpiredRecords(now);
+
   const record = rateLimitStore.get(ipHash);
 
   // Limpeza/reset de registro se for novo ou se o intervalo de 1 hora passou
