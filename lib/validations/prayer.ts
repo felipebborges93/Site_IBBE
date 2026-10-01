@@ -4,13 +4,13 @@ export const prayerFormSchema = z
   .object({
     name: z
       .string()
-      .max(100, { message: "O nome não pode exceder 100 caracteres." })
+      .max(100, { message: "O nome deve ter no máximo 100 caracteres." })
       .optional()
       .or(z.literal("")),
     request: z
       .string()
-      .min(5, { message: "O pedido deve ter pelo menos 5 caracteres." })
-      .max(1000, { message: "O pedido não pode exceder 1000 caracteres." }),
+      .min(5, { message: "Por favor, detalhe seu pedido com pelo menos 5 caracteres." })
+      .max(1000, { message: "O pedido deve ter no máximo 1.000 caracteres." }),
     is_anonymous: z.boolean().default(false),
     allow_public_display: z.boolean().default(false),
     honeypot: z.string().optional(),
@@ -24,7 +24,7 @@ export const prayerFormSchema = z
       return true;
     },
     {
-      message: "Por favor, informe seu nome ou marque a opção de pedido anônimo.",
+      message: "Por favor, informe seu nome ou marque a opção de envio anônimo.",
       path: ["name"],
     }
   );

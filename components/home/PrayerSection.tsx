@@ -15,10 +15,10 @@ export function PrayerSection() {
       <Container size="md" className="relative z-10">
         <SectionTitle
           highlight="Orar"
-          subtitle="Compartilhe sua necessidade ou motivo de agradecimento. Nossa equipe de intercessão estará orando por você com sigilo e carinho."
+          subtitle="Compartilhe seu motivo de oração ou agradecimento. Nossa equipe pastoral e de intercessão acolhe cada mensagem com sigilo e carinho."
           align="center"
         >
-          Podemos Orar por você?
+          Podemos orar por você?
         </SectionTitle>
 
         <div className="mt-8 max-w-2xl mx-auto">

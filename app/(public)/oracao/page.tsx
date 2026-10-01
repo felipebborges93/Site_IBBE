@@ -13,10 +13,10 @@ export default function OracaoPage() {
         <div className="text-center mb-12">
           <SectionTitle
             highlight="Orar"
-            subtitle="Compartilhe sua necessidade e nossa equipe de intercessão estará orando."
+            subtitle="Compartilhe seu motivo de oração ou agradecimento. Nossa equipe pastoral e de intercessão acolhe cada mensagem com sigilo e carinho."
             align="center"
           >
-            Estamos aqui para Orar por você
+            Estamos aqui para orar por você
           </SectionTitle>
         </div>
         

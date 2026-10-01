@@ -53,7 +53,7 @@ export async function submitPrayerRequest(
     if (!validated.success) {
       return {
         success: false,
-        message: "Verifique os campos do formulário.",
+        message: "Por favor, revise as informações destacadas no formulário.",
         errors: validated.error.flatten().fieldErrors,
       };
     }
@@ -63,7 +63,7 @@ export async function submitPrayerRequest(
     if (!allowed) {
       return {
         success: false,
-        message: "Limite de pedidos atingido (máximo de 3 pedidos por hora). Por favor, tente novamente mais tarde.",
+        message: "Limite de envios atingido (máximo de 3 pedidos por hora). Se precisar de oração urgente, fale conosco pelo WhatsApp ou aguarde alguns minutos.",
       };
     }
 
@@ -85,19 +85,19 @@ export async function submitPrayerRequest(
       console.error("Erro ao inserir pedido de oração no Supabase:", error);
       return {
         success: false,
-        message: "Não foi possível enviar seu pedido agora. Tente novamente em instantes.",
+        message: "Não foi possível registrar seu pedido neste instante. Por favor, tente enviar novamente.",
       };
     }
 
     return {
       success: true,
-      message: "Seu pedido de oração foi recebido com carinho e nossa equipe estará orando por você!",
+      message: "Seu pedido de oração foi recebido! Nossa equipe de intercessão já está em oração por você.",
     };
   } catch (error) {
     console.error("Erro inesperado na Server Action submitPrayerRequest:", error);
     return {
       success: false,
-      message: "Ocorreu um erro inesperado no servidor. Tente novamente mais tarde.",
+      message: "Ocorreu uma instabilidade no servidor. Por favor, tente novamente em instantes.",
     };
   }
 }
