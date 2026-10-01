@@ -95,6 +95,13 @@
 
 **Requirements:** DISP-01, DISP-02, DISP-03
 
+**Plans:** 1/1 plans complete
+
+### Wave 1
+
+- [x] 12-01-PLAN.md — createAdminClient e endpoints seguros de display e displayed
+
+
 ---
 
 ### Phase 13: Exibição no Telão
