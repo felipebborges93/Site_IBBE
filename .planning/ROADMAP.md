@@ -75,6 +75,12 @@
 
 **Requirements:** MOD-01, MOD-02, MOD-03, MOD-04
 
+**Plans:** 1 plan
+
+### Wave 1
+
+- [ ] 11-01-PLAN.md — Painel de moderação pastoral, Server Actions, tabs e feedback por Toasts
+
 ---
 
 ### Phase 12: Integração de APIs do Telão
