@@ -1,15 +1,14 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { env } from '@/lib/env'
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request,
   })
 
-  // Se as credenciais do Supabase não estiverem configuradas (modo desenvolvimento/mock),
-  // permitir navegação livre ou apenas avisar em rotas /admin
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!supabaseUrl || !supabaseAnonKey) {
     if (request.nextUrl.pathname.startsWith('/admin')) {
