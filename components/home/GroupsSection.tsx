@@ -48,10 +48,10 @@ export function GroupsSection() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Falar sobre os grupos no WhatsApp (abre na nova aba)"
-            className="px-8 h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 min-h-[44px] py-2 transition-all shrink-0 shadow-xs hover:shadow"
+            aria-label="Falar sobre os grupos no WhatsApp (abre em nova aba)"
+            className="w-full sm:w-auto px-8 h-12 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 min-h-[44px] py-2 transition-all shrink-0 shadow-xs hover:shadow text-center"
           >
-            <WhatsappLogo className="w-4 h-4" weight="bold" aria-hidden="true" />
+            <WhatsappLogo className="w-4 h-4 shrink-0" weight="bold" aria-hidden="true" />
             <span>Encontrar meu grupo</span>
           </a>
         </div>

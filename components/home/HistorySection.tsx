@@ -66,7 +66,7 @@ export function HistorySection() {
 
         {/* Coluna Fotografia Humanizada */}
         <FadeIn delay={0.2} className="lg:col-span-6 space-y-4">
-          <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light relative w-full h-[420px] sm:h-[480px]">
+          <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light relative w-full h-[280px] sm:h-[420px] lg:h-[480px]">
             <Image
               src="/images/culto_3.jpg"
               alt="Comunidade acolhedora da Igreja Batista Bethel reunida em Resende"

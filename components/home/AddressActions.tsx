@@ -26,13 +26,13 @@ export function AddressActions({ address }: AddressActionsProps) {
   const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(address)}`;
 
   return (
-    <div className="pt-2 flex flex-wrap items-center gap-3">
+    <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
       <a
         href={googleMapsUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Abrir endereço no Google Maps (abre em nova aba)"
-        className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all motion-reduce:transition-none shadow-xs hover:shadow"
+        className="inline-flex items-center justify-center gap-2 px-6 h-11 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all motion-reduce:transition-none shadow-xs hover:shadow text-center"
       >
         <span>Google Maps</span>
         <ArrowUpRight aria-hidden="true" className="w-4 h-4" weight="bold" />
@@ -43,7 +43,7 @@ export function AddressActions({ address }: AddressActionsProps) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Navegar até a igreja com Waze (abre em nova aba)"
-        className="inline-flex items-center gap-2 px-6 h-11 rounded-full border border-marinho/20 hover:border-cobalto text-marinho hover:text-cobalto font-bold text-xs uppercase tracking-wider transition-colors motion-reduce:transition-none"
+        className="inline-flex items-center justify-center gap-2 px-6 h-11 rounded-full border border-marinho/20 hover:border-cobalto text-marinho hover:text-cobalto font-bold text-xs uppercase tracking-wider transition-colors motion-reduce:transition-none text-center"
       >
         <NavigationArrow aria-hidden="true" className="w-4 h-4" weight="bold" />
         <span>Waze</span>

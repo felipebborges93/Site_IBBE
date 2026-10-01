@@ -31,10 +31,10 @@ export function LocationSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Mapa do Google com Cantos Arredondados */}
-          <FadeIn delay={0.1} className="lg:col-span-7 rounded-3xl overflow-hidden border border-marinho/15 min-h-[420px] relative bg-white shadow-xs">
+          <FadeIn delay={0.1} className="lg:col-span-7 rounded-3xl overflow-hidden border border-marinho/15 min-h-[320px] sm:min-h-[420px] relative bg-white shadow-xs">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14738.562725515286!2d-44.4608383!3d-22.4646194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e7943d0e74b3f%3A0x67efc4644a04d221!2sVila%20Isabel%2C%20Resende%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-              className="w-full h-full min-h-[420px] border-0"
+              className="w-full h-full min-h-[320px] sm:min-h-[420px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Mapa da Igreja Batista Bethel em Vila Izabel Resende"

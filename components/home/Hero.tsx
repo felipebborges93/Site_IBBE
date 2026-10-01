@@ -73,11 +73,11 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto"
             >
               <Link
                 href="#contato"
-                className="inline-flex items-center justify-center px-8 sm:px-10 h-14 rounded-full bg-cobalto hover:bg-cobalto/85 text-white font-bold text-base tracking-wide transition-all shadow-md hover:scale-[1.02] active:scale-95"
+                className="inline-flex items-center justify-center px-8 sm:px-10 h-14 rounded-full bg-cobalto hover:bg-cobalto/85 text-white font-bold text-base tracking-wide transition-all shadow-md hover:scale-[1.02] active:scale-95 text-center"
               >
                 Venha nos Visitar
               </Link>
@@ -86,7 +86,7 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
                   href={liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 justify-center px-6 sm:px-8 h-14 rounded-full bg-verde hover:bg-verde/90 text-white font-bold text-base transition-all shadow-md hover:scale-[1.02] active:scale-95"
+                  className="inline-flex items-center gap-2 justify-center px-6 sm:px-8 h-14 rounded-full bg-verde hover:bg-verde/90 text-white font-bold text-base transition-all shadow-md hover:scale-[1.02] active:scale-95 text-center"
                 >
                   <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
                   <span>Assistir ao vivo</span>
@@ -94,7 +94,7 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
               ) : (
                 <Link
                   href={liveUrl}
-                  className="inline-flex items-center justify-center px-6 sm:px-8 h-14 rounded-full bg-white/80 hover:bg-white text-marinho font-semibold text-base border border-marinho/15 transition-all shadow-sm hover:scale-[1.02] active:scale-95"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 h-14 rounded-full bg-white/80 hover:bg-white text-marinho font-semibold text-base border border-marinho/15 transition-all shadow-sm hover:scale-[1.02] active:scale-95 text-center"
                 >
                   Assistir ao vivo
                 </Link>

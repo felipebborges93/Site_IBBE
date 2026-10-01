@@ -21,7 +21,7 @@ export function SocialActionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Coluna Esquerda: Foto Real e Cartão de Apoio */}
           <FadeIn delay={0.1} className="lg:col-span-5 space-y-6">
-            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[400px] sm:h-[460px]">
+            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[260px] sm:h-[400px] lg:h-[460px]">
               <Image
                 src="/images/acao_social.jpg"
                 alt="Ação Social na comunidade em Resende"
@@ -42,9 +42,9 @@ export function SocialActionSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Quero ajudar este trabalho pelo WhatsApp (abre em nova aba)"
-                  className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 min-h-[44px] py-2.5 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg text-center"
                 >
-                  <WhatsappLogo aria-hidden="true" className="w-4 h-4" weight="bold" />
+                  <WhatsappLogo aria-hidden="true" className="w-4 h-4 shrink-0" weight="bold" />
                   <span>Quero apoiar estes projetos</span>
                 </a>
               </div>
