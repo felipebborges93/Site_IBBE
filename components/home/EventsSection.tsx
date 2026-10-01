@@ -1,13 +1,56 @@
-import React from "react";
+"use client";
+
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { events } from "@/content/events";
-import { CalendarBlank, MapPin, Clock, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { events, type Event } from "@/content/events";
+import { CalendarBlank, MapPin, Clock, ArrowRight, Tag } from "@phosphor-icons/react";
+
+const categoryLabels: Record<Event["category"], string> = {
+  aniversario: "Aniversário",
+  social: "Comunhão & Almoço",
+  especial: "Celebração Especial",
+  conferencia: "Conferência",
+  retiro: "Retiro",
+};
 
 export function EventsSection() {
+  const [selectedMonth, setSelectedMonth] = useState<string>("todos");
+
+  // Identifica meses disponíveis e suas contagens
+  const monthFilters = useMemo(() => {
+    return [
+      { id: "todos", label: "Todos os eventos", count: events.length },
+      {
+        id: "out",
+        label: "Outubro",
+        count: events.filter((e) => e.monthLabel.includes("OUT")).length,
+      },
+      {
+        id: "nov",
+        label: "Novembro",
+        count: events.filter((e) => e.monthLabel.includes("NOV")).length,
+      },
+      {
+        id: "dez",
+        label: "Dezembro",
+        count: events.filter((e) => e.monthLabel.includes("DEZ")).length,
+      },
+    ];
+  }, []);
+
+  // Filtra os eventos de acordo com a seleção
+  const filteredEvents = useMemo(() => {
+    if (selectedMonth === "todos") return events;
+    if (selectedMonth === "out") return events.filter((e) => e.monthLabel.includes("OUT"));
+    if (selectedMonth === "nov") return events.filter((e) => e.monthLabel.includes("NOV"));
+    if (selectedMonth === "dez") return events.filter((e) => e.monthLabel.includes("DEZ"));
+    return events;
+  }, [selectedMonth]);
+
   return (
     <section id="eventos" className="py-20 lg:py-24 max-w-[1440px] mx-auto px-6 lg:px-12 scroll-mt-20">
-      {/* Cabeçalho */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+      {/* Cabeçalho da Seção */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 gap-6">
         <div>
           <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
             04 / Calendário Comunitário
@@ -19,7 +62,7 @@ export function EventsSection() {
             </span>
           </h2>
         </div>
-        <p className="text-marinho/70 text-sm max-w-sm leading-relaxed">
+        <p className="text-marinho/75 text-sm max-w-md leading-relaxed">
           Momentos planejados com carinho para fortalecer a comunhão, missões e adoração em nossa igreja.
         </p>
       </div>
@@ -35,7 +78,7 @@ export function EventsSection() {
           <div className="mt-6">
             <Link
               href="#cultos"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cobalto text-white text-xs font-bold uppercase tracking-wider hover:bg-cobalto/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-full bg-cobalto text-white text-xs font-bold uppercase tracking-wider hover:bg-cobalto/90 transition-colors"
             >
               <span>Ver horários dos cultos</span>
               <ArrowRight aria-hidden="true" className="w-4 h-4" weight="bold" />
@@ -43,90 +86,117 @@ export function EventsSection() {
           </div>
         </div>
       ) : (
-        <>
-          {/* Visualização Desktop: Lista Horizontal Tipográfica alinhada ao Stitch sem botão de confirmação */}
-          <div className="hidden md:block border-t border-marinho/15 divide-y divide-marinho/15">
-            {events.map((event) => (
-              <div key={event.id} className="py-7 grid grid-cols-12 gap-8 items-center group">
-                <div className="col-span-2 flex items-baseline gap-3">
-                  <span className="text-4xl font-black text-marinho group-hover:text-cobalto transition-colors">
-                    {event.dayNumber}
+        <div className="space-y-8">
+          {/* Barra de Filtros por Mês (Pills táteis) */}
+          <div
+            role="tablist"
+            aria-label="Filtrar eventos por mês"
+            className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar"
+          >
+            {monthFilters.map((tab) => {
+              const isActive = selectedMonth === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setSelectedMonth(tab.id)}
+                  className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-semibold tracking-wide transition-all motion-reduce:transition-none cursor-pointer shrink-0 flex items-center gap-2 ${
+                    isActive
+                      ? "bg-cobalto text-white shadow-xs"
+                      : "bg-gelo text-marinho/80 hover:bg-marinho/10 hover:text-marinho"
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                  <span
+                    className={`px-1.5 py-0.5 rounded-full text-micro font-bold ${
+                      isActive ? "bg-white/20 text-white" : "bg-white text-marinho/70"
+                    }`}
+                  >
+                    {tab.count}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-cobalto">
-                    {event.monthLabel}
-                  </span>
-                </div>
+                </button>
+              );
+            })}
+          </div>
 
-                <div className="col-span-7">
-                  <h3 className="text-2xl font-bold text-marinho group-hover:text-cobalto transition-colors">
-                    {event.title}
-                  </h3>
-                  <p className="text-sm text-marinho/75 mt-1 leading-relaxed">{event.description}</p>
-                  <div className="flex items-center gap-4 text-xs text-marinho/60 mt-2 font-medium">
-                    {event.time && (
-                      <>
-                        <span className="flex items-center gap-1">
-                          <Clock aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
-                          {event.time}
+          {/* Grade Responsiva de Eventos (2 colunas equilibradas) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {filteredEvents.map((event, index) => {
+              const isFirst = index === 0 && selectedMonth === "todos";
+              const isAnniversary = event.category === "aniversario";
+
+              return (
+                <article
+                  key={event.id}
+                  className={`p-6 sm:p-7 rounded-3xl bg-white border transition-all duration-200 motion-reduce:transition-none flex flex-col justify-between group relative overflow-hidden ${
+                    isAnniversary
+                      ? "border-cobalto/30 shadow-elevation-1 hover:shadow-elevation-2 bg-gradient-to-br from-white via-white to-gelo-light"
+                      : "border-marinho/10 shadow-xs hover:border-cobalto/25 hover:shadow-elevation-1"
+                  }`}
+                >
+                  {/* Topo do Card: Bloco de Data e Badges de Categoria */}
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      {/* Bloco de Data Visual */}
+                      <div className="flex items-baseline gap-2.5">
+                        <span className="text-3xl sm:text-4xl font-black text-marinho tracking-tight group-hover:text-cobalto transition-colors motion-reduce:transition-none">
+                          {event.dayNumber}
                         </span>
-                        <span>•</span>
-                      </>
-                    )}
-                    <span className="flex items-center gap-1">
-                      <MapPin aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
-                      {event.location}
-                    </span>
-                    <span>•</span>
-                    <span className="text-verde font-semibold">Entrada franca</span>
-                  </div>
-                </div>
-
-                <div className="col-span-3 flex justify-end">
-                  <span className="inline-flex items-center px-4 py-2 rounded-full bg-gelo text-marinho/80 text-xs font-semibold">
-                    {event.date}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Visualização Mobile: Cards Touch Snap */}
-          <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 no-scrollbar">
-            {events.map((event) => (
-              <div
-                key={event.id}
-                className="snap-start shrink-0 w-[84vw] max-w-[320px] p-6 rounded-3xl bg-white border border-marinho/10 shadow-xs flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="px-3 py-1 rounded-full bg-gelo text-cobalto font-bold text-xs uppercase tracking-wider">
-                      {event.date}
-                    </span>
-                    <span className="text-micro text-verde">Aberto ao público</span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-marinho leading-snug">{event.title}</h3>
-                  <p className="text-xs text-marinho/75 mt-2 leading-relaxed">{event.description}</p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-marinho/10">
-                  <div className="space-y-1 text-xs text-marinho/60">
-                    {event.time && (
-                      <div className="flex items-center gap-1.5">
-                        <Clock aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
-                        <span>{event.time}</span>
+                        <span className="text-xs font-bold uppercase tracking-wider text-cobalto">
+                          {event.monthLabel}
+                        </span>
                       </div>
-                    )}
-                    <div className="flex items-center gap-1.5">
-                      <MapPin aria-hidden="true" className="w-3.5 h-3.5 text-cobalto" />
-                      <span className="truncate">{event.location}</span>
+
+                      {/* Tag de Categoria e Destaque */}
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        {isFirst && (
+                          <span className="px-2.5 py-1 rounded-full bg-verde/15 text-verde text-micro font-bold tracking-wide">
+                            Próximo
+                          </span>
+                        )}
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gelo text-marinho/80 text-micro font-semibold">
+                          <Tag aria-hidden="true" className="w-3 h-3 text-cobalto" />
+                          {categoryLabels[event.category] || "Evento"}
+                        </span>
+                      </div>
                     </div>
+
+                    {/* Título do Evento */}
+                    <h3 className="text-xl sm:text-2xl font-bold text-marinho group-hover:text-cobalto transition-colors motion-reduce:transition-none leading-snug">
+                      {event.title}
+                    </h3>
+
+                    {/* Descrição Contextual */}
+                    <p className="text-sm text-marinho/75 mt-2.5 leading-relaxed font-normal">
+                      {event.description}
+                    </p>
                   </div>
-                </div>
-              </div>
-            ))}
+
+                  {/* Rodapé do Card: Metadados Estruturados */}
+                  <div className="mt-6 pt-4 border-t border-marinho/10 flex flex-wrap items-center justify-between gap-3 text-xs text-marinho/65">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 font-medium">
+                      {event.time && (
+                        <span className="flex items-center gap-1.5">
+                          <Clock aria-hidden="true" className="w-4 h-4 text-cobalto shrink-0" />
+                          <span>{event.time}</span>
+                        </span>
+                      )}
+                      <span className="flex items-center gap-1.5">
+                        <MapPin aria-hidden="true" className="w-4 h-4 text-cobalto shrink-0" />
+                        <span className="truncate max-w-[220px] sm:max-w-[260px]">{event.location}</span>
+                      </span>
+                    </div>
+
+                    <span className="text-verde font-semibold bg-verde/10 px-2.5 py-0.5 rounded-full shrink-0">
+                      Entrada franca
+                    </span>
+                  </div>
+                </article>
+              );
+            })}
           </div>
-        </>
+        </div>
       )}
     </section>
   );
