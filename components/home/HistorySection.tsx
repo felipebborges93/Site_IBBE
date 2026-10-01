@@ -2,31 +2,34 @@ import React from "react";
 import Image from "next/image";
 import { historyData } from "@/content/history";
 import { BookOpen } from "@phosphor-icons/react/dist/ssr";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export function HistorySection() {
   return (
     <section id="historia" className="py-20 lg:py-24 max-w-[1440px] mx-auto px-6 lg:px-12 scroll-mt-20">
       {/* Cabeçalho da Seção */}
-      <div className="border-b border-marinho/15 pb-8 mb-14 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
-            03 / Origem &amp; Caminhada
-          </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-marinho tracking-tight">
-            Uma história de{" "}
-            <span className="font-script text-cobalto italic font-extrabold text-5xl sm:text-6xl lg:text-7xl">
-              amor, alegria e esperança.
+      <FadeIn>
+        <div className="border-b border-marinho/15 pb-8 mb-14 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span className="text-xs font-bold text-cobalto uppercase tracking-widest block mb-2">
+              03 / Origem &amp; Caminhada
             </span>
-          </h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-marinho tracking-tight">
+              Uma história de{" "}
+              <span className="font-script text-cobalto italic font-extrabold text-5xl sm:text-6xl lg:text-7xl">
+                amor, alegria e esperança.
+              </span>
+            </h2>
+          </div>
+          <p className="text-marinho/70 text-sm max-w-sm leading-relaxed">
+            Igreja Batista Bethel, organizada em Resende desde 28 de outubro de 2000.
+          </p>
         </div>
-        <p className="text-marinho/70 text-sm max-w-sm leading-relaxed">
-          Igreja Batista Bethel, organizada em Resende desde 28 de outubro de 2000.
-        </p>
-      </div>
+      </FadeIn>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Coluna Editorial Texto */}
-        <div className="lg:col-span-6 space-y-6 text-base sm:text-lg text-marinho/85 leading-relaxed font-normal">
+        <FadeIn delay={0.1} className="lg:col-span-6 space-y-6 text-base sm:text-lg text-marinho/85 leading-relaxed font-normal">
           <p className="first-letter:text-5xl first-letter:font-extrabold first-letter:text-marinho first-letter:float-left first-letter:mr-3 first-letter:leading-none">
             {historyData.foundationText}
           </p>
@@ -59,10 +62,10 @@ export function HistorySection() {
               </span>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Coluna Fotografia Humanizada */}
-        <div className="lg:col-span-6 space-y-4">
+        <FadeIn delay={0.2} className="lg:col-span-6 space-y-4">
           <div className="rounded-3xl overflow-hidden border border-marinho/10 shadow-sm bg-gelo-light relative w-full h-[420px] sm:h-[480px]">
             <Image
               src="/images/culto_3.jpg"
@@ -76,7 +79,7 @@ export function HistorySection() {
             <span>Encontro comunitário na capela em Vila Izabel</span>
             <span>Resende • RJ</span>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

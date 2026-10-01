@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import PrayerForm from "@/app/(public)/oracao/PrayerForm";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export function PrayerSection() {
   return (
@@ -13,17 +14,19 @@ export function PrayerSection() {
       />
       
       <Container size="md" className="relative z-10">
-        <SectionTitle
-          highlight="Orar"
-          subtitle="Compartilhe seu motivo de oração ou agradecimento. Nossa equipe pastoral e de intercessão acolhe cada mensagem com sigilo e carinho."
-          align="center"
-        >
-          Podemos orar por você?
-        </SectionTitle>
+        <FadeIn>
+          <SectionTitle
+            highlight="Orar"
+            subtitle="Compartilhe seu motivo de oração ou agradecimento. Nossa equipe pastoral e de intercessão acolhe cada mensagem com sigilo e carinho."
+            align="center"
+          >
+            Podemos orar por você?
+          </SectionTitle>
+        </FadeIn>
 
-        <div className="mt-8 max-w-2xl mx-auto">
+        <FadeIn delay={0.15} className="mt-8 max-w-2xl mx-auto">
           <PrayerForm />
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );
