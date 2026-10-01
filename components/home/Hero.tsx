@@ -7,7 +7,6 @@ import { Container } from "@/components/ui/Container";
 import { NextServiceBar } from "./NextServiceBar";
 import { services } from "@/content/services";
 import { siteConfig } from "@/content/site";
-import { AuroraBackground } from "@/components/ui/AuroraBackground";
 
 export interface HeroProps {
   liveVideoUrl?: string;
@@ -19,7 +18,16 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
   const isExternalLive = Boolean(liveVideoUrl);
   
   return (
-    <AuroraBackground className="pt-12 sm:pt-16 lg:pt-20 pb-0 justify-between items-stretch">
+    <section
+      id="inicio"
+      className="relative min-h-[90vh] pt-12 sm:pt-16 lg:pt-20 pb-0 flex flex-col justify-between overflow-hidden bg-gradient-to-b from-white/70 via-gelo-light/85 to-gelo/40"
+    >
+      {/* Texture Pattern Background */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.04] mix-blend-multiply pointer-events-none"
+        style={{ backgroundImage: "url('/images/patterns/pattern-10.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+      />
+      
       <Container size="xl" className="flex-1 flex flex-col justify-center relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-6 sm:py-10">
           {/* Coluna Esquerda: Conteúdo Editorial e CTAs */}
@@ -129,7 +137,7 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
               <div className="w-full rounded-2xl overflow-hidden border-4 border-white shadow-elevation-2">
                 <div className="relative w-full h-48 sm:h-64">
                   <Image
-         src="/images/culto_2.jpg"
+                    src="/images/culto_2.jpg"
                     alt="Comunidade na Igreja Bethel"
                     fill
                     sizes="(max-width: 768px) 45vw, 20vw"
@@ -164,6 +172,6 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
       </Container>
 
       <NextServiceBar services={services} />
-    </AuroraBackground>
+    </section>
   );
 }

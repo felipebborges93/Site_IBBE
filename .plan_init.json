@@ -1,0 +1,69 @@
+{
+  "researcher_model": "inherit",
+  "planner_model": "inherit",
+  "checker_model": "inherit",
+  "tdd_mode": false,
+  "granularity": "standard",
+  "research_enabled": false,
+  "plan_checker_enabled": true,
+  "nyquist_validation_enabled": true,
+  "commit_docs": true,
+  "text_mode": false,
+  "auto_advance": false,
+  "auto_chain_active": true,
+  "mode": "yolo",
+  "phase_found": true,
+  "phase_dir": null,
+  "expected_phase_dir": "/home/felipe/Projetos IA/Site_IBBE/.planning/phases/12-integra-o-de-apis-do-tel-o",
+  "phase_number": "12",
+  "phase_name": "Integração de APIs do Telão",
+  "phase_slug": "integra-o-de-apis-do-tel-o",
+  "padded_phase": "12",
+  "phase_req_ids": "DISP-01, DISP-02, DISP-03",
+  "phase_status": "Pending",
+  "has_research": false,
+  "has_context": false,
+  "context_scope": "complete",
+  "has_reviews": false,
+  "has_plans": false,
+  "plan_count": 0,
+  "planning_exists": true,
+  "roadmap_exists": true,
+  "state_path": "/home/felipe/Projetos IA/Site_IBBE/.planning/STATE.md",
+  "roadmap_path": "/home/felipe/Projetos IA/Site_IBBE/.planning/ROADMAP.md",
+  "requirements_path": "/home/felipe/Projetos IA/Site_IBBE/.planning/REQUIREMENTS.md",
+  "patterns_path": null,
+  "section_manifest": {
+    "workflow": "plan-phase",
+    "included": [],
+    "excluded": [
+      "reviews-prerequisite",
+      "prd-express-gate",
+      "adr-ingest-express-path",
+      "research-only-modifiers",
+      "research-only-early-exit",
+      "chunked-planning-mode"
+    ],
+    "read": []
+  },
+  "prior_verify_commands": [
+    {
+      "phase": "11",
+      "plan": "/home/felipe/Projetos IA/Site_IBBE/.planning/phases/11-modera-o-pastoral/11-01-PLAN.md",
+      "task": "Tracer: Implementar Server Actions de moderação e conectar fluxo vertical ao Supabase",
+      "command": "npx tsc --noEmit"
+    },
+    {
+      "phase": "11",
+      "plan": "/home/felipe/Projetos IA/Site_IBBE/.planning/phases/11-modera-o-pastoral/11-01-PLAN.md",
+      "task": "Task: Criar testes automatizados de integração e validação para o painel de moderação",
+      "command": "npx playwright test tests/e2e/prayer-moderation.spec.ts"
+    }
+  ],
+  "project_root": "/home/felipe/Projetos IA/Site_IBBE",
+  "agents_installed": true,
+  "missing_agents": [],
+  "agents_dir": "/home/felipe/.gemini/antigravity/agents",
+  "agent_runtime": "claude",
+  "project_title": "Site Oficial — Igreja Batista Bethel em Resende (IBBE)"
+}
