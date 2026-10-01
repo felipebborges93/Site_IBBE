@@ -40,7 +40,7 @@
 
 ### Exibição no Telão (TELA)
 
-- [ ] **TELA-01**: Criar página web (`/telao`) otimizada para exibição em tela cheia (1080p/4K), sem barra de rolagem e com tipografia de alto contraste para leitura à distância.
+- [ ] **TELA-01**: Criar rota dinâmica secreta (`/telao/[token]`) otimizada para exibição em tela cheia (1080p/4K), sem barra de rolagem e com tipografia de alto contraste para leitura à distância. O token na URL deve validar a permissão.
 - [ ] **TELA-02**: Exibir um número fixo de pedidos aprovados (ex: 4 a 6) de forma estática, distribuídos em grade ou lista para maximizar a legibilidade.
 - [ ] **TELA-03**: Implementar interface para o operador marcar os pedidos na tela como exibidos (acionar API `displayed = true`) com um botão de avanço/conclusão, sem que o layout se desloque inesperadamente.
 

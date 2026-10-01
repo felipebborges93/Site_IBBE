@@ -79,10 +79,10 @@
 
 ### Phase 13: Exibição no Telão
 
-**Goal:** Interface front-end estática e em tela cheia otimizada para projetar pedidos de oração na igreja.
+**Goal:** Interface front-end estática e em tela cheia otimizada para projetar pedidos de oração na igreja, acessível exclusivamente via URL secreta.
 **Mode:** standard
 **Success Criteria:**
-1. Rota `/telao` com layout de tela cheia, alto contraste, sem barra de rolagem.
+1. Rota dinâmica `/telao/[token]` validando o parâmetro contra `TELAO_API_TOKEN` com layout de tela cheia, alto contraste, sem barra de rolagem.
 2. Visualização de um número fixo de orações aprovadas em grade/lista.
 3. Botões de ação para navegação e marcação das orações como exibidas.
 

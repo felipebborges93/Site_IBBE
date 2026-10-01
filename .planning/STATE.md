@@ -4,12 +4,12 @@ milestone: v1.2
 milestone_name: Tela de Exibição do Telão
 current_phase: 09
 current_phase_name: Autenticação e Proteção de Rotas
-status: pending
+status: executing
 stopped_at: Phase 9 context gathered
-last_updated: "2026-10-01T12:46:43.249Z"
+last_updated: "2026-10-01T12:49:15.267Z"
 last_activity: 2026-10-01
-last_activity_desc: Roadmap para v1.2 criado com sucesso
-state_head: 956f9b5b13d3a0aa66572bbec72939ef89a30967
+last_activity_desc: Phase 09 execution started
+state_head: 332996f2b6cbd1d0001eccd49f9c29668efe8fca
 progress:
   total_phases: 5
   completed_phases: 0
@@ -45,6 +45,7 @@ Phase 9: Autenticação e Proteção de Rotas (Pendente)
 | 2026-10-01 | RLS estrito: insert anon com check (pending/false), select/update apenas authenticated | Prevenção de injeção de orações não moderadas |
 | 2026-10-01 | Projeção telão consome via createAdminClient isolado e TELAO_API_TOKEN | Evita falhas silenciosas de leitura vazia por anon key |
 | 2026-10-01 | Hash de IP (SHA-256 + salt) sem gravar IP bruto | Conformidade com LGPD (Lei 13.709/2018) |
+| 2026-10-01 | Acesso ao Telão via URL Secreta | Praticidade para equipe de mídia; rota dinâmica `/telao/[token]` |
 
 ## Blockers
 
@@ -58,10 +59,10 @@ Phase 9: Autenticação e Proteção de Rotas (Pendente)
 
 ## Current Position
 
-Phase: 09 (Autenticação e Proteção de Rotas) — READY TO EXECUTE
-Plan: —
-Status: Pending
-Last activity: 2026-10-01 — Roadmap para v1.2 criado com sucesso
+Phase: 09 (Autenticação e Proteção de Rotas) — EXECUTING
+Plan: 1 of 2
+Status: Executing Phase 09
+Last activity: 2026-10-01 — Phase 09 execution started
 
 ## Operator Next Steps
 

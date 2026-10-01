@@ -108,7 +108,7 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 
 ### Active
 
-- [ ] **TELA-01**: Página `/telao` otimizada para tela cheia (1080p/4K), sem rolagem, com alto contraste.
+- [ ] **TELA-01**: Página acessível via URL secreta (`/telao/[token]`) otimizada para tela cheia (1080p/4K), sem rolagem, com alto contraste.
 - [ ] **TELA-02**: Consumo de pedidos de oração aprovados e exibição de número fixo de orações estáticas na tela.
 - [ ] **TELA-03**: Mecanismo para marcar os pedidos exibidos como `displayed`.
 - [ ] **AUTH-01**: Criação de usuário administrador no Supabase Auth para acesso seguro ao `/admin/oracao`
@@ -135,6 +135,7 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 | Design Stitch como referência visual | Divergências: design vence no visual, documento vence no comportamento/dados | Confirmado (✓ Good) |
 | Phosphor Icons | Leve, já usado no design Stitch | Decidido (✓ Good) |
 | Hash de IP (nunca IP bruto) | Conformidade LGPD para rate limiting | Confirmado (✓ Good) |
+| Acesso ao Telão via URL Secreta | Praticidade para a equipe de mídia não precisar de login interativo; usa `TELAO_API_TOKEN` na rota (`/telao/[token]`) | Confirmado (✓ Good) |
 
 ## Evolution
 
