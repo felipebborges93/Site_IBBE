@@ -1,21 +1,16 @@
 ---
 gsd_state_version: "1.0"
-milestone: v1.1
-milestone_name: Configuração do Supabase e Pedidos de Oração
-current_phase: 08
-current_phase_name: Infraestrutura Supabase e Banco de Dados
-status: complete
-stopped_at: Phase 9 context gathered
-last_updated: "2026-10-01T12:28:39.905Z"
+milestone: v1.2
+milestone_name: Tela de Exibição do Telão
+status: planning
+last_updated: "2026-10-01T12:35:29.517Z"
 last_activity: 2026-10-01
-last_activity_desc: Phase 08 verified and completed
-state_head: 7e92636d0ac17a677df3a184cd25c1f2b65bcaa4
 progress:
-  total_phases: 5
-  completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
-  percent: 20
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # State — Site IBBE
@@ -58,10 +53,10 @@ Phase 8: Infraestrutura Supabase e Banco de Dados (Concluída)
 
 ## Current Position
 
-Phase: 08 (Infraestrutura Supabase e Banco de Dados) — COMPLETED
-Plan: 1 of 1
-Status: Phase 08 Complete and Verified
-Last activity: 2026-10-01 — Phase 08 verified and completed
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-10-01 — Milestone v1.2 started
 
 ## Operator Next Steps
 

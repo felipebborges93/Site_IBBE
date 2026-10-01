@@ -95,26 +95,28 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 - ✓ **SEC-01**: Nenhuma chave no repo, cabeçalhos de segurança, validação de entrada no servidor — v1.0
 - ✓ **DOC-01**: README em português, .env.example, docs/telao-api.md, checklist de configuração — v1.0
 
-## Current Milestone: v1.1 Configuração do Supabase e Pedidos de Oração
+## Current Milestone: v1.2 Tela de Exibição do Telão
 
-**Goal:** Configurar o projeto Supabase do zero, aplicar o schema com RLS, configurar credenciais locais, provisionar usuário admin e validar o fluxo completo de pedidos de oração e moderação.
+**Goal:** Criar uma página web limpa e em tela cheia para exibir um número fixo e estático de pedidos de oração aprovados no telão da igreja.
 
 **Target features:**
-- Setup de novo projeto no Supabase e documentação das credenciais
-- Execução das migrações SQL com tabela `prayer_requests`, índices e políticas RLS restritivas
-- Provisionamento de conta de administrador no Supabase Auth para moderação
-- Validação do fluxo completo: formulário de pedidos de oração, painel `/admin/oracao` e endpoints da API
+- Página web otimizada para exibição em tela cheia, sem barra de rolagem (fontes grandes, alto contraste, legível a distância).
+- Layout em grade ou lista que exiba um número fixo de orações (a quantidade ideal para leitura, ex: 4 a 6 por tela).
+- Exibição estática durante o momento de oração (sem ciclo ou rotação automática).
+- Consumo da fila de pedidos aprovados via API (`/api/prayer-requests/display`).
+- Integração de atualização de status (marcar como `displayed` as orações após a exibição).
 
 ### Active
 
-- [ ] **SUPA-01**: Setup do projeto Supabase, variáveis de ambiente no `.env.local` e documentação de credenciais
-- [ ] **SUPA-02**: Execução de migração SQL (`prayer_requests`) com RLS estrito (insert anon, select/update autenticado)
+- [ ] **TELA-01**: Página `/telao` otimizada para tela cheia (1080p/4K), sem rolagem, com alto contraste.
+- [ ] **TELA-02**: Consumo de pedidos de oração aprovados e exibição de número fixo de orações estáticas na tela.
+- [ ] **TELA-03**: Mecanismo para marcar os pedidos exibidos como `displayed`.
 - [ ] **AUTH-01**: Criação de usuário administrador no Supabase Auth para acesso seguro ao `/admin/oracao`
 - [ ] **FLOW-01**: Validação ponta a ponta do envio de orações, moderação admin e consumo pela API do telão
 
 ### Out of Scope
 
-- Webapp do telão (apenas APIs preparatórias) — será projeto futuro
+- Rotação/ciclo automático de orações no telão — explicitly excluded by user preference (devem ficar estáticas para melhor leitura).
 - Sistema de membros / área logada para congregantes — escopo futuro
 - Blog / publicação de artigos — não solicitado
 - E-commerce / loja online — não aplicável
@@ -152,4 +154,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-10-01 for milestone v1.1*
+*Last updated: 2026-10-01 for milestone v1.2*
