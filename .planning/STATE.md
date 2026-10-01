@@ -1,18 +1,16 @@
 ---
 gsd_state_version: "1.0"
-status: Awaiting next milestone
-stopped_at: Phase 7 context gathered
-last_updated: "2026-09-30T12:54:48.763Z"
-last_activity: 2026-09-30
-last_activity_desc: Milestone v1.0 completed and archived
-state_head: "0b8b93ce700c768ec47d334741c8f41b8cffddc6"
+milestone: v1.1
+milestone_name: Configuração do Supabase e Pedidos de Oração
+status: planning
+last_updated: "2026-10-01T03:32:56.417Z"
+last_activity: 2026-10-01
 progress:
-  total_phases: 7
-  completed_phases: 7
-  total_plans: 13
-  completed_plans: 13
-  percent: 100
-current_phase_name: seo-acessibilidade-performance-e-lgpd
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # State — Site IBBE
@@ -69,10 +67,10 @@ Phase 4: Integração YouTube (Concluída)
 
 ## Current Position
 
-Phase: Milestone v1.0 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-09-30 — Milestone v1.0 completed and archived
+Status: Defining requirements
+Last activity: 2026-10-01 — Milestone v1.1 started
 
 ## Operator Next Steps
 

@@ -95,9 +95,22 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 - ✓ **SEC-01**: Nenhuma chave no repo, cabeçalhos de segurança, validação de entrada no servidor — v1.0
 - ✓ **DOC-01**: README em português, .env.example, docs/telao-api.md, checklist de configuração — v1.0
 
+## Current Milestone: v1.1 Configuração do Supabase e Pedidos de Oração
+
+**Goal:** Configurar o projeto Supabase do zero, aplicar o schema com RLS, configurar credenciais locais, provisionar usuário admin e validar o fluxo completo de pedidos de oração e moderação.
+
+**Target features:**
+- Setup de novo projeto no Supabase e documentação das credenciais
+- Execução das migrações SQL com tabela `prayer_requests`, índices e políticas RLS restritivas
+- Provisionamento de conta de administrador no Supabase Auth para moderação
+- Validação do fluxo completo: formulário de pedidos de oração, painel `/admin/oracao` e endpoints da API
+
 ### Active
 
-(Nenhum ativo no momento — marco v1.0 concluído e validado; próximos requisitos serão definidos no marco v1.1)
+- [ ] **SUPA-01**: Setup do projeto Supabase, variáveis de ambiente no `.env.local` e documentação de credenciais
+- [ ] **SUPA-02**: Execução de migração SQL (`prayer_requests`) com RLS estrito (insert anon, select/update autenticado)
+- [ ] **AUTH-01**: Criação de usuário administrador no Supabase Auth para acesso seguro ao `/admin/oracao`
+- [ ] **FLOW-01**: Validação ponta a ponta do envio de orações, moderação admin e consumo pela API do telão
 
 ### Out of Scope
 
@@ -125,5 +138,18 @@ Visual de referência gerado no Google Stitch: **"Igreja Batista Bethel Landing 
 
 This document evolves at phase transitions and milestone boundaries.
 
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd-complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-09-30 after v1.0 milestone*
+*Last updated: 2026-10-01 for milestone v1.1*
