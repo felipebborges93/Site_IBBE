@@ -5,11 +5,11 @@ milestone_name: Tela de Exibição do Telão
 current_phase: 11
 current_phase_name: Moderação Pastoral
 status: planning
-stopped_at: Phase 10 complete, ready to plan Phase 11
-last_updated: "2026-10-01T14:04:39.659Z"
+stopped_at: Phase 11 context gathered
+last_updated: "2026-10-01T14:16:51.257Z"
 last_activity: 2026-10-01
 last_activity_desc: Phase 10 complete, transitioned to Phase 11
-state_head: 919694655a152e2252a30d97080b6c280750da10
+state_head: 0eab0b069f2523cef89f1bfe112fc6b3a1e5b081
 progress:
   total_phases: 5
   completed_phases: 1
@@ -70,6 +70,6 @@ Last activity: 2026-10-01 — Phase 10 complete, transitioned to Phase 11
 
 ## Session
 
-**Last session:** 2026-10-01T12:56:33.946Z
-**Stopped at:** Phase 10 complete, ready to plan Phase 11
-**Resume file:** /home/felipe/Projetos IA/Site_IBBE/.planning/phases/10-ingest-o-e-prote-o-de-pedidos/10-CONTEXT.md
+**Last session:** 2026-10-01T14:16:51.122Z
+**Stopped at:** Phase 11 context gathered
+**Resume file:** .planning/phases/11-modera-o-pastoral/11-CONTEXT.md
