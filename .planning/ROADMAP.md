@@ -22,6 +22,11 @@
 
 **Requirements:** SUPA-01, SUPA-02, SUPA-03
 
+**Plans:** 1/1 plans executed
+**Wave 1**
+
+- [x] 08-01-PLAN.md: Infraestrutura Supabase e Banco de Dados (Wave 1)
+
 ---
 
 ### Phase 9: Autenticação e Proteção de Rotas
