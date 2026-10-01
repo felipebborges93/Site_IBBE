@@ -24,6 +24,16 @@
 
 **Requirements:** AUTH-01, AUTH-02, AUTH-03, AUTH-04
 
+**Plans:** 2 plans
+
+### Wave 1
+
+- [ ] 09-01-PLAN.md — Middleware e Refatoração
+
+### Wave 2 *(blocked on Wave 1 completion)*
+
+- [ ] 09-02-PLAN.md — UI de Login e Ações de Servidor
+
 ---
 
 ### Phase 10: Ingestão e Proteção de Pedidos
