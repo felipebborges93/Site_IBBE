@@ -25,11 +25,11 @@ export default async function TelaoPage({ params }: TelaoPageProps) {
 
   if (!isAuthorized) {
     return (
-      <main className="min-h-screen h-screen w-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 text-center select-none overflow-hidden font-sans">
-        <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl space-y-4">
-          <div className="w-14 h-14 mx-auto rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+      <main className="min-h-screen h-screen w-screen bg-gradient-to-b from-marinho via-[#162740] to-marinho text-white flex flex-col items-center justify-center p-6 text-center select-none overflow-hidden font-sans">
+        <div className="max-w-md w-full bg-white/5 border border-white/10 rounded-3xl p-8 shadow-elevation-3 backdrop-blur-md space-y-4">
+          <div className="w-16 h-16 mx-auto rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
             <svg
-              className="w-7 h-7"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -43,14 +43,14 @@ export default async function TelaoPage({ params }: TelaoPageProps) {
               />
             </svg>
           </div>
-          <h1 className="text-xl font-bold tracking-tight text-white">
+          <h1 className="text-2xl font-bold tracking-tight text-white">
             Acesso Restrito ao Telão
           </h1>
-          <p className="text-slate-400 text-sm leading-relaxed">
-            Acesso restrito ao telão da igreja. Token de autorização inválido ou ausente.
+          <p className="text-white/70 text-sm leading-relaxed">
+            Acesso reservado para projeção no templo da igreja. Token de autorização inválido ou ausente.
           </p>
-          <div className="pt-2 text-xs text-slate-600 font-mono">
-            IBBE &bull; Projeção de Orações
+          <div className="pt-2 text-xs text-ceu/80 font-medium">
+            Igreja Batista Bethel em Resende • Telão
           </div>
         </div>
       </main>
@@ -58,7 +58,7 @@ export default async function TelaoPage({ params }: TelaoPageProps) {
   }
 
   return (
-    <main className="min-h-screen h-screen w-screen overflow-hidden bg-slate-950 text-white select-none flex flex-col font-sans">
+    <main className="min-h-screen h-screen w-screen overflow-hidden bg-gradient-to-b from-marinho via-[#15253b] to-[#0d1726] text-white select-none flex flex-col font-sans">
       <TelaoDisplay token={token} />
     </main>
   );
