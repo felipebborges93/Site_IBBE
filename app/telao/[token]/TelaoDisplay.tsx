@@ -54,13 +54,13 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     fetchPrayers();
   }, [fetchPrayers]);
 
-  // Avançar lote atual (até 8 pedidos) com transição orquestrada
+  // Avançar lote atual (até 12 pedidos) com transição orquestrada
   const handleAdvanceBatch = useCallback(async () => {
     if (isAdvancing || prayers.length === 0) return;
 
     try {
       setIsAdvancing(true);
-      const currentBatch = prayers.slice(0, 8);
+      const currentBatch = prayers.slice(0, 12);
 
       // Dispara marcação de displayed em paralelo para o lote atual
       await Promise.allSettled(
@@ -75,12 +75,12 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
       );
 
       // Remove os pedidos exibidos do estado local e incrementa a chave do lote
-      const remainingPrayers = prayers.slice(8);
+      const remainingPrayers = prayers.slice(12);
       setPrayers(remainingPrayers);
       setBatchKey((prev) => prev + 1);
 
-      // Se restarem menos de 8, busca novos pedidos aprovados
-      if (remainingPrayers.length < 8) {
+      // Se restarem menos de 12, busca novos pedidos aprovados
+      if (remainingPrayers.length < 12) {
         const res = await fetch("/api/prayer-requests/display", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -122,10 +122,10 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     }
   };
 
-  const currentBatch = prayers.slice(0, 8);
+  const currentBatch = prayers.slice(0, 12);
 
   return (
-    <div className="flex-1 flex flex-col h-full w-full justify-between p-6 lg:p-8 select-none relative overflow-hidden bg-gradient-to-b from-white via-gelo-light to-gelo/30">
+    <div className="flex-1 flex flex-col h-full w-full justify-between p-4 sm:p-5 lg:p-6 select-none relative overflow-hidden bg-gradient-to-b from-white via-gelo-light to-gelo/30">
       {/* Padrão decorativo sutil de fundo do site */}
       <div 
         className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none mix-blend-multiply"
@@ -133,7 +133,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
       />
 
       {/* Cabeçalho minimalista: Logo da Igreja + Momento de Intercessão à esquerda | Botão de Tela Cheia à direita */}
-      <header className="relative z-10 flex items-center justify-between border-b border-marinho/10 pb-3 mb-4">
+      <header className="relative z-10 flex items-center justify-between border-b border-marinho/10 pb-2.5 mb-3">
         <div className="flex items-center gap-4 sm:gap-5">
           <div className="relative flex items-center justify-center">
             <Image
@@ -241,7 +241,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             </button>
           </motion.div>
         ) : (
-          /* Grade 4 colunas x 2 linhas com Transição Cinematográfica entre Lotes (Overdrive) */
+          /* Grade 4 colunas x 3 linhas (12 pedidos) com Transição Cinematográfica entre Lotes (Overdrive) */
           <AnimatePresence mode="wait">
             <motion.div
               key={`batch-${batchKey}`}
@@ -253,20 +253,20 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                 visible: {
                   opacity: 1,
                   transition: {
-                    staggerChildren: 0.05,
+                    staggerChildren: 0.035,
                     delayChildren: 0.02,
                   },
                 },
                 exit: {
                   opacity: 0,
                   transition: {
-                    staggerChildren: 0.03,
+                    staggerChildren: 0.02,
                     staggerDirection: -1,
-                    duration: 0.25,
+                    duration: 0.2,
                   },
                 },
               }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-3.5 lg:gap-4 flex-1 h-full min-h-0 py-1"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-3 gap-2.5 lg:gap-3 flex-1 h-full min-h-0 py-0.5"
             >
               {currentBatch.map((prayer, index) => {
                 const displayName =
@@ -280,7 +280,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                     variants={{
                       hidden: {
                         opacity: 0,
-                        y: 18,
+                        y: 16,
                         scale: 0.97,
                         filter: "blur(4px)",
                       },
@@ -298,35 +298,35 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                       },
                       exit: {
                         opacity: 0,
-                        y: -12,
+                        y: -10,
                         scale: 0.98,
                         filter: "blur(3px)",
                         transition: {
-                          duration: 0.2,
+                          duration: 0.18,
                           ease: "easeIn",
                         },
                       },
                     }}
-                    className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-2xl p-4 lg:p-5 flex flex-col justify-start shadow-elevation-1 transition-colors relative overflow-hidden group"
+                    className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-xl sm:rounded-2xl p-3 sm:p-3.5 lg:p-4 flex flex-col justify-start shadow-elevation-1 transition-colors relative overflow-hidden group"
                   >
                     {/* Linha de acento de marca com suave pulso de entrada */}
                     <motion.div 
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
-                      transition={{ delay: 0.1 + index * 0.04, duration: 0.5, ease: "easeOut" }}
+                      transition={{ delay: 0.06 + index * 0.025, duration: 0.45, ease: "easeOut" }}
                       className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto origin-left opacity-75 group-hover:opacity-100 transition-opacity" 
                     />
                     
-                    <div className="space-y-2.5 overflow-hidden flex-1 flex flex-col justify-start">
-                      <div className="flex items-center justify-between border-b border-marinho/10 pb-2">
-                        <span className="text-cobalto font-bold text-base lg:text-lg tracking-tight truncate max-w-[78%]">
+                    <div className="space-y-1.5 sm:space-y-2 overflow-hidden flex-1 flex flex-col justify-start">
+                      <div className="flex items-center justify-between border-b border-marinho/10 pb-1.5">
+                        <span className="text-cobalto font-bold text-sm sm:text-base tracking-tight truncate max-w-[76%]">
                           {displayName}
                         </span>
-                        <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/10 shrink-0">
+                        <span className="text-[10px] font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2 py-0.5 rounded-full border border-marinho/10 shrink-0">
                           Oração
                         </span>
                       </div>
-                      <p className="text-marinho text-sm lg:text-base font-normal leading-relaxed pt-0.5 select-text">
+                      <p className="text-marinho text-xs sm:text-sm lg:text-[14.5px] font-normal leading-relaxed pt-0.5 select-text">
                         {prayer.request}
                       </p>
                     </div>
