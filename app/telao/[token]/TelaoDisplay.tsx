@@ -146,8 +146,11 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             />
           </div>
           <div className="h-6 w-px bg-marinho/15 hidden sm:block" />
-          <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight text-cobalto">
-            Momento de Intercessão
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight text-marinho flex items-baseline gap-1.5">
+            <span>Momento de</span>
+            <span className="font-script text-cobalto italic font-normal text-[1.25em] inline-block -rotate-1">
+              Intercessão
+            </span>
           </h1>
         </div>
 
@@ -218,7 +221,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             
             <h2 className="text-3xl lg:text-4xl font-extrabold text-marinho mb-4 tracking-tight">
               Uma igreja feita de{" "}
-              <span className="font-script-accent text-cobalto italic inline-block text-[1.15em] -rotate-1">
+              <span className="font-script text-cobalto italic inline-block text-[1.15em] -rotate-1">
                 oração.
               </span>
             </h2>
@@ -319,15 +322,15 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                     
                     <div className="space-y-1.5 sm:space-y-2 overflow-hidden flex-1 flex flex-col justify-start">
                       <div className="flex items-center justify-between border-b border-marinho/10 pb-1.5">
-                        <span className="text-cobalto font-bold text-sm sm:text-base tracking-tight truncate max-w-[76%]">
+                        <span className="text-marinho font-bold text-sm sm:text-base tracking-tight truncate max-w-[76%]">
                           {displayName}
                         </span>
-                        <span className="text-[10px] font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2 py-0.5 rounded-full border border-marinho/10 shrink-0">
+                        <span className="text-micro font-semibold text-cobalto uppercase tracking-wider bg-gelo/70 px-2 py-0.5 rounded-full border border-cobalto/15 shrink-0">
                           Oração
                         </span>
                       </div>
-                      <p className="text-marinho text-xs sm:text-sm lg:text-[14.5px] font-normal leading-relaxed pt-0.5 select-text">
-                        {prayer.request}
+                      <p className="text-marinho/90 text-sm sm:text-base font-medium leading-relaxed pt-0.5 select-text">
+                        &ldquo;{prayer.request}&rdquo;
                       </p>
                     </div>
                   </motion.article>
