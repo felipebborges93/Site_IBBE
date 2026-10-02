@@ -61,6 +61,11 @@ export function ServicesSection() {
               note = "Ministério Infantil na Igreja";
               modality = "Presencial";
               timeRange = "19:30 às 21:00";
+            } else if (item.id === "sexta-na-brecha") {
+              scheduleBadge = "Sexta-feira";
+              note = "Reunião de Oração";
+              modality = "Presencial";
+              timeRange = "07:00 às 08:00";
             } else if (item.id === "pgm") {
               scheduleBadge = "Durante a semana";
               note = "Nos lares da cidade";

@@ -41,6 +41,14 @@ export const services: Service[] = [
     icon: "UsersThree",
   },
   {
+    id: "sexta-na-brecha",
+    title: "Sexta na Brecha",
+    day: "Sexta-feira",
+    time: "07:00",
+    description: "Reunião de oração pela nossa igreja, pela nossa cidade e pelos pedidos de oração enviados.",
+    icon: "HandsPraying",
+  },
+  {
     id: "pgm",
     title: "Pequenos Grupos (PGMs)",
     day: "Durante a semana",
