@@ -12,9 +12,7 @@ export async function GET(request: Request) {
   }
 
   const authHeader = request.headers.get("Authorization");
-  const isAuthorized =
-    authHeader === `Bearer ${secrets.TELAO_API_TOKEN}` ||
-    authHeader === "Bearer live";
+  const isAuthorized = authHeader === `Bearer ${secrets.TELAO_API_TOKEN}`;
 
   if (!authHeader || !isAuthorized) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

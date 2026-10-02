@@ -19,10 +19,9 @@ export default async function TelaoPage({ params }: TelaoPageProps) {
   }
 
   const isAuthorized =
-    token === "live" ||
-    (Boolean(expectedToken) &&
-      Boolean(token) &&
-      token.trim() === expectedToken?.trim());
+    Boolean(expectedToken) &&
+    Boolean(token) &&
+    token.trim() === expectedToken?.trim();
 
   if (!isAuthorized) {
     return (

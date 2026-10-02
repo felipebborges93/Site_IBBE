@@ -9,19 +9,20 @@ create table if not exists public.prayer_requests (
     is_anonymous boolean default false not null,
     created_at timestamp with time zone default timezone('utc'::text, now()) not null,
     status text default 'pending' not null check (status in ('pending', 'approved', 'rejected')),
-    displayed boolean default false not null
+    displayed boolean default false not null,
+    allow_public_display boolean default false not null
 );
 
 -- 2. Constraints de Validação e LGPD
 -- Garante conformidade com a LGPD: se for anônimo, name DEVE ser null. Se não for anônimo, name pode ser fornecido.
 alter table public.prayer_requests drop constraint if exists check_anonymous_name;
 alter table public.prayer_requests add constraint check_anonymous_name 
-    check ((is_anonymous = true and name is null) or is_anonymous = false);
+    check ((is_anonymous = true and name is null) or (is_anonymous = false and name is not null and char_length(trim(name)) > 0));
 
 -- Limite de caracteres do pedido e nome (defesa em profundidade no banco de dados)
 alter table public.prayer_requests drop constraint if exists check_request_length;
 alter table public.prayer_requests add constraint check_request_length 
-    check (char_length(request) >= 5 and char_length(request) <= 1000);
+    check (char_length(request) >= 5 and char_length(request) <= 140);
 
 alter table public.prayer_requests drop constraint if exists check_name_length;
 alter table public.prayer_requests add constraint check_name_length 
@@ -52,7 +53,7 @@ create policy "Public insert only pending and not displayed" on public.prayer_re
         status = 'pending' 
         and displayed = false 
         and char_length(request) >= 5 
-        and char_length(request) <= 1000
+        and char_length(request) <= 140
     );
 
 -- [SELECT - Role authenticated]
