@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface PrayerRequest {
   id: string;
@@ -21,6 +22,8 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
   const [error, setError] = useState<string | null>(null);
   const [isAdvancing, setIsAdvancing] = useState(false);
 
+  const [batchKey, setBatchKey] = useState(0);
+
   const fetchPrayers = useCallback(async () => {
     try {
       setLoading(true);
@@ -37,6 +40,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
 
       const data = await res.json();
       setPrayers(Array.isArray(data) ? data : []);
+      setBatchKey((prev) => prev + 1);
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Erro desconhecido ao carregar";
@@ -50,7 +54,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     fetchPrayers();
   }, [fetchPrayers]);
 
-  // Avançar lote atual (até 8 pedidos)
+  // Avançar lote atual (até 8 pedidos) com transição orquestrada
   const handleAdvanceBatch = useCallback(async () => {
     if (isAdvancing || prayers.length === 0) return;
 
@@ -70,9 +74,10 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
         )
       );
 
-      // Remove os pedidos exibidos do estado local
+      // Remove os pedidos exibidos do estado local e incrementa a chave do lote
       const remainingPrayers = prayers.slice(8);
       setPrayers(remainingPrayers);
+      setBatchKey((prev) => prev + 1);
 
       // Se restarem menos de 8, busca novos pedidos aprovados
       if (remainingPrayers.length < 8) {
@@ -168,8 +173,8 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
         </button>
       </header>
 
-      {/* Área Principal de Conteúdo */}
-      <section className="relative z-10 flex-1 flex flex-col justify-center min-h-0 pb-2">
+      {/* Área Principal de Conteúdo com Transição Cinematográfica Overdrive */}
+      <section className="relative z-10 flex-1 flex flex-col justify-center min-h-0 pb-2 overflow-hidden">
         {loading && prayers.length === 0 ? (
           <div className="flex flex-col items-center justify-center space-y-4 py-16 text-marinho/60">
             <div className="w-10 h-10 border-3 border-cobalto/25 border-t-cobalto rounded-full animate-spin" />
@@ -189,7 +194,12 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
           </div>
         ) : prayers.length === 0 ? (
           /* Estado Vazio - Slide Congregacional Luminoso e Acolhedor */
-          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 lg:p-12 bg-white border border-marinho/10 rounded-3xl my-auto shadow-elevation-1">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex-1 flex flex-col items-center justify-center text-center p-8 lg:p-12 bg-white border border-marinho/10 rounded-3xl my-auto shadow-elevation-1"
+          >
             <div className="w-20 h-20 mb-6 rounded-full bg-gelo border border-cobalto/20 flex items-center justify-center text-cobalto shadow-inner">
               <svg
                 className="w-10 h-10"
@@ -229,41 +239,102 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             >
               Verificar Novos Pedidos
             </button>
-          </div>
+          </motion.div>
         ) : (
-          /* Grade 4 colunas x 2 linhas para acomodar 8 pedidos com proporção vertical estável */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-3.5 lg:gap-4 flex-1 h-full min-h-0 py-1">
-            {currentBatch.map((prayer) => {
-              const displayName =
-                prayer.is_anonymous || !prayer.name
-                  ? "Irmão(ã) em Cristo"
-                  : prayer.name;
+          /* Grade 4 colunas x 2 linhas com Transição Cinematográfica entre Lotes (Overdrive) */
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`batch-${batchKey}`}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.05,
+                    delayChildren: 0.02,
+                  },
+                },
+                exit: {
+                  opacity: 0,
+                  transition: {
+                    staggerChildren: 0.03,
+                    staggerDirection: -1,
+                    duration: 0.25,
+                  },
+                },
+              }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-3.5 lg:gap-4 flex-1 h-full min-h-0 py-1"
+            >
+              {currentBatch.map((prayer, index) => {
+                const displayName =
+                  prayer.is_anonymous || !prayer.name
+                    ? "Irmão(ã) em Cristo"
+                    : prayer.name;
 
-              return (
-                <article
-                  key={prayer.id}
-                  className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-2xl p-4 lg:p-5 flex flex-col justify-start shadow-elevation-1 transition-all relative overflow-hidden group"
-                >
-                  {/* Linha de acento de marca no topo do cartão */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto opacity-70 group-hover:opacity-100 transition-opacity" />
-                  
-                  <div className="space-y-2.5 overflow-hidden flex-1 flex flex-col justify-start">
-                    <div className="flex items-center justify-between border-b border-marinho/10 pb-2">
-                      <span className="text-cobalto font-bold text-base lg:text-lg tracking-tight truncate max-w-[78%]">
-                        {displayName}
-                      </span>
-                      <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/10 shrink-0">
-                        Oração
-                      </span>
+                return (
+                  <motion.article
+                    key={prayer.id}
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        y: 18,
+                        scale: 0.97,
+                        filter: "blur(4px)",
+                      },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        filter: "blur(0px)",
+                        transition: {
+                          type: "spring",
+                          damping: 24,
+                          stiffness: 280,
+                          mass: 0.8,
+                        },
+                      },
+                      exit: {
+                        opacity: 0,
+                        y: -12,
+                        scale: 0.98,
+                        filter: "blur(3px)",
+                        transition: {
+                          duration: 0.2,
+                          ease: "easeIn",
+                        },
+                      },
+                    }}
+                    className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-2xl p-4 lg:p-5 flex flex-col justify-start shadow-elevation-1 transition-colors relative overflow-hidden group"
+                  >
+                    {/* Linha de acento de marca com suave pulso de entrada */}
+                    <motion.div 
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.1 + index * 0.04, duration: 0.5, ease: "easeOut" }}
+                      className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto origin-left opacity-75 group-hover:opacity-100 transition-opacity" 
+                    />
+                    
+                    <div className="space-y-2.5 overflow-hidden flex-1 flex flex-col justify-start">
+                      <div className="flex items-center justify-between border-b border-marinho/10 pb-2">
+                        <span className="text-cobalto font-bold text-base lg:text-lg tracking-tight truncate max-w-[78%]">
+                          {displayName}
+                        </span>
+                        <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/10 shrink-0">
+                          Oração
+                        </span>
+                      </div>
+                      <p className="text-marinho text-sm lg:text-base font-normal leading-relaxed pt-0.5 select-text">
+                        {prayer.request}
+                      </p>
                     </div>
-                    <p className="text-marinho text-sm lg:text-base font-normal leading-relaxed pt-0.5 select-text">
-                      {prayer.request}
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+                  </motion.article>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
         )}
       </section>
     </div>
