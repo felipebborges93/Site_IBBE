@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import { prayerFormSchema } from "@/lib/validations/prayer";
 import { createClient } from "@/utils/supabase/server";
 import { hashIp, checkRateLimit } from "@/lib/rate-limit";
-import { sanitizeHtml } from "@/lib/sanitize";
+import { sanitizeHtml, decodeHtmlEntities } from "@/lib/sanitize";
 
 export interface PrayerActionState {
   success: boolean;
@@ -98,8 +98,8 @@ export async function submitPrayerRequest(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          nome: finalName || "Anônimo",
-          pedido: validated.data.request,
+          nome: decodeHtmlEntities(finalName || "Anônimo"),
+          pedido: decodeHtmlEntities(validated.data.request),
           is_anonymous: validated.data.is_anonymous,
           allow_public_display: validated.data.allow_public_display,
           created_at: new Date().toISOString(),

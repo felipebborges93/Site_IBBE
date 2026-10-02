@@ -27,3 +27,17 @@ export function sanitizeHtml(input: string): string {
     })
     .trim();
 }
+
+/**
+ * Decodifica entidades HTML para texto puro legível (WhatsApp, e-mails, SMS, etc.).
+ */
+export function decodeHtmlEntities(input: string): string {
+  if (!input) return "";
+
+  return input
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+}
