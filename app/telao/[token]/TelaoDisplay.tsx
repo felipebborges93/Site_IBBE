@@ -141,7 +141,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
               </h1>
             </div>
             <p className="text-xs text-marinho/65 font-medium">
-              Apresentando as orações e súplicas da congregação diante do Senhor
+              Pedidos de oração recebidos durante esta semana (segunda a domingo)
             </p>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
           {prayers.length > 0 && (
             <div className="bg-white/90 border border-marinho/10 px-4 py-1.5 rounded-full text-xs font-semibold text-marinho shadow-elevation-1 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-cobalto" />
-              <span>{prayers.length} {prayers.length === 1 ? "pedido na fila" : "pedidos na fila"}</span>
+              <span>{prayers.length} {prayers.length === 1 ? "pedido da semana" : "pedidos da semana"}</span>
             </div>
           )}
           <button

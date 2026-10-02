@@ -17,14 +17,41 @@ export async function GET(request: Request) {
   }
 
   try {
+    // Calcula o início da semana corrente (Segunda-feira 00:00:00 horário de Brasília / America/Sao_Paulo)
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Sao_Paulo",
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour12: false,
+    });
+
+    const parts = formatter.formatToParts(new Date());
+    const partMap: Record<string, string> = {};
+    parts.forEach((p) => (partMap[p.type] = p.value));
+
+    const year = parseInt(partMap.year, 10);
+    const month = parseInt(partMap.month, 10) - 1;
+    const day = parseInt(partMap.day, 10);
+
+    const localDate = new Date(Date.UTC(year, month, day));
+    const dayOfWeek = localDate.getUTCDay(); // 0 = Domingo, 1 = Segunda, etc.
+    const diffToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+    localDate.setUTCDate(localDate.getUTCDate() - diffToMonday);
+
+    // Formata segunda-feira 00:00:00 com fuso do Brasil (UTC-3)
+    const mondayBRT = `${localDate.toISOString().split("T")[0]}T00:00:00-03:00`;
+    const startOfWeekISO = new Date(mondayBRT).toISOString();
+
     const supabase = createAdminClient();
     const { data, error } = await supabase
       .from("prayer_requests")
       .select("id, name, request, is_anonymous, created_at")
       .eq("status", "approved")
       .eq("displayed", false)
+      .gte("created_at", startOfWeekISO)
       .order("created_at", { ascending: true })
-      .limit(50);
+      .limit(100);
 
     if (error) {
       console.error("Erro ao buscar pedidos para exibição:", error);
