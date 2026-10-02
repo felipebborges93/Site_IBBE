@@ -2,12 +2,12 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com data:;
   img-src 'self' blob: data: https://lh3.googleusercontent.com https://images.unsplash.com https://i.ytimg.com;
   media-src 'self';
-  connect-src 'self' https://*.supabase.co;
+  connect-src 'self' https://*.supabase.co https://va.vercel-scripts.com;
   frame-src 'self' https://www.youtube.com https://youtube.com https://www.google.com;
   object-src 'none';
   base-uri 'self';

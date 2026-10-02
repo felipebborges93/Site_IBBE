@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/content";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -160,6 +161,7 @@ export default function RootLayout({
             {children}
           </SiteChrome>
         </SmoothScroll>
+        <SpeedInsights />
       </body>
     </html>
   );
