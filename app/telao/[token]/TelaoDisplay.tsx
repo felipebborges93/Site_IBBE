@@ -238,8 +238,8 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             </button>
           </div>
         ) : (
-          /* Grade 4 colunas x 2 linhas para acomodar 8 pedidos com fundo branco e contraste ideal */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-4 flex-1 h-full min-h-0 py-1">
+          /* Grade 4 colunas x 2 linhas para acomodar 8 pedidos com proporção vertical estável */
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-3.5 lg:gap-4 flex-1 h-full min-h-0 py-1">
             {currentBatch.map((prayer) => {
               const displayName =
                 prayer.is_anonymous || !prayer.name
@@ -249,21 +249,21 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
               return (
                 <article
                   key={prayer.id}
-                  className="bg-white hover:bg-gelo-light/60 border border-marinho/10 hover:border-cobalto/30 rounded-2xl p-5 flex flex-col justify-between shadow-elevation-1 transition-all relative overflow-hidden group"
+                  className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-2xl p-4 lg:p-5 flex flex-col justify-start shadow-elevation-1 transition-all relative overflow-hidden group"
                 >
                   {/* Linha de acento de marca no topo do cartão */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto opacity-70 group-hover:opacity-100 transition-opacity" />
                   
-                  <div className="space-y-3 overflow-hidden flex-1 flex flex-col justify-start">
-                    <div className="flex items-center justify-between border-b border-marinho/10 pb-2.5">
-                      <span className="text-cobalto font-bold text-lg lg:text-xl tracking-tight truncate max-w-[80%]">
+                  <div className="space-y-2.5 overflow-hidden flex-1 flex flex-col justify-start">
+                    <div className="flex items-center justify-between border-b border-marinho/10 pb-2">
+                      <span className="text-cobalto font-bold text-base lg:text-lg tracking-tight truncate max-w-[78%]">
                         {displayName}
                       </span>
-                      <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/10">
+                      <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/10 shrink-0">
                         Oração
                       </span>
                     </div>
-                    <p className="text-marinho text-base lg:text-lg font-normal leading-relaxed pt-1">
+                    <p className="text-marinho text-sm lg:text-[15px] xl:text-base font-normal leading-relaxed pt-0.5 select-text">
                       {prayer.request}
                     </p>
                   </div>
