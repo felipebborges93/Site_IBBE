@@ -89,6 +89,26 @@ export async function submitPrayerRequest(
       };
     }
 
+    // 7. Notificar automação n8n via Webhook (não-bloqueante para o usuário)
+    const n8nWebhookUrl = process.env.N8N_PRAYER_WEBHOOK_URL;
+    if (n8nWebhookUrl) {
+      fetch(n8nWebhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: finalName || "Anônimo",
+          pedido: validated.data.request,
+          is_anonymous: validated.data.is_anonymous,
+          allow_public_display: validated.data.allow_public_display,
+          created_at: new Date().toISOString(),
+        }),
+      }).catch((webhookError) => {
+        console.error("Falha ao disparar webhook do n8n para pedido de oração:", webhookError);
+      });
+    }
+
     return {
       success: true,
       message: "Seu pedido de oração foi recebido! Nossa equipe de intercessão já está em oração por você.",
