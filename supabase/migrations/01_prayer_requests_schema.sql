@@ -43,11 +43,11 @@ drop policy if exists "Anon insert only pending and not displayed" on public.pra
 
 -- 6. Políticas de RLS Restritivas
 
--- [INSERT - Role anon / public]
--- Clientes anônimos só podem inserir pedidos com status = 'pending' e displayed = false
-create policy "Anon insert only pending and not displayed" on public.prayer_requests
+-- [INSERT - Role public (anon e authenticated)]
+-- Qualquer usuário pode enviar pedidos com status = 'pending' e displayed = false
+create policy "Public insert only pending and not displayed" on public.prayer_requests
     for insert
-    to anon
+    to public
     with check (
         status = 'pending' 
         and displayed = false 
