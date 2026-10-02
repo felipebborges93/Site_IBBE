@@ -119,43 +119,43 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
   const currentBatch = prayers.slice(0, 8);
 
   return (
-    <div className="flex-1 flex flex-col h-full w-full justify-between p-6 lg:p-8 select-none relative overflow-hidden">
-      {/* Padrão decorativo sutil de fundo alinhado ao site */}
+    <div className="flex-1 flex flex-col h-full w-full justify-between p-6 lg:p-8 select-none relative overflow-hidden bg-gradient-to-b from-white via-gelo-light to-gelo/30">
+      {/* Padrão decorativo sutil de fundo do site */}
       <div 
-        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-screen"
-        style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+        className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none mix-blend-multiply"
+        style={{ backgroundImage: "url('/images/patterns/pattern-10.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
       />
 
-      {/* Cabeçalho superior refinado com a identidade visual da IBBE */}
-      <header className="relative z-10 flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+      {/* Cabeçalho superior luminoso e arejado com a identidade visual da IBBE */}
+      <header className="relative z-10 flex items-center justify-between border-b border-marinho/10 pb-4 mb-4">
         <div className="flex items-center gap-4">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cobalto/20 border border-cobalto/30 shadow-inner">
-            <span className="w-3 h-3 rounded-full bg-verde animate-pulse shadow-sm shadow-verde/50" />
+          <div className="flex items-center justify-center w-11 h-11 rounded-full bg-cobalto/10 border border-cobalto/20 shadow-sm">
+            <span className="w-3 h-3 rounded-full bg-verde animate-pulse shadow-sm shadow-verde/40" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-xl lg:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+              <h1 className="text-xl lg:text-2xl font-extrabold tracking-tight text-marinho flex items-center gap-2">
                 <span>Igreja Batista Bethel</span>
-                <span className="text-white/30 font-light">•</span>
-                <span className="text-ceu font-bold">Momento de Intercessão</span>
+                <span className="text-marinho/25 font-light">•</span>
+                <span className="text-cobalto font-bold">Momento de Intercessão</span>
               </h1>
             </div>
-            <p className="text-xs text-white/60 font-medium">
-              Apresentando as orações e súplicas da nossa família ao Senhor
+            <p className="text-xs text-marinho/65 font-medium">
+              Apresentando as orações e súplicas da congregação diante do Senhor
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
           {prayers.length > 0 && (
-            <div className="bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-xs font-semibold text-white/90 shadow-sm flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ceu" />
+            <div className="bg-white/90 border border-marinho/10 px-4 py-1.5 rounded-full text-xs font-semibold text-marinho shadow-elevation-1 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-cobalto" />
               <span>{prayers.length} {prayers.length === 1 ? "pedido na fila" : "pedidos na fila"}</span>
             </div>
           )}
           <button
             onClick={toggleFullscreen}
-            className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 hover:text-white transition-all shadow-sm"
+            className="p-2.5 rounded-full bg-white hover:bg-gelo-light border border-marinho/10 text-marinho/70 hover:text-marinho transition-all shadow-sm"
             title="Alternar Tela Cheia (F11)"
           >
             <svg
@@ -178,13 +178,13 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
       {/* Área Principal de Conteúdo */}
       <section className="relative z-10 flex-1 flex flex-col justify-center min-h-0">
         {loading && prayers.length === 0 ? (
-          <div className="flex flex-col items-center justify-center space-y-4 py-16 text-white/70">
-            <div className="w-10 h-10 border-3 border-cobalto/20 border-t-cobalto rounded-full animate-spin" />
+          <div className="flex flex-col items-center justify-center space-y-4 py-16 text-marinho/60">
+            <div className="w-10 h-10 border-3 border-cobalto/25 border-t-cobalto rounded-full animate-spin" />
             <p className="text-base font-medium">Buscando motivos de oração...</p>
           </div>
         ) : error && prayers.length === 0 ? (
           <div className="flex flex-col items-center justify-center space-y-4 py-16 text-center max-w-md mx-auto">
-            <p className="text-red-300 text-base bg-red-500/10 border border-red-500/20 px-6 py-3 rounded-2xl">
+            <p className="text-red-700 text-base bg-red-50 border border-red-200 px-6 py-3 rounded-2xl shadow-sm">
               Erro ao carregar dados: {error}
             </p>
             <button
@@ -195,9 +195,9 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             </button>
           </div>
         ) : prayers.length === 0 ? (
-          /* Estado Vazio - Slide Congregacional Acolhedor com estética do site */
-          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 lg:p-12 bg-white/[0.04] border border-white/10 rounded-3xl my-auto shadow-elevation-2 backdrop-blur-md">
-            <div className="w-20 h-20 mb-6 rounded-full bg-cobalto/15 border border-cobalto/30 flex items-center justify-center text-ceu shadow-inner">
+          /* Estado Vazio - Slide Congregacional Luminoso e Acolhedor */
+          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 lg:p-12 bg-white border border-marinho/10 rounded-3xl my-auto shadow-elevation-1">
+            <div className="w-20 h-20 mb-6 rounded-full bg-gelo border border-cobalto/20 flex items-center justify-center text-cobalto shadow-inner">
               <svg
                 className="w-10 h-10"
                 fill="none"
@@ -213,32 +213,32 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
               </svg>
             </div>
             
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-marinho mb-4 tracking-tight">
               Uma igreja feita de{" "}
-              <span className="font-script-accent text-ceu italic inline-block text-[1.15em] -rotate-1">
+              <span className="font-script-accent text-cobalto italic inline-block text-[1.15em] -rotate-1">
                 oração.
               </span>
             </h2>
             
-            <p className="text-lg lg:text-xl text-white/90 font-normal max-w-2xl mb-4 leading-relaxed">
+            <p className="text-lg lg:text-xl text-marinho/80 font-normal max-w-2xl mb-4 leading-relaxed">
               &ldquo;Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas, e com ação de graças, apresentem seus pedidos a Deus.&rdquo;
             </p>
             
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-ceu text-xs font-semibold uppercase tracking-wider mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gelo/70 border border-marinho/10 text-marinho/80 text-xs font-semibold uppercase tracking-wider mb-8">
               <span>Filipenses 4:6</span>
-              <span className="text-white/30">•</span>
+              <span className="text-marinho/30">•</span>
               <span>Igreja Batista Bethel em Resende</span>
             </div>
 
             <button
               onClick={() => fetchPrayers()}
-              className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-white text-xs font-semibold uppercase tracking-wider transition-all"
+              className="px-6 py-2.5 rounded-full bg-gelo hover:bg-gelo/80 border border-marinho/10 text-marinho text-xs font-semibold uppercase tracking-wider transition-all"
             >
               Verificar Novos Pedidos
             </button>
           </div>
         ) : (
-          /* Grade 4 colunas x 2 linhas para acomodar 8 pedidos com elegância e alta legibilidade */
+          /* Grade 4 colunas x 2 linhas para acomodar 8 pedidos com fundo branco e contraste ideal */
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-4 flex-1 h-full min-h-0 py-1">
             {currentBatch.map((prayer) => {
               const displayName =
@@ -249,28 +249,29 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
               return (
                 <article
                   key={prayer.id}
-                  className="bg-white/[0.06] hover:bg-white/[0.09] border border-white/10 rounded-2xl p-5 flex flex-col justify-between shadow-elevation-1 backdrop-blur-sm transition-all relative overflow-hidden group"
+                  className="bg-white hover:bg-gelo-light/60 border border-marinho/10 hover:border-cobalto/30 rounded-2xl p-5 flex flex-col justify-between shadow-elevation-1 transition-all relative overflow-hidden group"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto opacity-70 group-hover:opacity-100 transition-opacity" />
+                  {/* Linha de acento de marca no topo do cartão */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto opacity-60 group-hover:opacity-100 transition-opacity" />
                   
                   <div className="space-y-2.5 overflow-hidden">
-                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                      <span className="text-ceu font-bold text-lg lg:text-xl tracking-tight truncate max-w-[80%]">
+                    <div className="flex items-center justify-between border-b border-marinho/5 pb-2">
+                      <span className="text-cobalto font-bold text-lg lg:text-xl tracking-tight truncate max-w-[80%]">
                         {displayName}
                       </span>
-                      <span className="text-micro font-semibold text-white/50 uppercase tracking-widest bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
+                      <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/5">
                         Oração
                       </span>
                     </div>
-                    <p className="text-white/95 text-base lg:text-lg font-normal leading-snug line-clamp-4 pt-0.5">
+                    <p className="text-marinho text-base lg:text-lg font-normal leading-snug line-clamp-4 pt-0.5">
                       {prayer.request}
                     </p>
                   </div>
 
-                  <div className="pt-2 flex items-center justify-between text-micro text-white/40">
-                    <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-ceu/60" />
-                      Intercessão
+                  <div className="pt-2 flex items-center justify-between text-micro text-marinho/50 border-t border-marinho/5">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cobalto" />
+                      Intercessão Comunitária
                     </span>
                   </div>
                 </article>
@@ -280,17 +281,17 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
         )}
       </section>
 
-      {/* Rodapé Operacional com Controle Manual Alinhado à Linguagem IBBE */}
-      <footer className="relative z-10 flex items-center justify-between pt-4 mt-3 border-t border-white/10 text-xs text-white/60">
+      {/* Rodapé Operacional com Controle Manual Luminoso */}
+      <footer className="relative z-10 flex items-center justify-between pt-4 mt-3 border-t border-marinho/10 text-xs text-marinho/70">
         <div className="flex items-center gap-2">
-          <kbd className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-white font-mono text-micro shadow-sm">
+          <kbd className="px-2.5 py-1 rounded-md bg-white border border-marinho/15 text-marinho font-mono text-micro shadow-sm">
             Espaço
           </kbd>
           <span>ou</span>
-          <kbd className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-white font-mono text-micro shadow-sm">
+          <kbd className="px-2.5 py-1 rounded-md bg-white border border-marinho/15 text-marinho font-mono text-micro shadow-sm">
             →
           </kbd>
-          <span className="text-white/70">para avançar lote (até 8 pedidos)</span>
+          <span className="text-marinho/70 font-medium">para avançar lote (até 8 pedidos)</span>
         </div>
 
         {prayers.length > 0 && (
@@ -298,7 +299,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
             <button
               onClick={handleAdvanceBatch}
               disabled={isAdvancing}
-              className="px-6 py-2.5 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-elevation-2 hover:shadow-elevation-3 disabled:opacity-50 flex items-center gap-2"
+              className="px-6 py-2.5 rounded-full bg-cobalto hover:bg-cobalto/90 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-elevation-1 hover:shadow-elevation-2 disabled:opacity-50 flex items-center gap-2"
             >
               {isAdvancing ? (
                 <>

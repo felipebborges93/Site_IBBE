@@ -58,7 +58,7 @@ export default async function TelaoPage({ params }: TelaoPageProps) {
   }
 
   return (
-    <main className="min-h-screen h-screen w-screen overflow-hidden bg-gradient-to-b from-marinho via-[#15253b] to-[#0d1726] text-white select-none flex flex-col font-sans">
+    <main className="min-h-screen h-screen w-screen overflow-hidden bg-[#F8FAFC] text-marinho select-none flex flex-col font-sans">
       <TelaoDisplay token={token} />
     </main>
   );
