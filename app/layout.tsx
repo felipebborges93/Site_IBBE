@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Caveat } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { siteConfig } from "@/content";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -158,12 +156,9 @@ export default function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(churchJsonLd) }}
           />
-          <Header />
-          <main id="main-content" tabIndex={-1} className="flex-1 pt-20 outline-none">
+          <SiteChrome>
             {children}
-          </main>
-          <Footer />
-          <FloatingWhatsApp />
+          </SiteChrome>
         </SmoothScroll>
       </body>
     </html>
