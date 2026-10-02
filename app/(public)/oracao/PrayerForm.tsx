@@ -165,36 +165,36 @@ export default function PrayerForm() {
             id="request-count"
             aria-live="polite"
             className={`text-xs ${
-              requestText.length >= 1000
+              requestText.length >= 250
                 ? "text-red-600 font-bold"
                 : isUnderMin
                 ? "text-cobalto font-medium"
                 : "text-marinho/50"
             }`}
           >
-            {requestText.length}/1.000 caracteres
+            {requestText.length}/250 caracteres
             {isUnderMin && " (mínimo de 5 caracteres)"}
           </span>
         </div>
 
         <p className="text-xs text-marinho/60">
-          Descreva sua necessidade, motivo de saúde, família, trabalho ou gratidão a Deus.
+          Descreva de forma breve e clara sua necessidade, saúde, família ou gratidão (máximo de 250 caracteres).
         </p>
 
         <textarea
           name="request"
           id="request"
-          rows={5}
+          rows={4}
           value={requestText}
           onChange={(e) => setRequestText(e.target.value)}
-          maxLength={1000}
+          maxLength={250}
           aria-invalid={Boolean(state?.errors?.request)}
           aria-describedby={
             state?.errors?.request
               ? "request-error request-count"
               : "request-count"
           }
-          placeholder="Ex.: Gostaria de pedir oração pela saúde da minha família e por direção em uma decisão profissional importante..."
+          placeholder="Ex.: Peço oração pela saúde da minha família e por direção em uma decisão profissional importante..."
           className="w-full px-4 py-3 rounded-lg border border-marinho/20 focus:ring-2 focus:ring-cobalto focus:border-cobalto transition-colors motion-reduce:transition-none resize-y text-marinho placeholder:text-marinho/40"
           required
         />

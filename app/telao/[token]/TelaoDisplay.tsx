@@ -263,7 +263,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                         Oração
                       </span>
                     </div>
-                    <p className="text-marinho text-base lg:text-lg font-normal leading-snug line-clamp-4 pt-0.5">
+                    <p className="text-marinho text-base lg:text-lg font-normal leading-snug line-clamp-5 pt-0.5">
                       {prayer.request}
                     </p>
                   </div>
