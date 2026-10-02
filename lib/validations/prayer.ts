@@ -10,7 +10,7 @@ export const prayerFormSchema = z
     request: z
       .string()
       .min(5, { message: "Por favor, detalhe seu pedido com pelo menos 5 caracteres." })
-      .max(250, { message: "O pedido deve ter no máximo 250 caracteres para facilitar a leitura no telão e dos intercessores." }),
+      .max(140, { message: "O pedido deve ter no máximo 140 caracteres para exibição perfeita no telão." }),
     is_anonymous: z.boolean().default(false),
     allow_public_display: z.boolean().default(false),
     honeypot: z.string().optional(),

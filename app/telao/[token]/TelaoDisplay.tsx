@@ -254,25 +254,18 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                   {/* Linha de acento de marca no topo do cartão */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto opacity-60 group-hover:opacity-100 transition-opacity" />
                   
-                  <div className="space-y-2.5 overflow-hidden">
-                    <div className="flex items-center justify-between border-b border-marinho/5 pb-2">
+                  <div className="space-y-3 overflow-hidden flex-1 flex flex-col justify-start">
+                    <div className="flex items-center justify-between border-b border-marinho/10 pb-2.5">
                       <span className="text-cobalto font-bold text-lg lg:text-xl tracking-tight truncate max-w-[80%]">
                         {displayName}
                       </span>
-                      <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/5">
+                      <span className="text-micro font-semibold text-marinho/60 uppercase tracking-widest bg-gelo/60 px-2.5 py-0.5 rounded-full border border-marinho/10">
                         Oração
                       </span>
                     </div>
-                    <p className="text-marinho text-base lg:text-lg font-normal leading-snug line-clamp-5 pt-0.5">
+                    <p className="text-marinho text-base lg:text-lg font-normal leading-relaxed pt-1">
                       {prayer.request}
                     </p>
-                  </div>
-
-                  <div className="pt-2 flex items-center justify-between text-micro text-marinho/50 border-t border-marinho/5">
-                    <span className="flex items-center gap-1.5 font-medium">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cobalto" />
-                      Intercessão Comunitária
-                    </span>
                   </div>
                 </article>
               );
