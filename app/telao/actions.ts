@@ -48,7 +48,7 @@ export async function getTelaoPrayerRequests(): Promise<TelaoPrayerRequest[]> {
       .eq("displayed", false)
       .gte("created_at", startOfWeekISO)
       .order("created_at", { ascending: true })
-      .limit(100);
+      .limit(9);
 
     if (error) {
       console.error("Erro ao buscar pedidos para o telão:", error);

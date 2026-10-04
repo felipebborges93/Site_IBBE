@@ -53,7 +53,7 @@ export async function GET(request: Request) {
       .eq("displayed", false)
       .gte("created_at", startOfWeekISO)
       .order("created_at", { ascending: true })
-      .limit(100);
+      .limit(9);
 
     if (error) {
       console.error("Erro ao buscar pedidos para exibição:", error);
