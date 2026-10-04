@@ -86,7 +86,7 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
                   href={liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 justify-center px-6 sm:px-8 h-14 rounded-full bg-verde hover:bg-verde/90 text-white font-bold text-base transition-all shadow-md hover:scale-[1.02] active:scale-95 text-center"
+                  className="inline-flex items-center gap-2.5 justify-center px-6 sm:px-8 h-14 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-base transition-all shadow-md shadow-red-600/25 hover:scale-[1.02] active:scale-95 text-center animate-pulse motion-reduce:animate-none"
                 >
                   <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
                   <span>Assistir ao vivo</span>

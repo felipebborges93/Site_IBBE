@@ -23,7 +23,7 @@ export async function YouTubeSection() {
                   02 / Mensagens e Transmissões
                 </span>
                 {isLiveNow && (
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-verde text-white text-micro font-extrabold uppercase animate-pulse motion-reduce:animate-none">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-600 text-white text-micro font-extrabold uppercase animate-pulse motion-reduce:animate-none shadow-sm shadow-red-600/20">
                     <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
                     Ao Vivo Agora
                   </span>
@@ -72,7 +72,7 @@ export async function YouTubeSection() {
                     variant="gelo"
                     elevation={1}
                     className={`flex flex-col h-full p-0 overflow-hidden rounded-2xl border transition-all duration-300 group-hover:shadow-elevation-2 group-hover:-translate-y-1 motion-reduce:transition-none motion-reduce:transform-none ${
-                      isVideoLive ? "border-verde/50 ring-2 ring-verde/20" : "border-marinho/10"
+                      isVideoLive ? "border-red-500/50 ring-2 ring-red-500/20" : "border-marinho/10"
                     }`}
                   >
                     {/* Thumbnail do Vídeo com Selo de Destaque */}
@@ -89,7 +89,7 @@ export async function YouTubeSection() {
                       {/* Selos / Badges sobre o Thumbnail */}
                       <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                         {isVideoLive ? (
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-verde text-white text-micro font-extrabold uppercase shadow-sm">
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-red-600 text-white text-micro font-extrabold uppercase shadow-sm">
                             <span aria-hidden="true" className="w-2 h-2 rounded-full bg-white animate-pulse motion-reduce:animate-none" />
                             AO VIVO
                           </span>
@@ -100,7 +100,11 @@ export async function YouTubeSection() {
                           </span>
                         )}
 
-                        <span className="p-1 rounded-full bg-black/40 text-white/80 group-hover:text-white group-hover:bg-verde transition-colors motion-reduce:transition-none">
+                        <span className={`p-1 rounded-full text-white/80 transition-colors motion-reduce:transition-none ${
+                          isVideoLive
+                            ? "bg-red-600/80 group-hover:bg-red-600 text-white"
+                            : "bg-black/40 group-hover:text-white group-hover:bg-cobalto"
+                        }`}>
                           <YoutubeLogo aria-hidden="true" className="w-4 h-4" weight="fill" />
                         </span>
                       </div>
@@ -119,9 +123,14 @@ export async function YouTubeSection() {
                         )}
                       </div>
 
-                      <div className="mt-4 pt-3 border-t border-marinho/10 flex items-center justify-between text-xs text-marinho/60">
-                        <span>Assistir no YouTube</span>
-                        <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5 text-cobalto group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform motion-reduce:transition-none motion-reduce:transform-none" />
+                      <div className="mt-4 pt-3 border-t border-marinho/10 flex items-center justify-between text-xs">
+                        <span className={isVideoLive ? "text-red-600 font-bold flex items-center gap-1.5" : "text-marinho/60"}>
+                          {isVideoLive && <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />}
+                          {isVideoLive ? "Assistir transmissão ao vivo" : "Assistir no YouTube"}
+                        </span>
+                        <ArrowUpRight aria-hidden="true" className={`w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform motion-reduce:transition-none motion-reduce:transform-none ${
+                          isVideoLive ? "text-red-600" : "text-cobalto"
+                        }`} />
                       </div>
                     </div>
                   </Card>
