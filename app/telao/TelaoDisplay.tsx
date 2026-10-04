@@ -63,13 +63,13 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     fetchPrayers();
   }, [fetchPrayers]);
 
-  // Avançar lote atual (até 12 pedidos) com transição orquestrada
+  // Avançar lote atual (até 9 pedidos) com transição orquestrada
   const handleAdvanceBatch = useCallback(async () => {
     if (isAdvancing || prayers.length === 0) return;
 
     try {
       setIsAdvancing(true);
-      const currentBatch = prayers.slice(0, 12);
+      const currentBatch = prayers.slice(0, 9);
       const currentBatchIds = currentBatch.map((p) => p.id);
 
       // Dispara marcação de displayed em paralelo para o lote atual
@@ -89,12 +89,12 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
       }
 
       // Remove os pedidos exibidos do estado local e incrementa a chave do lote
-      const remainingPrayers = prayers.slice(12);
+      const remainingPrayers = prayers.slice(9);
       setPrayers(remainingPrayers);
       setBatchKey((prev) => prev + 1);
 
-      // Se restarem menos de 12, busca novos pedidos aprovados
-      if (remainingPrayers.length < 12) {
+      // Se restarem menos de 9, busca novos pedidos aprovados
+      if (remainingPrayers.length < 9) {
         if (token) {
           const res = await fetch("/api/prayer-requests/display", {
             headers: {
@@ -143,7 +143,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     }
   };
 
-  const currentBatch = prayers.slice(0, 12);
+  const currentBatch = prayers.slice(0, 9);
 
   return (
     <div className="flex-1 flex flex-col h-full w-full justify-between p-4 sm:p-5 lg:p-6 select-none relative overflow-hidden bg-gradient-to-b from-white via-gelo-light to-gelo/30">
@@ -290,7 +290,7 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                   },
                 },
               }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-3 gap-2.5 lg:gap-3 flex-1 h-full min-h-0 py-0.5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-3 sm:gap-4 lg:gap-4 flex-1 h-full min-h-0 py-0.5"
             >
               {currentBatch.map((prayer, index) => {
                 const displayName =
@@ -331,26 +331,26 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
                         },
                       },
                     }}
-                    className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-xl sm:rounded-2xl p-3 sm:p-3.5 lg:p-4 flex flex-col justify-start shadow-elevation-1 transition-colors relative overflow-hidden group"
+                    className="bg-white hover:bg-gelo-light/50 border border-marinho/10 hover:border-cobalto/25 rounded-2xl p-4 sm:p-4.5 lg:p-5 flex flex-col justify-start shadow-elevation-1 transition-colors relative overflow-hidden group"
                   >
                     {/* Linha de acento de marca com suave pulso de entrada */}
                     <motion.div 
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ delay: 0.06 + index * 0.025, duration: 0.45, ease: "easeOut" }}
-                      className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cobalto via-ceu to-cobalto origin-left opacity-75 group-hover:opacity-100 transition-opacity" 
+                      className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-cobalto via-ceu to-cobalto origin-left opacity-75 group-hover:opacity-100 transition-opacity" 
                     />
                     
-                    <div className="space-y-1.5 sm:space-y-2 overflow-hidden flex-1 flex flex-col justify-start">
-                      <div className="flex items-center justify-between border-b border-marinho/10 pb-1.5">
-                        <span className="text-marinho font-bold text-sm sm:text-base tracking-tight truncate max-w-[76%]">
+                    <div className="space-y-2 overflow-hidden flex-1 flex flex-col justify-start">
+                      <div className="flex items-center justify-between border-b border-marinho/10 pb-2">
+                        <span className="text-marinho font-bold text-base sm:text-lg tracking-tight truncate max-w-[76%]">
                           {displayName}
                         </span>
-                        <span className="text-micro font-semibold text-cobalto uppercase tracking-wider bg-gelo/70 px-2 py-0.5 rounded-full border border-cobalto/15 shrink-0">
+                        <span className="text-micro font-semibold text-cobalto uppercase tracking-wider bg-gelo/70 px-2.5 py-0.5 rounded-full border border-cobalto/15 shrink-0">
                           Oração
                         </span>
                       </div>
-                      <p className="text-marinho/90 text-sm sm:text-base font-medium leading-relaxed pt-0.5 select-text">
+                      <p className="text-marinho/90 text-sm sm:text-base lg:text-[1.05rem] font-medium leading-relaxed pt-1 select-text">
                         &ldquo;{prayer.request}&rdquo;
                       </p>
                     </div>
