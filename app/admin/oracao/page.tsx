@@ -47,6 +47,17 @@ export default async function AdminOracaoPage() {
         </div>
 
         <div className="flex items-center gap-3">
+          <a
+            href="/telao"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cobalto text-white text-xs font-semibold hover:bg-cobalto/90 transition-colors shadow-sm"
+          >
+            <span>Abrir Telão</span>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
           <span className="text-xs text-marinho/50 hidden sm:inline">
             Conectado como {user.email}
           </span>

@@ -1,5 +1,5 @@
 import { validateServerSecrets } from "@/lib/env";
-import TelaoDisplay from "./TelaoDisplay";
+import TelaoDisplay from "../TelaoDisplay";
 
 interface TelaoPageProps {
   params: Promise<{ token: string }>;

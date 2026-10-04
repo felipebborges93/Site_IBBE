@@ -4,6 +4,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { getTelaoPrayerRequests, markPrayerRequestsAsDisplayed } from "./actions";
+
 interface PrayerRequest {
   id: string;
   name: string | null;
@@ -13,7 +15,7 @@ interface PrayerRequest {
 }
 
 interface TelaoDisplayProps {
-  token: string;
+  token?: string;
 }
 
 export default function TelaoDisplay({ token }: TelaoDisplayProps) {
@@ -28,18 +30,25 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch("/api/prayer-requests/display", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
 
-      if (!res.ok) {
-        throw new Error(`Falha ao carregar pedidos (${res.status})`);
+      if (token) {
+        const res = await fetch("/api/prayer-requests/display", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (!res.ok) {
+          throw new Error(`Falha ao carregar pedidos (${res.status})`);
+        }
+
+        const data = await res.json();
+        setPrayers(Array.isArray(data) ? data : []);
+      } else {
+        const data = await getTelaoPrayerRequests();
+        setPrayers(Array.isArray(data) ? data : []);
       }
 
-      const data = await res.json();
-      setPrayers(Array.isArray(data) ? data : []);
       setBatchKey((prev) => prev + 1);
     } catch (err: unknown) {
       const message =
@@ -61,18 +70,23 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
     try {
       setIsAdvancing(true);
       const currentBatch = prayers.slice(0, 12);
+      const currentBatchIds = currentBatch.map((p) => p.id);
 
       // Dispara marcação de displayed em paralelo para o lote atual
-      await Promise.allSettled(
-        currentBatch.map((prayer) =>
-          fetch(`/api/prayer-requests/${prayer.id}/displayed`, {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
-        )
-      );
+      if (token) {
+        await Promise.allSettled(
+          currentBatchIds.map((id) =>
+            fetch(`/api/prayer-requests/${id}/displayed`, {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            })
+          )
+        );
+      } else {
+        await markPrayerRequestsAsDisplayed(currentBatchIds);
+      }
 
       // Remove os pedidos exibidos do estado local e incrementa a chave do lote
       const remainingPrayers = prayers.slice(12);
@@ -81,13 +95,20 @@ export default function TelaoDisplay({ token }: TelaoDisplayProps) {
 
       // Se restarem menos de 12, busca novos pedidos aprovados
       if (remainingPrayers.length < 12) {
-        const res = await fetch("/api/prayer-requests/display", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        if (res.ok) {
-          const freshData = await res.json();
+        if (token) {
+          const res = await fetch("/api/prayer-requests/display", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          if (res.ok) {
+            const freshData = await res.json();
+            if (Array.isArray(freshData)) {
+              setPrayers(freshData);
+            }
+          }
+        } else {
+          const freshData = await getTelaoPrayerRequests();
           if (Array.isArray(freshData)) {
             setPrayers(freshData);
           }

@@ -8,7 +8,7 @@ const cspHeader = `
   img-src 'self' blob: data: https://lh3.googleusercontent.com https://images.unsplash.com https://i.ytimg.com;
   media-src 'self';
   connect-src 'self' https://*.supabase.co;
-  frame-src 'self' https://www.youtube.com https://youtube.com https://www.google.com;
+  frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://www.google.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
