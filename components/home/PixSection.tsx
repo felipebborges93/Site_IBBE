@@ -3,6 +3,7 @@ import { siteConfig } from "@/content/site";
 import { CopyPixButton } from "./CopyPixButton";
 import { Heart, HandHeart, Sparkle, ShieldCheck, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
+import { Parallax } from "@/components/ui/Parallax";
 
 export function PixSection() {
   const pixKey = siteConfig.contact.pixKey || "04.198.205/0001-84";
@@ -12,10 +13,12 @@ export function PixSection() {
       <FadeIn>
         <div className="relative rounded-3xl bg-marinho text-white overflow-hidden shadow-elevation-2 border border-white/10">
           {/* Fundo com Pattern da Marca sutil */}
-          <div 
-            className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
-            style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '360px', backgroundRepeat: 'repeat' }}
-          />
+          <Parallax offset={60} speed={0.4} className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none">
+            <div 
+              className="w-full h-[120%]"
+              style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '360px', backgroundRepeat: 'repeat' }}
+            />
+          </Parallax>
 
           {/* Gradiente sutil nos cantos */}
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-cobalto/25 rounded-full blur-3xl pointer-events-none" />

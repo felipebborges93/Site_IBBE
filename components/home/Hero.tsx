@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { NextServiceBar } from "./NextServiceBar";
+import { Parallax } from "@/components/ui/Parallax";
 import { services } from "@/content/services";
 import { siteConfig } from "@/content/site";
 
@@ -23,10 +24,12 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
       className="relative min-h-[90vh] pt-12 sm:pt-16 lg:pt-20 pb-0 flex flex-col justify-between overflow-hidden bg-gradient-to-b from-white/70 via-gelo-light/85 to-gelo/40"
     >
       {/* Texture Pattern Background */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.04] mix-blend-multiply pointer-events-none"
-        style={{ backgroundImage: "url('/images/patterns/pattern-10.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
-      />
+      <Parallax offset={80} speed={0.5} className="absolute inset-0 z-0 opacity-[0.04] mix-blend-multiply pointer-events-none">
+        <div 
+          className="w-full h-[120%]"
+          style={{ backgroundImage: "url('/images/patterns/pattern-10.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+        />
+      </Parallax>
       
       <Container size="xl" className="flex-1 flex flex-col justify-center relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-6 sm:py-10">
@@ -105,80 +108,86 @@ export function Hero({ liveVideoUrl, isLiveNow }: HeroProps) {
           {/* Coluna Direita: Mosaico Fotográfico Assimétrico */}
           <div className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[540px]">
             {/* Foto Principal */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.92, rotate: -2 }}
-              animate={{ opacity: 1, scale: 1, rotate: -1 }}
-              whileHover={{ rotate: 0, scale: 1.02 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="w-[82%] sm:w-[78%] relative z-10 cursor-pointer"
-            >
-              <motion.div
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="w-full rounded-3xl overflow-hidden border-4 border-white shadow-elevation-2"
+            <Parallax offset={20} speed={1.2} className="w-[82%] sm:w-[78%] relative z-10 cursor-pointer">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.92, rotate: -2 }}
+                animate={{ opacity: 1, scale: 1, rotate: -1 }}
+                whileHover={{ rotate: 0, scale: 1.02 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full"
               >
-                <div className="relative w-full h-72 sm:h-84 md:h-96">
-                  <Image
-                    src="/images/culto_1.jpeg"
-                    alt="Família da Igreja Bethel reunida"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 80vw, 40vw"
-                    className="object-cover"
-                  />
-                </div>
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="w-full rounded-3xl overflow-hidden border-4 border-white shadow-elevation-2"
+                >
+                  <div className="relative w-full h-72 sm:h-84 md:h-96">
+                    <Image
+                      src="/images/culto_1.jpeg"
+                      alt="Família da Igreja Bethel reunida"
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 80vw, 40vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </Parallax>
 
             {/* Foto Secundária 1 */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30, rotate: -6 }}
-              animate={{ opacity: 1, x: 0, rotate: -3 }}
-              whileHover={{ rotate: 0, scale: 1.05 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -bottom-4 left-0 sm:left-2 w-44 sm:w-56 z-20 cursor-pointer"
-            >
-              <motion.div
-                animate={{ y: [0, -7, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="w-full rounded-2xl overflow-hidden border-4 border-white shadow-elevation-2"
+            <Parallax offset={40} speed={1.5} className="absolute -bottom-4 left-0 sm:left-2 w-44 sm:w-56 z-20 cursor-pointer">
+              <motion.div 
+                initial={{ opacity: 0, x: -30, rotate: -6 }}
+                animate={{ opacity: 1, x: 0, rotate: -3 }}
+                whileHover={{ rotate: 0, scale: 1.05 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full"
               >
-                <div className="relative w-full h-48 sm:h-64">
-                  <Image
-                    src="/images/culto_2.jpg"
-                    alt="Comunidade na Igreja Bethel"
-                    fill
-                    sizes="(max-width: 768px) 45vw, 20vw"
-                    className="object-cover"
-                  />
-                </div>
+                <motion.div
+                  animate={{ y: [0, -7, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-full rounded-2xl overflow-hidden border-4 border-white shadow-elevation-2"
+                >
+                  <div className="relative w-full h-48 sm:h-64">
+                    <Image
+                      src="/images/culto_2.jpg"
+                      alt="Comunidade na Igreja Bethel"
+                      fill
+                      sizes="(max-width: 768px) 45vw, 20vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </Parallax>
 
             {/* Foto Secundária 2 */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30, rotate: 6 }}
-              animate={{ opacity: 1, x: 0, rotate: 3 }}
-              whileHover={{ rotate: 0, scale: 1.05 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -top-4 right-0 sm:right-2 w-40 sm:w-52 z-20 cursor-pointer"
-            >
-              <motion.div
-                animate={{ y: [0, 7, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="w-full rounded-2xl overflow-hidden border-4 border-white shadow-elevation-2"
+            <Parallax offset={30} speed={0.8} className="absolute -top-4 right-0 sm:right-2 w-40 sm:w-52 z-20 cursor-pointer">
+              <motion.div 
+                initial={{ opacity: 0, x: 30, rotate: 6 }}
+                animate={{ opacity: 1, x: 0, rotate: 3 }}
+                whileHover={{ rotate: 0, scale: 1.05 }}
+                transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full"
               >
-                <div className="relative w-full h-40 sm:h-52">
-                  <Image
-                    src="/images/culto_3.jpg"
-                    alt="Membros da comunidade Bethel"
-                    fill
-                    sizes="(max-width: 768px) 40vw, 18vw"
-                    className="object-cover"
-                  />
-                </div>
+                <motion.div
+                  animate={{ y: [0, 7, 0] }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="w-full rounded-2xl overflow-hidden border-4 border-white shadow-elevation-2"
+                >
+                  <div className="relative w-full h-40 sm:h-52">
+                    <Image
+                      src="/images/culto_3.jpg"
+                      alt="Membros da comunidade Bethel"
+                      fill
+                      sizes="(max-width: 768px) 40vw, 18vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </Parallax>
           </div>
         </div>
       </Container>

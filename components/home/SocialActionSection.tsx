@@ -3,6 +3,7 @@ import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { WhatsappLogo, Basket, CookingPot, Compass, HandHeart } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/FadeIn";
+import { Parallax } from "@/components/ui/Parallax";
 
 export function SocialActionSection() {
   const whatsappPhone = siteConfig.contact.whatsapp.replace(/\D/g, "");
@@ -12,16 +13,18 @@ export function SocialActionSection() {
   return (
     <section id="acao-social" className="py-20 lg:py-24 bg-marinho text-white scroll-mt-20 relative overflow-hidden">
       {/* Texture Pattern Background */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
-        style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
-      />
+      <Parallax offset={80} speed={0.4} className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+        <div 
+          className="w-full h-[120%]"
+          style={{ backgroundImage: "url('/images/patterns/pattern-9.png')", backgroundSize: '400px', backgroundRepeat: 'repeat' }}
+        />
+      </Parallax>
       
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Coluna Esquerda: Foto Real e Cartão de Apoio */}
           <FadeIn delay={0.1} className="lg:col-span-5 space-y-6">
-            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[260px] sm:h-[400px] lg:h-[460px]">
+            <Parallax offset={20} speed={0.8} className="rounded-3xl overflow-hidden border border-white/20 shadow-xl bg-black/20 relative w-full h-[260px] sm:h-[400px] lg:h-[460px]">
               <Image
                 src="/images/acao_social.jpg"
                 alt="Ação Social na comunidade em Resende"
@@ -29,7 +32,7 @@ export function SocialActionSection() {
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover"
               />
-            </div>
+            </Parallax>
             
             <div className="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <h4 className="text-base font-bold text-ceu mb-2">Como você pode participar</h4>
